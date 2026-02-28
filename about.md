@@ -71,8 +71,8 @@ If you are having trouble getting access to a personal laptop and feel that it's
 
 Let's be honest: this is the part of the syllabus most students probably jumped to 😉. The breakdown of your grade in this course will be as follows:
 
-**Labs (Weekly Programming Assignments)** → 45% \
-**Midterm Exam** → 15% \
+**Labs** → 30% \
+**Midterm Exam** → 30% \
 **Final Exam** → 40%
 
 The percentages for each letter grades are exactly what you'd expect too, but in case you've forgotten:
