@@ -61,11 +61,11 @@ There is no required textbook for this course. The material covered in the lectu
 
 - [**Probabilistic Robotics**](http://www.probabilistic-robotics.org/) by Sebastian Thrun, Wolfram Burgard, and Dieter Fox
 - [**Underactuated Robotics**](https://underactuated.csail.mit.edu/) by Russ Tedrake
-- [**Planning Algorithms**](http://planning.cs.uiuc.edu/) by Steven M. LaValle
+- [**Planning Algorithms**](https://lavalle.pl/planning/) by Steven M. LaValle
 
-The real requirement for this course is that you have access to a personal laptop capable of running the class Virtual Machine (VM). Most modern laptops should be more than capable of this.
+The real requirement for this course is that you have access to a personal laptop capable of running the class Virtual Machine (VM). Most modern laptops should be capable of this. Furthermore, you are **required** to bring this personal laptop with you to every class: we will be working on labs in-person during amost every session.
 
-That said, you are **required** to bring this personal laptop with you to every class: we will be working on labs in-person during every session. If you are having trouble getting access to a personal laptop and feel that it's impacting your learning in this course, send me an email: I will do my best to find a solution, but nothing is guaranteed. My goal in this course is to give everybody an opportunity to succeed regardless of personal resources or other privileges.
+If you are having trouble getting access to a personal laptop and feel that it's impacting your learning in this course, send me an email: I will do my best to find a solution. My goal in this course is to give everybody an opportunity to succeed regardless of personal resources or other privileges. We will figure it out.
 
 ## Grading
 
