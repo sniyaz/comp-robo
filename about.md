@@ -105,7 +105,7 @@ All of your programming assignments in this class are composed of weekly Labs. A
 
 ## Class Forum
 
-We will have a course forum for you to discuss questions with your classmates and help each other out (I also plan to be very active and answer your questions here as well). If you're emailing me with a question, I would prefer you post it on the forum instead (assuming that it isn't super personal): that way other students can also learn from your question (and probably have the same one!)
+We will have a course forum (Piazza) for you to discuss questions with your classmates and help each other out (I also plan to be very active and answer your questions here as well). If you're emailing me with a question, I would prefer you post it on the forum instead (assuming that it isn't super personal): that way other students can also learn from your question (and probably have the same one!)
 
 **Danger Zone:** I expect you to behave yourself online the same way I expect you to behave in an in-person course: that means respect and patience for your fellow students. We all learn at different rates (I was personally a slow learner in college), and making others feel bad about that (or anything else) is **not** OK. I have absolutely zero tolerance for this stuff, and I **will** shut down the class forum if people are being disrespectful.
 
