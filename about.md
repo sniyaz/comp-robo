@@ -24,15 +24,26 @@ description: >-
 
 **Final Exam Time:** TBD Dec 2026
 
-**Last Day To Drop (No W):** TBD 2026
+**Lecture:** 5:00 - 6:30PM Wednesdays
 
-**Last Day To Drop (With a W):** TBD 2026
+**Lab:** 6:50 - 8:20PM Wednesdays
 
 **Office Hours:** 10-11AM Saturdays, via Teams
 
 ## Course Description
 
-For computer science, engineering, mathematics, and other science students. Introduction to Java language and object-oriented programming with Java as well as general concepts and techniques of computer programming. Topics include Java expressions, flow control, functions and program structure, Java classes, overloading, object references, inheritance, Java library packages, exceptions, file I/O, applets, event handling, multithreading. Prerequisite: Completion of CSCI 110. 4 units (3 lecture units and 1 lab unit).
+This course explores the computational foundations of autonomous systems, organized around the **Sense-Plan-Act** paradigm—the fundamental cycle that enables robots to interact intelligently with the physical world. While robotics is inherently interdisciplinary, this class focuses strictly on the algorithmic and software challenges of autonomy, rather than mechanical design or hardware construction.
+
+Our primary focus will be on the first two components of the autonomy stack:
+
+*   **Sense (Perception):** We will investigate how robots interpret raw sensory information to build internal models of their environment. This includes topics such as coordinate transformations, camera models, image processing, and the basics of state estimation.
+*   **Plan (Motion Planning):** We will study the algorithms that allow robots to navigate complex environments while avoiding obstacles. This includes the study of configuration spaces, discrete search methods (e.g., A*, Dijkstra), and sampling-based motion planning (e.g., RRT, PRM).
+
+As time permits, we will explore the **Act (Control)** component, focusing on the feedback loops required to execute planned trajectories accurately (e.g., PID control).
+
+By the end of the course, students will have a deep understanding of the mathematical and algorithmic tools required to transform a "dumb" machine into an autonomous agent capable of perceiving its surroundings and planning its own motions. 
+
+**Note:** This is a software-centric course; no hardware assembly or electronics experience is expected or required.
 
 ## Student Learning Outcomes (SLOs)
 
