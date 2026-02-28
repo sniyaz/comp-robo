@@ -97,7 +97,7 @@ When it comes to exams, you usually need to let me know **72 hours** in advance 
 
 **Golden Rule:** If weird stuff happens and you aren't sure what to do, send me an email. I understand that we are all human beings with a lot going on, and I don't want this class to make your life miserable.
 
-## Lab Collaboration
+## Lab Groups
 
 All of your programming assignments in this class are composed of weekly Labs. All labs can be completed alone or in groups of up to **three**: it's completely up to you. I encourage you to work in groups (both because this makes things easier and because you learn from talking to your colleagues). You are allowed to switch groups for every lab (but you don't have to). 
 
