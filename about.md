@@ -63,9 +63,9 @@ There is no required textbook for this course. The material covered in the lectu
 - [**Underactuated Robotics**](https://underactuated.csail.mit.edu/) by Russ Tedrake
 - [**Planning Algorithms**](http://planning.cs.uiuc.edu/) by Steven M. LaValle
 
-The only other material I expect you to have access to is a computer. If you don't have a personal laptop, you can use the machines available in the university computer labs.
+The real requirement for this course is that you have access to a personal laptop capable of running the class Virtual Machine (VM). Most modern laptops should be more than capable of this.
 
-That said, I *strongly* recommend having access to a personal laptop and bringing it with you to class: it's much easier as a student to be able to take your work home and work on it when off-campus. You can check out the Northeastern [laptop loaner program](https://www.northeastern.edu/studenttech/laptoploanerprogram.html) for help with this. If you are still having trouble getting access to a personal laptop and feel that it's impacting your learning in this course, send me an email: I can try my best to find another way (although I can't promise anything). My goal in this course is to give everybody an opportunity to succeed regardless of personal resources or other privileges.
+That said, you are **required** to bring this personal laptop with you to every class: we will be working on labs in-person during every session. If you are having trouble getting access to a personal laptop and feel that it's impacting your learning in this course, send me an email: I will do my best to find a solution, but nothing is guaranteed. My goal in this course is to give everybody an opportunity to succeed regardless of personal resources or other privileges.
 
 ## Grading
 
