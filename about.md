@@ -32,18 +32,18 @@ description: >-
 
 ## Course Description
 
-This course explores the computational foundations of autonomous systems, organized around the **Sense-Plan-Act** paradigm—the fundamental cycle that enables robots to interact intelligently with the physical world. While robotics is inherently interdisciplinary, this class focuses strictly on the algorithmic and software challenges of autonomy, rather than mechanical design or hardware construction.
+This course explores the computational foundations of autonomous systems, organized around the **Sense, Plan, Act** paradigm: the fundamental cycle that enables robots to interact intelligently with the physical world. While robotics is inherently interdisciplinary, this class focuses **strictly** on the algorithmic and software challenges of autonomy, rather than mechanical design or hardware construction.
 
 Our primary focus will be on the first two components of the autonomy stack:
 
-*   **Sense (Perception):** We will investigate how robots interpret raw sensory information to build internal models of their environment. This includes topics such as coordinate transformations, camera models, image processing, and the basics of state estimation.
+*   **Sense (Perception):** We will investigate how robots interpret raw sensory information to build internal models of their environment.
 *   **Plan (Motion Planning):** We will study the algorithms that allow robots to navigate complex environments while avoiding obstacles. This includes the study of configuration spaces, discrete search methods (e.g., A*, Dijkstra), and sampling-based motion planning (e.g., RRT, PRM).
 
-As time permits, we will explore the **Act (Control)** component, focusing on the feedback loops required to execute planned trajectories accurately (e.g., PID control).
+As time permits, we will explore the **Act (Control)** component, focusing on the feedback loops required to execute planned trajectories accurately (e.g., iLQR).
 
 By the end of the course, students will have a deep understanding of the mathematical and algorithmic tools required to transform a "dumb" machine into an autonomous agent capable of perceiving its surroundings and planning its own motions. 
 
-**Note:** This is a software-centric course; no hardware assembly or electronics experience is expected or required.
+**Again:** This is a software-centric course. No hardware assembly or electronics experience is expected or required.
 
 ## Student Learning Outcomes (SLOs)
 
