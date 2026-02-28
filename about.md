@@ -57,9 +57,13 @@ Students should have a solid foundation in computer science and mathematics. Thi
 
 ## Textbooks and Materials
 
-The textbook we use in this course is **Java Software Solutions -- Foundations of Program Design by J. Lewis and W. Loftus, 9th Edition, Pearson**.
+There is no required textbook for this course. The material covered in the lecture slides will be sufficient for all assignments and exams. However, the following textbooks are excellent resources and serve as "helpful companions" if you'd like to dive deep into certain topics or would like additional practice:
 
-The only other material I expect you to have access to is a computer with a Java compiler. If you don't have a personal laptop, you can use the machines in the Math/CSCI computer lab.
+- [**Probabilistic Robotics**](http://www.probabilistic-robotics.org/) by Sebastian Thrun, Wolfram Burgard, and Dieter Fox
+- [**Underactuated Robotics**](https://underactuated.csail.mit.edu/) by Russ Tedrake
+- [**Planning Algorithms**](http://planning.cs.uiuc.edu/) by Steven M. LaValle
+
+The only other material I expect you to have access to is a computer. If you don't have a personal laptop, you can use the machines available in the university computer labs.
 
 That said, I *strongly* recommend having access to a personal laptop and bringing it with you to class: it's much easier as a student to be able to take your work home and work on it when off-campus. You can check out the Northeastern [laptop loaner program](https://www.northeastern.edu/studenttech/laptoploanerprogram.html) for help with this. If you are still having trouble getting access to a personal laptop and feel that it's impacting your learning in this course, send me an email: I can try my best to find another way (although I can't promise anything). My goal in this course is to give everybody an opportunity to succeed regardless of personal resources or other privileges.
 
