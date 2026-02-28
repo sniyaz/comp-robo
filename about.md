@@ -45,6 +45,16 @@ By the end of the course, students will have a deep understanding of the mathema
 
 **Again:** This is a software-centric course. No hardware assembly or electronics experience is expected or required.
 
+## Prerequisites
+
+Students should have a solid foundation in computer science and mathematics. This means the following:
+
+- **CS 5100 (Foundations of AI)**
+- **CS 5800 (Algorithms)**
+- **Basic Linear Algebra** (familiarity with matrices, vectors, and coordinate transformations)
+
+**Note:** While I will not kick you out without these prerequisites, they are **STRONGLY recommended**. If you choose to take the course without this background, you will need to learn these topics on the fly as we progress through the material, which will make the course significantly more challenging.
+
 ## Textbooks and Materials
 
 The textbook we use in this course is **Java Software Solutions -- Foundations of Program Design by J. Lewis and W. Loftus, 9th Edition, Pearson**.
