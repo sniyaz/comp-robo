@@ -17,7 +17,7 @@ Don't worry about actually setting up GitHub Classroom or anything like that: ju
 
 #### ⚠️ Account Linking ⚠️
 
-Once you have your GitHub user name, you need to actually tell me what it is (along with your **official** Northeastern email). This will allow me to actually give you credit for the labs and homeworks you submit on GitHub Classroom.
+Once you have your GitHub user name, you need to actually tell me what it is (along with your **official** Northeastern email). This will allow me to actually give you credit for the labs you submit on GitHub Classroom.
 
 You can find this all-important form [here](https://docs.google.com/forms/d/e/1FAIpQLSd02qUq3B4oOqWxRa351NG6RnbJsoXeHwSKl49V2-KdjMZU8Q/viewform?usp=sharing&ouid=117727921578247837543): please do this ASAP (preferably before the first day of the class).
 

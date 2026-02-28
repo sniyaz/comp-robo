@@ -71,10 +71,9 @@ If you are having trouble getting access to a personal laptop and feel that it's
 
 Let's be honest: this is the part of the syllabus most students probably jumped to 😉. The breakdown of your grade in this course will be as follows:
 
-**Labs (Shorter, In-Class Programming Assignments)** → 35% \
-**Homeworks (Longer, Take-Home Programming Assignments)** → 20% \
+**Labs (Weekly Programming Assignments)** → 45% \
 **Midterm Exam** → 15% \
-**Final Exam** → 30%
+**Final Exam** → 40%
 
 The percentages for each letter grades are exactly what you'd expect too, but in case you've forgotten:
 
@@ -84,15 +83,15 @@ The percentages for each letter grades are exactly what you'd expect too, but in
 **D >= 60%** \
 **F < 60%**
 
-**Note 1:** This means that points in different categories (Lab, HW, Final, etc) are worth different percentages of your final grade: your percentage in each category gets reweighted according to the "recipe" above.
+**Note 1:** This means that points in different categories (Lab, Final, etc) are worth different percentages of your final grade: your percentage in each category gets reweighted according to the "recipe" above.
 
-**Note 2:** My goal is that everybody should get 100% (or close to 100%) on the Labs and Homeworks.
+**Note 2:** My goal is that everybody should get 100% (or close to 100%) on the Labs.
 
 **Do I Curve?** I reserve the right to make the bins for each grade _easier_, but I will never make them _harder_ (in case, for example, I mess up and give an exam that's way too hard).
 
 ## Late Assignments and Make-Up Exams
 
-Programming assignments (Labs and HWs) can be submitted up to three days late with a 10% penalty of the **original** point amount each day. For example, suppose you get 9/10 on a lab assignment but submit it two days late (usually this means on a Tuesday). Your final score on the lab in this case would be 7/10. This same rules apply to homeworks. No submissions more than three days late will be graded unless you have an exception from me.
+Programming assignments (Labs) can be submitted up to three days late with a 10% penalty of the **original** point amount each day. For example, suppose you get 9/10 on a lab assignment but submit it two days late (usually this means on a Friday). Your final score on the lab in this case would be 7/10. No submissions more than three days late will be graded unless you have an exception from me.
 
 When it comes to exams, you usually need to let me know **72 hours** in advance if you need a make-up exam. I understand that life happens: if something unexpected happens that causes you to miss an exam, you need to let me know within **24 hours** for me to handle it somehow.
 
@@ -100,7 +99,7 @@ When it comes to exams, you usually need to let me know **72 hours** in advance 
 
 ## Programming Assignments
 
-More than half of your grade in this class is composed of programming assignments, both in-class (Labs) and take-home (Homeworks). All programming assignments can be completed alone or in groups of two: it's completely up to you. I encourage you to work in groups (both because this makes things easier and because you learn from talking to your colleagues). You are allowed to switch groups for every assignment (but you don't have to).
+All of your programming assignments in this class are composed of weekly Labs. All programming assignments can be completed alone or in groups of two: it's completely up to you. I encourage you to work in groups (both because this makes things easier and because you learn from talking to your colleagues). You are allowed to switch groups for every assignment (but you don't have to).
 
 ## Class Forum
 
