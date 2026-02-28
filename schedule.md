@@ -18,7 +18,7 @@ To queue for office hours, please follow these steps:
 3.  **Wait for Assistance:** I will help students in the order they post. When it is your turn, I'll call you into a breakout room on Teams.
 4.  **Completion:** Once I've finished helping you, I will reply to your comment on Piazza with "Done" so you know you've been checked off the queue.
 
-Don't worry if you don't see the instructor in the main Teams call: they are helping another student in a breakout room.
+**Don't worry** if you don't see the instructor in the main Teams call: they are helping another student in a breakout room.
 
 ## Weekly Schedule
 
