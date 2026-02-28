@@ -45,34 +45,6 @@ By the end of the course, students will have a deep understanding of the mathema
 
 **Again:** This is a software-centric course. No hardware assembly or electronics experience is expected or required.
 
-## Student Learning Outcomes (SLOs)
-
-1. Students will be able to analyze problems and design appropriate algorithms.
-
-2. Students will be able to code provided algorithms using Java language.
-
-3. Students will be able to provide code for a Java class given objects’ attributes and behaviors.
-
-4. Students will be able to use existing Java classes to perform required tasks.
-
-## Course Measurable Objectives (CMOs)
-
-1. Analyze problems and design appropriate algorithms.
-
-2. Code algorithms into the Java language.
-
-3. Recognize and produce proper Java syntax.
-
-4. Utilize recursion, iteration, and arrays.
-
-5. Demonstrate the paradigm of object-oriented programming.
-
-6. Write, organize, and assemble program documentation.
-
-7. Develop standards for comparing the efficiency of various algorithms.
-
-8. Demonstrate debugging techniques.
-
 ## Textbooks and Materials
 
 The textbook we use in this course is **Java Software Solutions -- Foundations of Program Design by J. Lewis and W. Loftus, 9th Edition, Pearson**.
