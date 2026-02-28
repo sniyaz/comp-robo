@@ -99,7 +99,7 @@ When it comes to exams, you usually need to let me know **72 hours** in advance 
 
 ## Lab Collaboration
 
-All of your programming assignments in this class are composed of weekly Labs. All labs can be completed alone or in groups of up to three: it's completely up to you. I encourage you to work in groups (both because this makes things easier and because you learn from talking to your colleagues). You are allowed to switch groups for every lab (but you don't have to). 
+All of your programming assignments in this class are composed of weekly Labs. All labs can be completed alone or in groups of up to **three**: it's completely up to you. I encourage you to work in groups (both because this makes things easier and because you learn from talking to your colleagues). You are allowed to switch groups for every lab (but you don't have to). 
 
 **Note:** Even if you work in a group, **everybody must submit their own code** (and their own write-up, if that week's lab requires one).
 
@@ -121,7 +121,7 @@ Learning these ideas is challenging. I encourage you to discuss course activitie
 The following applies to collaboration on labs when interacting with students **other than your group members**. Reminder: you are allowed to fully collaborate with your group members.
 
 Learning collaboratively is different from sharing answers. Here are some guidelines to keep your interactions "collaborative" and not "cheating":
-- You should never directly show another student your code. This means you should never send your files to another student nor should you screen share your work for other students.
+- You should never directly show another student your code or your write-up PDF. This means you should never send your files to another student nor should you screen share your work for other students.
   - Instead you are welcome to describe what is happening either verbally or in text.
 - If you are helping another student, don't just tell them the answer; they will learn very little and run into trouble on exams. Instead, try to guide them toward discovering the solution on their own.
   - You should not be spelling out code for any other students to directly type.
