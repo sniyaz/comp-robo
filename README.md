@@ -8,7 +8,8 @@ seo:
   name: CS 7680
 ---
 
-# CS 7680, Fall 2026
+# CS 7680: Computational Robotics
+## Fall 2026
 
 Welcome to CS 7680 at Northeastern! This course page is intended as a "home page" for our course where you can find all of the resources we will use this term.
 
