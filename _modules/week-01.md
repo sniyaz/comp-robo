@@ -3,6 +3,6 @@ title: Week 1 → Welcome to Comp Robo!
 ---
 
 Sep 9
-: **TODO**
+: **Intro to Computational Robotics**
   : [slides](#)
-: **Lab 1**{: .label .label-purple } TODO
+: **Lab 1**{: .label .label-purple } Machine Setup
