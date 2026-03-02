@@ -5,7 +5,7 @@ description: >-
     The form that lets me know your accounts!
 ---
 
-## Accounts in CS XXXX
+## Accounts in CS 7680
 
 Heads up: there are two accounts I expect you to create this semester (if you don't already have them).
 
