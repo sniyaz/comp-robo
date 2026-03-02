@@ -91,7 +91,7 @@ The percentages for each letter grades are exactly what you'd expect too, but in
 
 ## Late Assignments and Make-Up Exams
 
-Labs can be submitted up to three days late with a 10% penalty of the **original** point amount each day. For example, suppose you get 9/10 on a lab assignment but submit it two days late (usually this means on a Friday). Your final score on the lab in this case would be 7/10. No submissions more than three days late will be graded unless you have an exception from me.
+Labs can be submitted up to three days late with a 10% penalty of the **original** point amount each day. For example, suppose you get 9/10 on a lab assignment but submit it two days late. Your final score on the lab in this case would be 7/10. No submissions more than three days late will be graded unless you have an exception from me.
 
 When it comes to exams, you usually need to let me know **72 hours** in advance if you need a make-up exam. I understand that life happens: if something unexpected happens that causes you to miss an exam, you need to let me know within **24 hours** for me to handle it somehow.
 
