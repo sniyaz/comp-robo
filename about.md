@@ -146,6 +146,7 @@ Since AI tools are common now, here is a clear policy on what is and is not allo
 - You may **NEVER** use LLM tools to generate code for assignments.
 - You may **NEVER** ask LLM tools for direct answers to lab write-up questions.
 - In short: treat an LLM like another student in the class. High-level guidance and explanation are fine, but sharing answers (code or written) is not.
+
 I have gotten pretty good at spotting LLM-generated code, both in teaching and in my industry job, and I will treat these cases as seriously as any other form of cheating.
 
 ## Final Thoughts
