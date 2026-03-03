@@ -141,7 +141,7 @@ Sharing answers is one form of cheating, but all forms of cheating are disallowe
 Ultimately, **the goal of enrolling in this course is for YOU to learn this material**, so that you will be prepared for exams, for research, for job interviews, etc.  Engaging in academic misconduct does not help you towards that goal. If you are in doubt about what might constitute cheating, send me an email describing the situation and I will be happy to clarify it for you.
 
 ## Cheating: LLM Use Policy
-- You may use LLM tools (for example, ChatGPT, Claude, Gemini, or Copilot Chat) to ask general, high-level questions about course material (for example, as a "study buddy" to help explain concepts).
+- You may use LLM tools (for example, ChatGPT, Claude, Gemini, etc) to ask general, high-level questions about course material (for example, as a "study buddy" to help explain concepts).
 - You may **NEVER** use LLM tools to generate code for assignments.
 - You may **NEVER** ask LLM tools for direct answers to lab write-up questions.
 - In short: treat an LLM like another student in the class. High-level guidance and explanation are fine, but sharing answers (code or written) is not.
