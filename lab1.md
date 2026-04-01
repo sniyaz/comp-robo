@@ -25,7 +25,7 @@ Note that the real requirement for this course is that you have access to a pers
 
 Of course, that means the first thing we'll do in Lab 1 is **set up** this fabled VM!
 
-### 0. Requirements
+### Requirements
 
 Before you begin, ensure your disk has at least **14GB** of free space.
 
