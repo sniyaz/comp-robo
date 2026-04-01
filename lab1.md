@@ -29,22 +29,22 @@ Of course, that means the first thing we'll do in Lab 1 is **set up** this fable
 
 Before you begin, ensure your disk has at least **14GB** of free space.
 
-### 1. Download VM Image
+### Download VM Image
 
 Download the appropriate virtual machine image for your hardware. Use the Google Drive folder [here](https://drive.google.com/drive/folders/1NS3p4AtmgWsnuty7PZSxREThAKnUy_sC?usp=drive_link).
 
 *   **For Windows / Linux / Intel Macs:** You will need both the `.vmdk` and the `.ovf` files.
 *   **For Apple Silicon (M1/M2/M3):** Download the `.utm` virtual machine image.
 
-### 2. Install Hypervisor
+### Install Hypervisor
 
 Depending on your operating system, you will need to install a "hypervisor" to run the VM:
 
-*   **Windows / Linux:** Use **VMware Workstation Pro**. You will need to register for a free account on the Broadcom Support portal to download it [here.](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion). Search in the "Free Downloads" area for **VMware Workstation Pro**. Once installed, import the `.ovf` file.
-*   **Intel Macs (pre-Apple Silicon):** Use **VMware Fusion**. You will need to register for a free account on the Broadcom Support portal to download it [here.](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion). Search in the "Free Downloads" area for **VMware Fusion**. Once installed, import the `.ovf` file.
+*   **Windows / Linux:** Use **VMware Workstation Pro**. You will need to register for a free account on the Broadcom Support portal to download it [here](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion). Search in the "Free Downloads" area for **VMware Workstation Pro**. Once installed, import the `.ovf` file.
+*   **Intel Macs (pre-Apple Silicon):** Use **VMware Fusion**. You will need to register for a free account on the Broadcom Support portal to download it [here](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion). Search in the "Free Downloads" area for **VMware Fusion**. Once installed, import the `.ovf` file.
 *   **Apple Silicon Macs:** Use the [**UTM hypervisor**](https://mac.getutm.app/). Unzip the downloaded VM file and double-click the `.utm` image to open it in UTM.
 
-### 3. Login Credentials
+### Login Credentials
 
 Once the VM is booted, use the following credentials to log in. Note that if you are using Apple Silicon/UTM, you likely won't be asked for a password at all.
 
@@ -52,7 +52,7 @@ Once the VM is booted, use the following credentials to log in. Note that if you
 *   **Password:** `robotics` 
     *   *Note: For Apple Silicon/UTM, if prompted for a different password, it may be `prl_robot`.*
 
-### 4. Git & GitHub Setup
+### Git & GitHub Setup
 
 Once inside the VM, you should configure Git to work with your GitHub account:
 
