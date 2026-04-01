@@ -1,5 +1,5 @@
 ---
-title: Week 2 → TODO
+title: Week 2 → Moving Into Perception
 ---
 
 Sep 15
@@ -7,6 +7,6 @@ Sep 15
 
 
 Sep 16
-: **TODO**
+: **Sense, Plan, Act + Intro to Perception**
   : [slides](#)
 : **Lab 2**{: .label .label-purple } TODO
