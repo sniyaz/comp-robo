@@ -40,8 +40,8 @@ Download the appropriate virtual machine image for your hardware. Use the Google
 
 Depending on your operating system, you will need to install a "hypervisor" to run the VM:
 
-*   **Windows / Linux:** Use **VMware Workstation Pro**. You will need to register for a free account on the Broadcom Support portal to download it [here](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion). Search in the "Free Downloads" area for **VMware Workstation Pro**. Once installed, import the `.ovf` file.
-*   **Intel Macs (pre-Apple Silicon):** Use **VMware Fusion**. You will need to register for a free account on the Broadcom Support portal to download it [here](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion). Search in the "Free Downloads" area for **VMware Fusion**. Once installed, import the `.ovf` file.
+*   **Windows / Linux:** Use **VMware Workstation Pro**. You will need to register for a free account on the Broadcom Support portal to download it [here](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion). Search in the "Free Downloads" area for VMware Workstation Pro. Once installed, import the `.ovf` file.
+*   **Intel Macs (pre-Apple Silicon):** Use **VMware Fusion**. You will need to register for a free account on the Broadcom Support portal to download it [here](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion). Search in the "Free Downloads" area for VMware Fusion. Once installed, import the `.ovf` file.
 *   **Apple Silicon Macs:** Use the [**UTM hypervisor**](https://mac.getutm.app/). Unzip the downloaded VM file and double-click the `.utm` image to open it in UTM.
 
 ### Login Credentials
