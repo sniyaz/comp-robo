@@ -46,7 +46,7 @@ Depending on your operating system, you will need to install a "hypervisor" to r
 
 ### 3. Login Credentials
 
-Once the VM is booted, use the following credentials to log in:
+Once the VM is booted, use the following credentials to log in. Note that if you are using Apple Silicon/UTM, you likely won't be asked for a password at all.
 
 *   **Username:** `robotics`
 *   **Password:** `robotics` 
