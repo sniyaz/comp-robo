@@ -22,6 +22,8 @@ Welcome to Lab 0! Here, we'll set up the class VM for the rest of the semester a
 
 Note that the real requirement for this course is that you have access to a personal laptop capable of running the class Virtual Machine (VM). Most modern laptops should be capable of this. Furthermore, you are **required** to bring this personal laptop with you to every class: we will be working on labs in-person during almost every session.
 
+Of course, that means the first thing we'll do in Lab 1 is **set up** this fabled VM!
+
 ### 0. Requirements
 
 Before you begin, ensure your disk has at least **14GB** of free space.
