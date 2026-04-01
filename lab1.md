@@ -5,7 +5,7 @@ description: >-
     Instructions for setting up the CS 7680 Virtual Machine.
 ---
 
-# Virtual Machine Setup
+# Lab 0
 {:.no_toc}
 
 ## Table of contents
@@ -15,6 +15,10 @@ description: >-
 {:toc}
 
 ---
+
+Welcome to Lab 0! Here, we'll set up the class VM for the rest of the semester and learn a bit about ROS. We'll also get familiar with the GitHub Classroom system you'll use to submit your assignments in CS 7680.
+
+# Virtual Machine Setup
 
 Note that the real requirement for this course is that you have access to a personal laptop capable of running the class Virtual Machine (VM). Most modern laptops should be capable of this. Furthermore, you are **required** to bring this personal laptop with you to every class: we will be working on labs in-person during almost every session.
 
