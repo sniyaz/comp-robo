@@ -3,6 +3,7 @@ layout: page
 title: Virtual Machine Setup
 description: >-
     Instructions for setting up the CS 7680 Virtual Machine.
+nav_exclude: true
 ---
 
 # Lab 1
@@ -30,17 +31,17 @@ Before you begin, ensure your disk has at least **14GB** of free space.
 
 ### 1. Download VM Image
 
-Download the appropriate virtual machine image for your hardware:
+Download the appropriate virtual machine image for your hardware. Use the Google Drive folder [here](https://drive.google.com/drive/folders/1NS3p4AtmgWsnuty7PZSxREThAKnUy_sC?usp=drive_link).
 
-*   **For Windows / Linux / Intel Macs:** Download the course virtual machine (~5.8GB). You will need both the `.vmdk` and the `.ovf` files. [TODO: Add Link]
-*   **For Apple Silicon (M1/M2/M3):** Download the `.utm` virtual machine image. [TODO: Add Link]
+*   **For Windows / Linux / Intel Macs:** You will need both the `.vmdk` and the `.ovf` files.
+*   **For Apple Silicon (M1/M2/M3):** Download the `.utm` virtual machine image.
 
 ### 2. Install Hypervisor
 
 Depending on your operating system, you will need to install a "hypervisor" to run the VM:
 
-*   **Windows / Linux:** Use **VMware Workstation Player**. You may need to register for a free account on the Broadcom Support portal to download it. Once installed, import the `.ovf` file.
-*   **Intel Macs (pre-Apple Silicon):** Use **VMware Fusion**. You can register on the Broadcom portal to download it for free. Once installed, import the `.ovf` file.
+*   **Windows / Linux:** Use **VMware Workstation Pro**. You will need to register for a free account on the Broadcom Support portal to download it [here.](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion). Search in the "Free Downloads" area for **VMware Workstation Pro**. Once installed, import the `.ovf` file.
+*   **Intel Macs (pre-Apple Silicon):** Use **VMware Fusion**. You will need to register for a free account on the Broadcom Support portal to download it [here.](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion). Search in the "Free Downloads" area for **VMware Fusion**. Once installed, import the `.ovf` file.
 *   **Apple Silicon Macs:** Use the [**UTM hypervisor**](https://mac.getutm.app/). Unzip the downloaded VM file and double-click the `.utm` image to open it in UTM.
 
 ### 3. Login Credentials
