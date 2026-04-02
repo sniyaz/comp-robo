@@ -106,7 +106,7 @@ First, let’s take a look at our workspaces.
 $ ls ~/dependencies_ws/
 build devel logs src
 $ ls ~/mushr_ws/
-build devel logs src  # You may be missing directories here, but we will go through how to clone and build this workspace
+build devel logs src  # You may be missing directories here, but we will go through how to build this workspace!
 ```
 
 **Terminal Tip: ls**
@@ -121,13 +121,13 @@ The key part of the workspace is the `src` folder which contains packages. The o
 
 ### Building Dependencies
 
-Let’s update and build the dependencies:
+Let’s build the dependencies workspace first.
+
+⚠️ **NOTE:** The `dependencies_ws` must be built first (before `mushr_ws`) since it contains important packages that let our labs assignments actually run. **Never** modify anything inside the `dependencies_ws` folder.
 
 ```bash
 $ source /opt/ros/noetic/setup.bash
 $ cd ~/dependencies_ws/src/
-$ # Ensure you have the latest dependencies
-$ git pull --recurse-submodules
 $ rosdep install --from-paths . --ignore-src -y -r
 $ cd ~/dependencies_ws
 $ catkin clean  # remove old build files
@@ -169,19 +169,4 @@ $ source ~/mushr_ws/devel/setup.bash
 Note that we sourced the dependencies workspace before we built the project workspace `mushr_ws`. This way, the packages inside `mushr_ws` have access to the packages built in the `dependencies_ws` underlay.
 
 You can verify that your workspaces are overlaid as expected by checking the output of `catkin config` from within `mushr_ws`. The second line should read `Extending: /home/robotics/dependencies_ws/devel:/opt/ros/noetic`.
-
-### Rebuilding Dependencies
-
-If you plan to either (1) rebuild your dependencies or (2) remove existing builds in `mushr_ws`, you should always activate the dependencies workspace before building the project workspace:
-
-```bash
-$ cd ~/dependencies_ws/src/
-$ git pull --recurse-submodules
-$ catkin clean  # remove old build files
-$ catkin build
-$ cd ~/mushr_ws/
-$ catkin clean
-$ source ~/dependencies_ws/devel/setup.bash
-$ catkin build
-$ source ~/mushr_ws/devel/setup.bash
 ```
