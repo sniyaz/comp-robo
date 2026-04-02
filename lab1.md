@@ -78,7 +78,105 @@ Once inside the VM, you should configure Git to work with your GitHub account:
     cat ~/.ssh/id_ed25519.pub
     ```
 
-### VM Troubleshooting
+## Getting Started with ROS
+
+The Robot Operating System (ROS) is a robotics middleware framework (not actually an operating system) that is commonly used in robotics platforms. ROS is used as an interprocess communications provider. By implementing functionalities in many separate “nodes” (each their own process) and relying on ROS mechanisms to communicate, we can seamlessly integrate custom software with existing, off-the-shelf ROS components. Gaining a grasp of fundamental ROS concepts will help you make the most of the many robots which use ROS.
+
+ROS code is organized into packages, which can contain executables, libraries and other information like message formats, geometric meshes, and maps. Some of these executables may be nodes, processes that register themselves with a ROS Master and communicate with other nodes. A package can have multiple nodes. Each package has a `package.xml` file which specifies dependencies, as well as a `CMakeLists.txt` makefile. Most ROS code is written in Python or C++.
+
+ROS development is done in a workspace, a specially structured file tree that enables you to work on many separate packages and build them all at once. For this course, we’ve crafted a repository `~/dependencies_ws` that combines all of the key packages you’ll need in order to run the simulator alongside starter code and packages for each assignment. This means you won’t have to create any packages yourself.
+
+ROS workspaces are designed to be layered, which allows you to build sets of packages separately and to override packages selectively. In fact, ROS itself is just a bunch of packages living in a workspace in `/opt/ros/noetic`, and for the most part every ROS workspace you’ll encounter will overlay this root workspace. We won’t be using the full power of workspace overlays, but we will be using two overlaid workspaces (in addition to the root installation workspace) to better manage the packages you’ll need to work with.
+
+### Workspaces
+
+First, let’s take a look at our workspaces.
+
+```bash
+$ ls ~/dependencies_ws/
+build devel logs src
+$ ls ~/robotics_ws/
+build devel logs src  # You may be missing directories here, but we will go through how to clone and build this workspace
+```
+
+**Terminal Tip: ls**
+
+The `ls` command lists the contents of a directory. In a path like `~/dependencies_ws`, the `~` is shorthand for your home directory (`/home/robotics` for this virtual machine).
+
+You can use tab completion rather than typing out the entire command. Try typing `ls ~/dep<TAB>`. If there are multiple completions, press the tab key twice to see all the options.
+
+As the names indicate, one workspace is dedicated to the dependencies you’ll need for your projects. They’re set up for you, and you shouldn’t need to modify them. The `robotics_ws` is for your project code.
+
+The key part of the workspace is the `src` folder which contains packages. The others are automatically generated at build time. 
+
+### Building Dependencies
+
+Let’s update and build the dependencies:
+
+```bash
+$ source /opt/ros/noetic/setup.bash
+$ cd ~/dependencies_ws/src/
+$ # Ensure you have the latest dependencies
+$ git pull --recurse-submodules
+$ rosdep install --from-paths . --ignore-src -y -r
+$ cd ~/dependencies_ws
+$ catkin clean  # remove old build files
+$ catkin build
+```
+
+**Terminal Tip: cd**
+
+The `cd` command changes the current directory.
+
+You’ll see a lot of colorful output, ending with a message saying how many packages were built. All `catkin build` did was compile a bunch of executables and dump build artifacts into the `build` and `devel` folders. However, your shell doesn’t know how to find and run them because they aren’t on the PATH. You will need to activate the workspace by running a special script that configures your shell’s environment variables to know about all of the build output. To activate a workspace, you run:
+
+```bash
+$ source ~/dependencies_ws/devel/setup.bash
+```
+
+### Setting up your Project Workspace
+
+Once you have accepted the GitHub Classroom assignment, clone your repository into the `~/robotics_ws/src` folder:
+
+```bash
+$ cd ~/robotics_ws/src/
+$ git clone <your_github_repo_url>
+```
+
+Now we’re going to build and activate the workspaces in order to ensure that they’re overlaid:
+
+```bash
+$ # Activate root workspace
+$ source /opt/ros/noetic/setup.bash
+$ # Activate dependencies underlay (built previously)
+$ source ~/dependencies_ws/devel/setup.bash
+$ # Build and activate projects workspace
+$ cd ~/robotics_ws/
+$ catkin build
+$ source ~/robotics_ws/devel/setup.bash
+```
+
+Note that we sourced the dependencies workspace before we built the project workspace `robotics_ws`. This way, the packages inside `robotics_ws` have access to the packages built in the `dependencies_ws` underlay.
+
+You can verify that your workspaces are overlaid as expected by checking the output of `catkin config` from within `robotics_ws`. The second line should read `Extending: /home/robotics/dependencies_ws/devel:/opt/ros/noetic`.
+
+### Rebuilding Dependencies
+
+If you plan to either (1) rebuild your dependencies or (2) remove existing builds in `robotics_ws`, you should always activate the dependencies workspace before building the project workspace:
+
+```bash
+$ cd ~/dependencies_ws/src/
+$ git pull --recurse-submodules
+$ catkin clean  # remove old build files
+$ catkin build
+$ cd ~/robotics_ws/
+$ catkin clean
+$ source ~/dependencies_ws/devel/setup.bash
+$ catkin build
+$ source ~/robotics_ws/devel/setup.bash
+```
+
+## VM Troubleshooting
 
 #### Not enough physical memory
 If you see an error stating "Not enough physical memory is available," navigate to **Virtual Machine > Settings > Processors & Memory** and reduce the allocated RAM from the default (typically 4096MB).
