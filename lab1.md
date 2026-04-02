@@ -105,7 +105,7 @@ First, let’s take a look at our workspaces.
 ```bash
 $ ls ~/dependencies_ws/
 build devel logs src
-$ ls ~/robotics_ws/
+$ ls ~/mushr_ws/
 build devel logs src  # You may be missing directories here, but we will go through how to clone and build this workspace
 ```
 
@@ -115,7 +115,7 @@ The `ls` command lists the contents of a directory. In a path like `~/dependenci
 
 You can use tab completion rather than typing out the entire command. Try typing `ls ~/dep<TAB>`. If there are multiple completions, press the tab key twice to see all the options.
 
-As the names indicate, one workspace is dedicated to the dependencies you’ll need for your projects. They’re set up for you, and you shouldn’t need to modify them. The `robotics_ws` is for your project code.
+As the names indicate, one workspace is dedicated to the dependencies you’ll need for your projects. They’re set up for you, and you shouldn’t need to modify them. The `mushr_ws` is for your project code.
 
 The key part of the workspace is the `src` folder which contains packages. The others are automatically generated at build time. 
 
@@ -146,10 +146,10 @@ $ source ~/dependencies_ws/devel/setup.bash
 
 ### Setting up your Project Workspace
 
-Once you have accepted the GitHub Classroom assignment, clone your repository into the `~/robotics_ws/src` folder:
+Once you have accepted the GitHub Classroom assignment, clone your repository into the `~/mushr_ws/src` folder:
 
 ```bash
-$ cd ~/robotics_ws/src/
+$ cd ~/mushr_ws/src/
 $ git clone <your_github_repo_url>
 ```
 
@@ -161,27 +161,27 @@ $ source /opt/ros/noetic/setup.bash
 $ # Activate dependencies underlay (built previously)
 $ source ~/dependencies_ws/devel/setup.bash
 $ # Build and activate projects workspace
-$ cd ~/robotics_ws/
+$ cd ~/mushr_ws/
 $ catkin build
-$ source ~/robotics_ws/devel/setup.bash
+$ source ~/mushr_ws/devel/setup.bash
 ```
 
-Note that we sourced the dependencies workspace before we built the project workspace `robotics_ws`. This way, the packages inside `robotics_ws` have access to the packages built in the `dependencies_ws` underlay.
+Note that we sourced the dependencies workspace before we built the project workspace `mushr_ws`. This way, the packages inside `mushr_ws` have access to the packages built in the `dependencies_ws` underlay.
 
-You can verify that your workspaces are overlaid as expected by checking the output of `catkin config` from within `robotics_ws`. The second line should read `Extending: /home/robotics/dependencies_ws/devel:/opt/ros/noetic`.
+You can verify that your workspaces are overlaid as expected by checking the output of `catkin config` from within `mushr_ws`. The second line should read `Extending: /home/robotics/dependencies_ws/devel:/opt/ros/noetic`.
 
 ### Rebuilding Dependencies
 
-If you plan to either (1) rebuild your dependencies or (2) remove existing builds in `robotics_ws`, you should always activate the dependencies workspace before building the project workspace:
+If you plan to either (1) rebuild your dependencies or (2) remove existing builds in `mushr_ws`, you should always activate the dependencies workspace before building the project workspace:
 
 ```bash
 $ cd ~/dependencies_ws/src/
 $ git pull --recurse-submodules
 $ catkin clean  # remove old build files
 $ catkin build
-$ cd ~/robotics_ws/
+$ cd ~/mushr_ws/
 $ catkin clean
 $ source ~/dependencies_ws/devel/setup.bash
 $ catkin build
-$ source ~/robotics_ws/devel/setup.bash
+$ source ~/mushr_ws/devel/setup.bash
 ```
