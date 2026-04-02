@@ -78,13 +78,23 @@ Once inside the VM, you should configure Git to work with your GitHub account:
     cat ~/.ssh/id_ed25519.pub
     ```
 
+## VM Troubleshooting
+
+#### Not enough physical memory
+If you see an error stating "Not enough physical memory is available," navigate to **Virtual Machine > Settings > Processors & Memory** and reduce the allocated RAM from the default (typically 4096MB).
+
+#### 3D Graphics Acceleration
+It is highly recommended to enable **3D Graphics Acceleration** in the VM settings to improve the frame rate in RViz and other simulation tools. This usually requires a full VM shutdown before the setting can be changed.
+
 ## Getting Started with ROS
 
-The Robot Operating System (ROS) is a robotics middleware framework (not actually an operating system) that is commonly used in robotics platforms. ROS is used as an interprocess communications provider. By implementing functionalities in many separate “nodes” (each their own process) and relying on ROS mechanisms to communicate, we can seamlessly integrate custom software with existing, off-the-shelf ROS components. Gaining a grasp of fundamental ROS concepts will help you make the most of the many robots which use ROS.
+The Robot Operating System (ROS) is a robotics middleware framework (not actually an operating system) that is commonly used in robotics platforms. ROS is used as an interprocess communications provider. By implementing functionalities in many separate “nodes” (each their own process) and relying on ROS mechanisms to communicate, we can seamlessly integrate custom software with existing, off-the-shelf ROS components. **Gaining a grasp of fundamental ROS concepts will help you make the most of the many robots which use ROS.**
+
+⚠️ **NOTE:** To be clear, the point of this class is to learn important algorithms in Computational Robotics, not to learn ROS: that said, hopefully learning it is a cool side benefit of this class!
 
 ROS code is organized into packages, which can contain executables, libraries and other information like message formats, geometric meshes, and maps. Some of these executables may be nodes, processes that register themselves with a ROS Master and communicate with other nodes. A package can have multiple nodes. Each package has a `package.xml` file which specifies dependencies, as well as a `CMakeLists.txt` makefile. Most ROS code is written in Python or C++.
 
-ROS development is done in a workspace, a specially structured file tree that enables you to work on many separate packages and build them all at once. For this course, we’ve crafted a repository `~/dependencies_ws` that combines all of the key packages you’ll need in order to run the simulator alongside starter code and packages for each assignment. This means you won’t have to create any packages yourself.
+ROS development is done in a workspace, a specially structured file tree that enables you to work on many separate packages and build them all at once. For this course, we’ve crafted a repository `~/dependencies_ws` that combines all of the key packages you’ll need in order to run the simulator alongside starter code and packages for each assignment. **This means you won’t have to create any packages yourself.**
 
 ROS workspaces are designed to be layered, which allows you to build sets of packages separately and to override packages selectively. In fact, ROS itself is just a bunch of packages living in a workspace in `/opt/ros/noetic`, and for the most part every ROS workspace you’ll encounter will overlay this root workspace. We won’t be using the full power of workspace overlays, but we will be using two overlaid workspaces (in addition to the root installation workspace) to better manage the packages you’ll need to work with.
 
@@ -175,11 +185,3 @@ $ source ~/dependencies_ws/devel/setup.bash
 $ catkin build
 $ source ~/robotics_ws/devel/setup.bash
 ```
-
-## VM Troubleshooting
-
-#### Not enough physical memory
-If you see an error stating "Not enough physical memory is available," navigate to **Virtual Machine > Settings > Processors & Memory** and reduce the allocated RAM from the default (typically 4096MB).
-
-#### 3D Graphics Acceleration
-It is highly recommended to enable **3D Graphics Acceleration** in the VM settings to improve the frame rate in RViz and other simulation tools. This usually requires a full VM shutdown before the setting can be changed.
