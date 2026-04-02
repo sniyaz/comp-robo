@@ -119,7 +119,7 @@ As the names indicate, one workspace is dedicated to the dependencies you’ll n
 
 The key part of the workspace is the `src` folder which contains packages. The others are automatically generated at build time. 
 
-### Building Dependencies
+### Building the Dependencies Workspace
 
 Let’s build the dependencies workspace first.
 
@@ -134,26 +134,15 @@ $ catkin clean  # remove old build files
 $ catkin build
 ```
 
-**Terminal Tip: cd**
-
-The `cd` command changes the current directory.
-
 You’ll see a lot of colorful output, ending with a message saying how many packages were built. All `catkin build` did was compile a bunch of executables and dump build artifacts into the `build` and `devel` folders. However, your shell doesn’t know how to find and run them because they aren’t on the PATH. You will need to activate the workspace by running a special script that configures your shell’s environment variables to know about all of the build output. To activate a workspace, you run:
 
 ```bash
 $ source ~/dependencies_ws/devel/setup.bash
 ```
 
-### Setting up your Project Workspace
+### Building the Project Workspace
 
-Once you have accepted the GitHub Classroom assignment, clone your repository into the `~/mushr_ws/src` folder:
-
-```bash
-$ cd ~/mushr_ws/src/
-$ git clone <your_github_repo_url>
-```
-
-Now we’re going to build and activate the workspaces in order to ensure that they’re overlaid:
+**Great!** We've built the dependencies workspace. Now we’re going to build and activate the main project workspace (`mushr_ws`):
 
 ```bash
 $ # Activate root workspace
@@ -169,4 +158,13 @@ $ source ~/mushr_ws/devel/setup.bash
 Note that we sourced the dependencies workspace before we built the project workspace `mushr_ws`. This way, the packages inside `mushr_ws` have access to the packages built in the `dependencies_ws` underlay.
 
 You can verify that your workspaces are overlaid as expected by checking the output of `catkin config` from within `mushr_ws`. The second line should read `Extending: /home/robotics/dependencies_ws/devel:/opt/ros/noetic`.
+```
+
+### Accepting the Assignment on GitHub Classroom
+
+Once you have accepted the GitHub Classroom assignment, clone your repository into the `~/mushr_ws/src` folder:
+
+```bash
+$ cd ~/mushr_ws/src/
+$ git clone <your_github_repo_url>
 ```
