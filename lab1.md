@@ -291,13 +291,9 @@ $ python3 $(rospack find introduction)/test/fibonacci.py
 > Make sure you are using `rospy.loginfo` with `--text` flag to print information as in the above example.
 > See ROS Logging and ROS test for more information.
 
-## Programming Task
+## Coding Question 1: Fibonacci Publisher
 
-Now that you have the simulator running and understand how to run tests, it's time to write some code! You will be working in the `introduction` folder inside your `mushr478` repository.
-
-Note that there is only one coding question on this lab- but usually we will have more!
-
-### Coding Question 1: Fibonacci Publisher
+Now that you have the simulator running and understand how to run tests, it's time to write some code! You will be working in the `introduction` folder inside your `mushr478` repository. Note that there is only one coding question on this lab- but usually we will have more!
 
 In this task, you'll implement a simple ROS node that calculates Fibonacci numbers and publishes them to a topic.
 
@@ -305,13 +301,9 @@ In this task, you'll implement a simple ROS node that calculates Fibonacci numbe
 2.  **Complete the ROS Node:** Open `scripts/fibonacci` and complete the ROS interface code. Your node should publish the calculated Fibonacci number to the `/fibonacci` topic.
 3.  **Create a Launch File:** Create a new launch file at `launch/fibonacci.launch` that starts your Fibonacci node and allows passing an `index` parameter.
 
-## Homework & Submission
+## Write-up
 
-Your final task is to complete the write-up and submit your work.
-
-### Write-up
-
-Create a **new file** `introduction/writeup/lab1.md`. Answer the following questions:
+Our labs will also have a write-up portion (usually)! Create a **new file** `introduction/writeup/lab1.md`, and answer the following questions:
 
 1.  Explain ROS nodes, topics, publishers, and subscribers in your own words.
 2.  Explain what a ROS launch file is and why it's useful.
@@ -320,11 +312,11 @@ Please also include the following images in the `introduction/writeup/` director
 
 1. The screenshot of RViz showing the `cse2_2` map (name this `map.png`, `map.jpg`, etc).
 
-### Grading Breakdown
+## Grading Breakdown
 
 TODO!
 
-### Submission
+## Submission
 
 When you are finished with the lab, commit all your changes and push them to your private GitHub repository. You **MUST** use a specific Git tag to signal completion so that my grading scripts can find your work. For Lab 1, this tag is exactly `submit-lab1`.
 
@@ -336,7 +328,7 @@ $ git tag submit-lab1
 $ git push origin main submit-lab1
 ```
 
-#### Re-submitting
+### Re-submitting
 
 If you need to make changes after you have already submitted (and before the deadline), don't panic! You can re-submit by deleting the old tag and creating a new one:
 
