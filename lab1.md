@@ -19,7 +19,7 @@ nav_exclude: true
 
 Welcome to Lab 1! Here, we'll set up the class VM for the rest of the semester and learn a bit about ROS. We'll also get familiar with the GitHub process you'll use to submit your assignments in CS 7680.
 
-## GitHub Account and Class Repro
+## GitHub Account and Class Repo
 
 You are required to have a GitHub account for this course, as we will use it for all lab assignments. You should have created both a GitHub account and your copy of the class repo by following the [GitHub Linking]({{ site.baseurl }}/account_linking#github-account) directions before Lab today.
 
@@ -142,7 +142,16 @@ $ source ~/dependencies_ws/devel/setup.bash
 
 ### Building the Project Workspace
 
-**Great!** We've built the dependencies workspace. Now we’re going to build and activate the main project workspace (`mushr_ws`):
+**Great!** We've built the dependencies workspace. Now we’re going to build and activate the main project workspace (`mushr_ws`).
+
+First, clone your class repository into the `~/mushr_ws/src` folder:
+
+```bash
+$ cd ~/mushr_ws/src/
+$ git clone git@github.com:<your-github-handle>/mushr478.git
+```
+
+**With your class repo cloned**, we can now build and activate the main project workspace (`mushr_ws`):
 
 ```bash
 $ # Activate root workspace
@@ -158,13 +167,3 @@ $ source ~/mushr_ws/devel/setup.bash
 Note that we sourced the dependencies workspace before we built the project workspace `mushr_ws`. This way, the packages inside `mushr_ws` have access to the packages built in the `dependencies_ws` underlay.
 
 You can verify that your workspaces are overlaid as expected by checking the output of `catkin config` from within `mushr_ws`. The second line should read `Extending: /home/robotics/dependencies_ws/devel:/opt/ros/noetic`.
-```
-
-### Accepting the Assignment on GitHub
-
-Once you have accepted the GitHub assignment, clone your repository into the `~/mushr_ws/src` folder:
-
-```bash
-$ cd ~/mushr_ws/src/
-$ git clone <your_github_repo_url>
-```
