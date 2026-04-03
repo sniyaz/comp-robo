@@ -58,6 +58,10 @@ Finally, you **MUST** add me (`sniyaz`) as a collaborator on your private reposi
 
 See the photos **below** for a visual guide!
 
+![Collab 1]({{ site.baseurl }}/assets/lab1-assets/collab-1.png)
+
+![Collab 2]({{ site.baseurl }}/assets/lab1-assets/collab-2.png)
+
 ### ⚠️ Linking Form ⚠️
 
 Once you have your GitHub user name and the link to your new `mushr478` repository, you need to actually tell me what they are (along with your **official** Northeastern email). This will allow me to actually give you credit for the labs you submit on GitHub.
