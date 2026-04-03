@@ -206,7 +206,9 @@ $ rosrun rviz rviz -d ~/mushr_ws/src/mushr478/cse478/config/default.rviz
 
 If you see error messages in your terminal like “Could not load model…”, remember to activate your workspace by running `source ~/mushr_ws/devel/setup.bash`. 
 
-This will launch RViz with a configuration that has all the right topics visualized. 
+This will launch RViz with a configuration that has all the right topics visualized. You will see something like this:
+
+![rviz_image]({{ site.baseurl }}/assets/lab1-assets/rviz_image.png)
 
 To drive the car, click on the small gray window and use the WASD keys.
 
@@ -299,7 +301,7 @@ Note that there is only one coding question on this lab- but usually we will hav
 
 In this task, you'll implement a simple ROS node that calculates Fibonacci numbers and publishes them to a topic.
 
-1.  **Implement Fibonacci Logic:** Open `src/introduction/fibonacci.py` and implement the `fibonacci` function. It should be an $O(n)$ implementation.
+1.  **Implement Fibonacci Logic:** Open `src/introduction/fibonacci.py` and implement the `fibonacci` function. It should be an `O(n)` implementation.
 2.  **Complete the ROS Node:** Open `scripts/fibonacci` and complete the ROS interface code. Your node should publish the calculated Fibonacci number to the `/fibonacci` topic.
 3.  **Create a Launch File:** Create a new launch file at `launch/fibonacci.launch` that starts your Fibonacci node and allows passing an `index` parameter.
 
