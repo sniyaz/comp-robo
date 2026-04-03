@@ -13,6 +13,24 @@ Heads up: we will use GitHub to submit the Labs in CS 7680. Please do all of the
 
 First, you can create a GitHub account [here](https://github.com/signup) if you need one. You can use any email you'd like to sign up, I just need your handle once you have an account. For example, my GitHub handle is [sniyaz](https://github.com/sniyaz).
 
+### Create Your Class Repo
+
+You will create **your own** copy of our class repository in this step. You will use the same repository this semester for all labs: many of the lab assignments actually build on each other!
+
+**⚠️ Danger! ⚠️** Please make sure to follow these instructions **exactly** and to the letter. If you make any mistakes, it will interfere with the tools I use to grade your work from GitHub.
+
+#### Create a Copy of the Template Repository
+
+Here is the template repository for Lab assignments in CS 7680 (we are borrowing a lot of infrastructure from the Computational Robotics course at the University of Washington):
+
+https://github.com/sniyaz/mushr478
+
+On the GitHub repo page, you'll see a button to `use this template` (see photo below). Click that button and select the `create a new repository` option.
+
+This should take you to the following screen:
+
+
+
 #### ⚠️ Linking Form ⚠️
 
 Once you have your GitHub user name, you need to actually tell me what it is (along with your **official** Northeastern email). This will allow me to actually give you credit for the labs you submit on GitHub.
