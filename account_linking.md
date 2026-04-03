@@ -48,7 +48,7 @@ Failure to set your repository to Private will result in a **5 point penalty** o
 
 Once you have these settings set **exactly**, go ahead and click the `create repository button`! We're almost done.
 
-### Add Collaborator
+#### Add Collaborator
 
 Finally, you **MUST** add me (`sniyaz`) as a collaborator on your private repository. This is how I will access and grade your code throughout the semester.
 
@@ -60,6 +60,6 @@ See the photos **below** for a visual guide!
 
 ### ⚠️ Linking Form ⚠️
 
-Once you have your GitHub user name, you need to actually tell me what it is (along with your **official** Northeastern email). This will allow me to actually give you credit for the labs you submit on GitHub.
+Once you have your GitHub user name and the link to your new `mushr478` repository, you need to actually tell me what they are (along with your **official** Northeastern email). This will allow me to actually give you credit for the labs you submit on GitHub.
 
 You can find this all-important form [here](https://docs.google.com/forms/d/e/1FAIpQLSd02qUq3B4oOqWxRa351NG6RnbJsoXeHwSKl49V2-KdjMZU8Q/viewform?usp=sharing&ouid=117727921578247837543): please do this ASAP (it is **required** before the first day of class).
