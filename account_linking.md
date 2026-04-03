@@ -6,8 +6,15 @@ description: >-
 ---
 
 ## GitHub in CS 7680
+{:.no_toc}
 
 Heads up: we will use GitHub to submit the Labs in CS 7680. Please do all of the following **before** the first day of class, or you **will be behind**!
+
+### Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ### GitHub Account
 
@@ -23,11 +30,15 @@ You will create **your own** copy of our class repository in this step. You will
 
 Here is the template repository for Lab assignments in CS 7680 (we are borrowing a lot of infrastructure from the Computational Robotics course at the University of Washington):
 
-https://github.com/sniyaz/mushr478
+[https://github.com/sniyaz/mushr478](https://github.com/sniyaz/mushr478)
 
 On the GitHub repo page, you'll see a button to `use this template` (see photo below). Click that button and select the `create a new repository` option.
 
+![Create new repo from template]({{ site.baseurl }}/assets/lab1-assets/create-template.png)
+
 This should take you to the following screen:
+
+![Repository settings screen]({{ site.baseurl }}/assets/lab1-assets/repo-screen.png)
 
 
 
