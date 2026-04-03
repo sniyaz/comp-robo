@@ -19,11 +19,11 @@ nav_exclude: true
 
 Welcome to Lab 1! Here, we'll set up the class VM for the rest of the semester and learn a bit about ROS. We'll also get familiar with the GitHub Classroom system you'll use to submit your assignments in CS 7680.
 
-## GitHub Account
+## GitHub Account and Class Repro
 
-You are required to have a GitHub account for this course, as we will use GitHub Classroom for all lab assignments. If you don't already have one, please see the [Account Linking]({{ site.baseurl }}/account_linking#github-account) section for details on how to set it up and link it to your Northeastern ID.
+You are required to have a GitHub account for this course, as we will use GitHub Classroom for all lab assignments. You should have created both a GitHub account and your copy of the class repo by following the [GitHub Linking]({{ site.baseurl }}/account_linking#github-account) directions before Lab today.
 
-You will need this to set up the class VM next.
+If you haven't already done this, **please do this immediately**. You will need a GitHub account and a copy of the class repo to set up the class VM next!
 
 ## Virtual Machine Setup
 

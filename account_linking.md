@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Account Linking
+title: GitHub Linking
 description: >-
     The form that lets me know your accounts!
 ---
