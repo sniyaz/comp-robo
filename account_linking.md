@@ -36,8 +36,7 @@ On the GitHub repo page, you'll see a button to `use this template` (see photo b
 
 ![Create new repo from template]({{ site.baseurl }}/assets/lab1-assets/create-template.png)
 
-
-This should take you to the following screen:
+This should take you to the following screen. Make sure you fill this out exactly as shown here. That means:
 
 **⚠️ MANDATORY SETTINGS ⚠️**
 - **Repository name:** You **MUST** name your repository `mushr478`.
@@ -47,8 +46,7 @@ Failure to set your repository to Private will result in a **5 point penalty** o
 
 ![Repository settings screen]({{ site.baseurl }}/assets/lab1-assets/repo-screen.png)
 
-Once you have these settings set, go ahead and click the `create repository button`! We're almost done.
-
+Once you have these settings set **exactly** as above, go ahead and click the `create repository button`! We're almost done.
 
 ### ⚠️ Linking Form ⚠️
 
