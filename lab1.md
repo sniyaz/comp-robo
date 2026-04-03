@@ -326,13 +326,28 @@ TODO!
 
 ### Submission
 
-When you are finished with the lab, commit all your changes and push them to your private GitHub repository:
+When you are finished with the lab, commit all your changes and push them to your private GitHub repository. You **MUST** use a specific Git tag to signal completion so that my grading scripts can find your work. For Lab 1, this tag is exactly `submit-lab1`.
 
 ```bash
 $ cd ~/mushr_ws/src/mushr478
 $ git add *
 $ git commit -m "Complete Lab 1" (or any fun message you like!)
-$ git push origin main
+$ git tag submit-lab1
+$ git push origin main submit-lab1
+```
+
+#### Re-submitting
+
+If you need to make changes after you have already submitted (and before the deadline), don't panic! You can re-submit by deleting the old tag and creating a new one:
+
+```bash
+# Delete the tag locally
+$ git tag -d submit-lab1
+# Delete the tag on GitHub
+$ git push origin :refs/tags/submit-lab1
+# Create and push the new tag
+$ git tag submit-lab1
+$ git push origin submit-lab1
 ```
 
 **Congratulations!** You've completed Lab 1 and are ready for the rest of the semester. 🏎️💨
