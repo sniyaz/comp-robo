@@ -32,11 +32,11 @@ Here is the template repository for Lab assignments in CS 7680 (we are borrowing
 
 [https://github.com/sniyaz/mushr478](https://github.com/sniyaz/mushr478)
 
-On the GitHub repo page, you'll see a button to `use this template` (see photo below). Click that button and select the `create a new repository` option.
+On the GitHub repo page, you'll see a button to `use this template` (see red box in photo below). Click that button and select the `create a new repository` option.
 
 ![Create new repo from template]({{ site.baseurl }}/assets/lab1-assets/create-template.png)
 
-This should take you to the following screen. Make sure you fill this out exactly as shown here. That means:
+This should take you to the screen below. Make sure you fill this out exactly as shown below. That means:
 
 **⚠️ MANDATORY SETTINGS ⚠️**
 - **Repository name:** You **MUST** name your repository `mushr478`.
@@ -46,7 +46,17 @@ Failure to set your repository to Private will result in a **5 point penalty** o
 
 ![Repository settings screen]({{ site.baseurl }}/assets/lab1-assets/repo-screen.png)
 
-Once you have these settings set **exactly** as above, go ahead and click the `create repository button`! We're almost done.
+Once you have these settings set **exactly**, go ahead and click the `create repository button`! We're almost done.
+
+### Add Collaborator
+
+Finally, you **MUST** add me (`sniyaz`) as a collaborator on your private repository. This is how I will access and grade your code throughout the semester.
+
+1. In your new `mushr478` repository, go to **Settings** -> **Collaborators**.
+2. Click **Add people**.
+3. Search for `sniyaz` and add me.
+
+See the photos **below** for a visual guide!
 
 ### ⚠️ Linking Form ⚠️
 
