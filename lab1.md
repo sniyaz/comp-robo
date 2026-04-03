@@ -294,12 +294,56 @@ $ python3 $(rospack find introduction)/test/fibonacci.py
 ## 💻 Coding Question 1: Fibonacci Publisher
 
 Now that you have the simulator running and understand how to run tests, it's time to write some code! You will be working in the `introduction` folder inside your `mushr478` repository. Note that there is only one coding question on this lab- but usually we will have more!
+### Coding Question 1: Your First Publisher Node: Fibonacci
 
-In this task, you'll implement a simple ROS node that calculates Fibonacci numbers and publishes them to a topic.
+As you may recall from above, publishers and subscribers are how ROS manages interprocess communication. Publishers send out messages to a topic, while subscribers choose a topic to receive messages from. 
 
-1.  **Implement Fibonacci Logic:** Open `src/introduction/fibonacci.py` and implement the `fibonacci` function. It should be an `O(n)` implementation.
-2.  **Complete the ROS Node:** Open `scripts/fibonacci` and complete the ROS interface code. Your node should publish the calculated Fibonacci number to the `/fibonacci` topic.
-3.  **Create a Launch File:** Create a new launch file at `launch/fibonacci.launch` that starts your Fibonacci node and allows passing an `index` parameter.
+We will be creating a simple ROS node that calculates the nth Fibonacci number. It will read `n` from a ROS parameter and publish the desired Fibonacci number to a ROS topic. The 0th Fibonacci number is 0, 1st is 1, 10th is 55, etc.
+
+#### Sub-Tasks and Implementation Requirements
+
+*   **Q1.1:** Implement the Fibonacci calculation in `src/introduction/fibonacci.py`. 
+    *   **Requirement:** You will need an **O(n) implementation** to pass the larger tests.
+*   **Q1.2:** Complete the ROS interface code in the provided skeleton at `scripts/fibonacci`. 
+    *   **Requirement:** Follow the instructions provided inline within the script to complete the code.
+*   **Q1.3:** Write a launch file for the node at `launch/fibonacci.launch`. 
+    *   **Requirement:** Since the calculator requires a ROS parameter, you must pass it to your node in the launch file. Follow the inline instructions in the provided skeleton.
+
+#### Testing Your Code
+
+**Automated Testing:**
+To verify your implementation for each sub-task, run the following commands from within your `mushr_ws` (make sure it is sourced!):
+
+*   **For Q1.1 (Python Logic):**
+    ```bash
+    python3 $(rospack find introduction)/test/fibonacci.py
+    ```
+*   **For Q1.2 (ROS Node):**
+    ```bash
+    rostest introduction fibonacci_small.test
+    ```
+*   **For Q1.3 (Launch File):**
+    ```bash
+    rostest introduction fibonacci_launch.test
+    ```
+
+**Manual Verification:**
+To see the output directly without the automated tests, follow these steps across three terminals:
+
+1.  **Terminal 1 (Start ROS Master):**
+    ```bash
+    roscore
+    ```
+2.  **Terminal 2 (Listen to the output topic):**
+    ```bash
+    rostopic echo /introduction/fib_output
+    ```
+3.  **Terminal 3 (Launch the node):**
+    ```bash
+    roslaunch introduction fibonacci.launch
+    # To test with a specific index (e.g., 20):
+    roslaunch introduction fibonacci.launch index:=20
+    ```
 
 ## 📝 Write-up
 
