@@ -294,7 +294,7 @@ $ python3 $(rospack find introduction)/test/fibonacci.py
 ## 💻 Coding Question 1: Fibonacci Publisher
 
 Now that you have the simulator running and understand how to run tests, it's time to write some code! You will be working in the `introduction` folder inside your `mushr478` repository. Note that there is only one coding question on this lab- but usually we will have more!
-### Coding Question 1: Your First Publisher Node: Fibonacci
+### Your First Publisher Node!
 
 As you may recall from above, publishers and subscribers are how ROS manages interprocess communication. Publishers send out messages to a topic, while subscribers choose a topic to receive messages from. 
 
@@ -328,7 +328,7 @@ To verify your implementation for each sub-task, run the following commands from
     ```
 
 **Manual Verification:**
-To see the output directly without the automated tests, follow these steps across three terminals:
+To see the output directly without the automated tests, follow these steps across three terminals. Note that you must first start `roscore`: this is the central coordinator for any ROS system. It provides the ROS Master, which allows nodes to find and communicate with each other.
 
 1.  **Terminal 1 (Start ROS Master):**
     ```bash
