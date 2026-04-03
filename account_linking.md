@@ -31,6 +31,7 @@ You will create **your own** copy of our class repository in this step. You will
 Here is the template repository for Lab assignments in CS 7680 (we are borrowing a lot of infrastructure from the Computational Robotics course at the University of Washington):
 
 [https://github.com/sniyaz/mushr478](https://github.com/sniyaz/mushr478)
+<br>
 
 On the GitHub repo page, you'll see a button to `use this template` (see photo below). Click that button and select the `create a new repository` option.
 
@@ -39,10 +40,9 @@ On the GitHub repo page, you'll see a button to `use this template` (see photo b
 This should take you to the following screen:
 
 ![Repository settings screen]({{ site.baseurl }}/assets/lab1-assets/repo-screen.png)
+<br>
 
-
-
-#### ⚠️ Linking Form ⚠️
+### ⚠️ Linking Form ⚠️
 
 Once you have your GitHub user name, you need to actually tell me what it is (along with your **official** Northeastern email). This will allow me to actually give you credit for the labs you submit on GitHub.
 
