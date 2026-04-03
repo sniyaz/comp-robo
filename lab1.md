@@ -262,7 +262,7 @@ You can use whichever way you like, but note that single quotes (') are importan
 
 > **Task:** Use whichever method you prefer to set the map to `cse2_2.yaml` from the `cse478` package. Then, save a screenshot of RViz showing the new map. (Note that the car will start in the “walls” and therefore won’t be able to drive. Use the Publish Point tool in the top panel to place the car in an open hallway before driving with WASD.)
 
-## Testing
+## Running Tests in CS 7680
 
 Each package contains a test directory with unit and integration tests built with the `rosunit` framework. The `catkin test` command provides a summary view of all test suites.
 
@@ -291,7 +291,7 @@ $ python3 $(rospack find introduction)/test/fibonacci.py
 > Make sure you are using `rospy.loginfo` with `--text` flag to print information as in the above example.
 > See ROS Logging and ROS test for more information.
 
-## Coding Question 1: Fibonacci Publisher
+## 💻 Coding Question 1: Fibonacci Publisher
 
 Now that you have the simulator running and understand how to run tests, it's time to write some code! You will be working in the `introduction` folder inside your `mushr478` repository. Note that there is only one coding question on this lab- but usually we will have more!
 
@@ -301,7 +301,7 @@ In this task, you'll implement a simple ROS node that calculates Fibonacci numbe
 2.  **Complete the ROS Node:** Open `scripts/fibonacci` and complete the ROS interface code. Your node should publish the calculated Fibonacci number to the `/fibonacci` topic.
 3.  **Create a Launch File:** Create a new launch file at `launch/fibonacci.launch` that starts your Fibonacci node and allows passing an `index` parameter.
 
-## Write-up
+## 📝 Write-up
 
 Our labs will also have a write-up portion (usually)! Create a **new file** `introduction/writeup/lab1.md`, and answer the following questions:
 
@@ -312,11 +312,11 @@ Please also include the following images in the `introduction/writeup/` director
 
 1. The screenshot of RViz showing the `cse2_2` map (name this `map.png`, `map.jpg`, etc).
 
-## Grading Breakdown
+## 🔥 Grading Breakdown
 
 TODO!
 
-## Submission
+## 🚀 Submission
 
 When you are finished with the lab, commit all your changes and push them to your private GitHub repository. You **MUST** use a specific Git tag to signal completion so that my grading scripts can find your work. For Lab 1, this tag is exactly `submit-lab1`.
 
