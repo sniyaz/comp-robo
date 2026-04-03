@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Virtual Machine Setup
+title: Lab 1
 description: >-
     Instructions for setting up the CS 7680 Virtual Machine.
 nav_exclude: true
