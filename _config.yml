@@ -28,7 +28,6 @@ search_enabled: true
 heading_anchors: true
 permalink: pretty
 aux_links:
-  Github Classroom:
   Gradescope:
   Spotify:
     - https://open.spotify.com/playlist/2K8blvA3K9KnYFZ5EWjfd0?si=5f85dda36cc5465a

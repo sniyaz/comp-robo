@@ -17,11 +17,11 @@ nav_exclude: true
 
 ---
 
-Welcome to Lab 1! Here, we'll set up the class VM for the rest of the semester and learn a bit about ROS. We'll also get familiar with the GitHub Classroom system you'll use to submit your assignments in CS 7680.
+Welcome to Lab 1! Here, we'll set up the class VM for the rest of the semester and learn a bit about ROS. We'll also get familiar with the GitHub process you'll use to submit your assignments in CS 7680.
 
 ## GitHub Account and Class Repro
 
-You are required to have a GitHub account for this course, as we will use GitHub Classroom for all lab assignments. You should have created both a GitHub account and your copy of the class repo by following the [GitHub Linking]({{ site.baseurl }}/account_linking#github-account) directions before Lab today.
+You are required to have a GitHub account for this course, as we will use it for all lab assignments. You should have created both a GitHub account and your copy of the class repo by following the [GitHub Linking]({{ site.baseurl }}/account_linking#github-account) directions before Lab today.
 
 If you haven't already done this, **please do this immediately**. You will need a GitHub account and a copy of the class repo to set up the class VM next!
 
@@ -160,9 +160,9 @@ Note that we sourced the dependencies workspace before we built the project work
 You can verify that your workspaces are overlaid as expected by checking the output of `catkin config` from within `mushr_ws`. The second line should read `Extending: /home/robotics/dependencies_ws/devel:/opt/ros/noetic`.
 ```
 
-### Accepting the Assignment on GitHub Classroom
+### Accepting the Assignment on GitHub
 
-Once you have accepted the GitHub Classroom assignment, clone your repository into the `~/mushr_ws/src` folder:
+Once you have accepted the GitHub assignment, clone your repository into the `~/mushr_ws/src` folder:
 
 ```bash
 $ cd ~/mushr_ws/src/
