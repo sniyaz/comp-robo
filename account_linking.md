@@ -5,28 +5,28 @@ description: >-
     The form that lets me know your GitHub!
 ---
 
-## GitHub in CS 7680
+# GitHub in CS 7680
 {:.no_toc}
 
 Heads up: we will use GitHub to submit the Labs in CS 7680. Please do all of the following **before** the first day of class, or you **will be behind**!
 
-### Table of contents
+## Table of contents
 {: .no_toc .text-delta }
 
 1. TOC
 {:toc}
 
-### GitHub Account
+## GitHub Account
 
 First, you can create a GitHub account [here](https://github.com/signup) if you need one. You can use any email you'd like to sign up, I just need your handle once you have an account. For example, my GitHub handle is [sniyaz](https://github.com/sniyaz).
 
-### Create Your Class Repo
+## Create Your Class Repo
 
 You will create **your own** copy of our class repository in this step. You will use the same repository this semester for all labs: many of the lab assignments actually build on each other!
 
 **⚠️ Danger! ⚠️** Please make sure to follow these instructions **exactly** and to the letter. If you make any mistakes, it will interfere with the tools I use to grade your work from GitHub.
 
-#### Create a Copy of the Template Repository
+### Create a Copy of the Template Repository
 
 Here is the template repository for Lab assignments in CS 7680 (we are borrowing a lot of infrastructure from the Computational Robotics course at the University of Washington):
 
@@ -48,7 +48,7 @@ Failure to set your repository to Private will result in a **5 point penalty** o
 
 Once you have these settings set **exactly**, go ahead and click the `create repository button`! We're almost done.
 
-#### Add Collaborator
+### Add Collaborator
 
 Finally, you **MUST** add me (`sniyaz`) as a collaborator on your private repository. This is how I will access and grade your code throughout the semester.
 
@@ -62,7 +62,7 @@ See the photos **below** for a visual guide!
 
 ![Collab 2]({{ site.baseurl }}/assets/lab1-assets/collab-2.png)
 
-### ⚠️ Linking Form ⚠️
+## ⚠️ Linking Form ⚠️
 
 Once you have your GitHub user name and the link to your new `mushr478` repository, you need to actually tell me what they are (along with your **official** Northeastern email). This will allow me to actually give you credit for the labs you submit on GitHub.
 
