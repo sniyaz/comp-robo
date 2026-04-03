@@ -31,16 +31,16 @@ You will create **your own** copy of our class repository in this step. You will
 Here is the template repository for Lab assignments in CS 7680 (we are borrowing a lot of infrastructure from the Computational Robotics course at the University of Washington):
 
 [https://github.com/sniyaz/mushr478](https://github.com/sniyaz/mushr478)
-<br>
 
 On the GitHub repo page, you'll see a button to `use this template` (see photo below). Click that button and select the `create a new repository` option.
 
 ![Create new repo from template]({{ site.baseurl }}/assets/lab1-assets/create-template.png)
 
+
 This should take you to the following screen:
 
 ![Repository settings screen]({{ site.baseurl }}/assets/lab1-assets/repo-screen.png)
-<br>
+
 
 ### ⚠️ Linking Form ⚠️
 
