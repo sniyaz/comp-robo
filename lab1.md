@@ -230,10 +230,10 @@ $ pwd
 /home/robotics/mushr_ws/src/mushr478/cse478
 ```
 
-Now open `teleop.launch` in `launch/` using your favorite editor (e.g. `nano` or `gedit`):
+Now open `teleop.launch` in `launch/` using your favorite editor (e.g. `vim`):
 
 ```bash
-$ gedit launch/teleop.launch
+$ vim launch/teleop.launch
 ```
 
 You can see a comment that explains how to configure the map:
