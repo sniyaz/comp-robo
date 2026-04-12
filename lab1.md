@@ -210,7 +210,7 @@ This will launch RViz with a configuration that has all the right topics visuali
 
 ![rviz_image]({{ site.baseurl }}/assets/lab1-assets/rviz_image.png)
 
-To drive the car, click on the small gray window and use the WASD keys.
+To drive the car, click on the small gray window (i.e. the tele-op window you opened previously in the first terminal labeled `tk`) and use the WASD keys.
 
 In RViz, you will notice multiple panels. The right panel is the views panel. The “Target Frame” option tells the camera what to focus on. If you don’t want it to track the car, you can change it from “base_link” to “map”. The center panel is the view panel; you can zoom, pan, and rotate using the mouse and mouse wheel.
 
