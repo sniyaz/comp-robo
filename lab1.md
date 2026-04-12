@@ -214,7 +214,7 @@ To drive the car, click on the small gray window (i.e. the tele-op window you op
 
 In RViz, you will notice multiple panels. The right panel is the views panel. The “Target Frame” option tells the camera what to focus on. If you don’t want it to track the car, you can change it from “base_link” to “map”. The center panel is the view panel; you can zoom, pan, and rotate using the mouse and mouse wheel.
 
-The top panel has a few tools, like Measure and Publish Point. Publish Point is particularly useful for relocating the MuSHR car. Just click on it, then click on the map; the simulator listens to the message RViz sends and sets the car position to match.
+The top panel has a few tools, like Measure and Publish Point. **Publish Point is particularly useful for relocating the MuSHR car.** Just click on it, then click on the map; the simulator listens to the message RViz sends and sets the car position to match.
 
 Finally, the left panel shows all of the ROS topics that RViz is subscribed to. For example, if you toggle off the checkbox for the Map topic, you will no longer see the map visualization (although it’s still being used by the simulator). You can add additional topics by clicking the “Add” button then “By topic”. 
 
