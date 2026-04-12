@@ -296,6 +296,9 @@ $ python3 $(rospack find introduction)/test/fibonacci.py
 ## 💻 Coding Question 1: Fibonacci Publisher
 
 Now that you have the simulator running and understand how to run tests, it's time to write some code! You will be working in the `introduction` folder inside your `mushr478` repository. Note that there is only one coding question on this lab- but usually we will have more!
+
+⚠️ NOTE: The class VM already comes with VSCode installed. This is the recommended editor for CS 7680: make sure to pin it to the "favorites" sidebar in the VM as well!
+
 ### Your First Publisher Node!
 
 As you may recall from above, publishers and subscribers are how ROS manages interprocess communication. Publishers send out messages to a topic, while subscribers choose a topic to receive messages from. 
