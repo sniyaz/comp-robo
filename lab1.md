@@ -260,7 +260,9 @@ Using the environment variable has the benefit of being somewhat persistent; if 
 
 You can use whichever way you like, but note that single quotes (') are important. The terminal treats double-quoted strings differently than single-quoted strings, and interchanging them may cause errors.
 
-> **Task:** Use whichever method you prefer to set the map to `cse2_2.yaml` from the `cse478` package. Then, save a screenshot of RViz showing the new map. (Note that the car will start in the “walls” and therefore won’t be able to drive. Use the Publish Point tool in the top panel to place the car in an open hallway before driving with WASD.)
+**Writeup Task:** Use whichever method you prefer to set the map to `cse2_2.yaml` from the `cse478` package. Then, save a screenshot of RViz showing the new map. (Note that the car will start in the “walls” and therefore won’t be able to drive. Use the Publish Point tool in the top panel to place the car in an open hallway before driving with WASD.)
+
+⚠️ **NOTE:** Remember, RViz is a **node** that is subscribing to the **specific** simulator node you launch in the other terminal. That means that if you already have a pair of a simulator + RViz node running that were launched with _one_ map, you'll need to close them both, relaunch the simulator node with the `cse2_2.yaml` map, and _then_ relaunch RViz to see the new map environment.
 
 ## Running Tests in CS 7680
 
