@@ -367,13 +367,14 @@ Please also include the following images in the `introduction/writeup/` director
 
 **Total Lab Points:** 24
 
-**Q1.1:** 9 points if `python3 $(rospack find introduction)/test/fibonacci.py` passes. That's three points per test.
-
-**Q1.2:** 3 points if `rostest introduction fibonacci_small.test` passes. All or nothing.
-
-**Q1.1:** 3 points if `rrostest introduction fibonacci_launch.test` passes. All or nothing.
-
-**Write-Up:** 9 points. 3 points per question, partial credit may be assigned.
+*   **Q1.1:** 9 points if `python3 $(rospack find introduction)/test/fibonacci.py`passes.
+    *   That's three points per test.
+*   **Q1.2:** 3 points if `rostest introduction fibonacci_small.test` passes. 
+    *   All or nothing.
+*   **Q1.3:** 3 points if `rrostest introduction fibonacci_launch.test` passes.
+    *   All or nothing.
+*   **Write-Up:** 9 points.
+    *   3 points per question, partial credit may be assigned.
 
 ## 🚀 Submission
 
