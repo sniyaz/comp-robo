@@ -314,7 +314,7 @@ We will be creating a simple ROS node that calculates the nth Fibonacci number. 
     *   **⚠️ HINT:** It may be helpful for you to pattern-match the code you see elsewhere in the script as well.
 *   **Q1.3:** Write a launch file for the node at `launch/fibonacci.launch`. 
     *   **Requirement:** Since the calculator requires a ROS parameter, you must pass it to your node in the launch file. Follow the inline instructions in the provided skeleton.
-    *   **⚠️ HINT:** 
+    *   **⚠️ HINT:** You are essentially passing the `index` arg given to the launch file to the node you defined in the previous question. This should tell you what the variable names you need to use are. Ask us for a hint if you get stuck!
 
 #### Testing Your Code
 
@@ -361,11 +361,19 @@ Our labs will also have a write-up portion (usually)! Create a **new file** `int
 
 Please also include the following images in the `introduction/writeup/` directory
 
-1. The screenshot of RViz showing the `cse2_2` map (name this `map.png`, `map.jpg`, etc).
+3. The screenshot of RViz showing the `cse2_2` map (name this `map.png`, `map.jpg`, etc).
 
 ## 🔥 Grading Breakdown
 
-TODO!
+**Total Lab Points:** 24
+
+**Q1.1:** 9 points if `python3 $(rospack find introduction)/test/fibonacci.py` passes. That's three points per test.
+
+**Q1.2:** 3 points if `rostest introduction fibonacci_small.test` passes. All or nothing.
+
+**Q1.1:** 3 points if `rrostest introduction fibonacci_launch.test` passes. All or nothing.
+
+**Write-Up:** 9 points. 3 points per question, partial credit may be assigned.
 
 ## 🚀 Submission
 
