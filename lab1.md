@@ -311,8 +311,10 @@ We will be creating a simple ROS node that calculates the nth Fibonacci number. 
     *   **Requirement:** You will need an **O(n) implementation** to pass the larger tests.
 *   **Q1.2:** Complete the ROS interface code in the provided skeleton at `scripts/fibonacci`. 
     *   **Requirement:** Follow the instructions provided inline within the script to complete the code.
+    *   **⚠️ HINT:** It may be helpful for you to pattern-match the code you see elsewhere in the script as well.
 *   **Q1.3:** Write a launch file for the node at `launch/fibonacci.launch`. 
     *   **Requirement:** Since the calculator requires a ROS parameter, you must pass it to your node in the launch file. Follow the inline instructions in the provided skeleton.
+    *   **⚠️ HINT:** 
 
 #### Testing Your Code
 
