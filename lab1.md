@@ -378,12 +378,14 @@ Please also include the following images in the `introduction/writeup/` director
 
 ## 🚀 Submission
 
-When you are finished with the lab, commit all your changes and push them to your private GitHub repository. You **MUST** use a specific Git tag to signal completion so that my grading scripts can find your work. For Lab 1, this tag is exactly `submit-lab1`.
+When you are finished with the lab, **make sure** to commit all your changes and push them to your private GitHub repository.
+
+**Only** once you have committed and pushed your changes: you **MUST** use a specific Git tag to signal completion so that my grading scripts can find your work. For Lab 1, this tag is exactly `submit-lab1`.
+
+Run these commands to mark your latest commit as the one I should grade:
 
 ```bash
 $ cd ~/mushr_ws/src/mushr478
-$ git add *
-$ git commit -m "Complete Lab 1" (or any fun message you like!)
 $ git tag submit-lab1
 $ git push origin main submit-lab1
 ```
