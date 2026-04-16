@@ -307,7 +307,7 @@ We will be creating a simple ROS node that calculates the nth Fibonacci number. 
 
 #### Sub-Tasks and Implementation Requirements
 
-*   **Q1.1:** Implement the Fibonacci calculation in `src/introduction/fibonacci.py`. 
+*   **Q1.1:** Implement the Fibonacci calculation in `introduction/src/fibonacci.py`. 
     *   **Requirement:** You will need an **O(n) implementation** to pass the larger tests.
 *   **Q1.2:** Complete the ROS interface code in the provided skeleton at `scripts/fibonacci`. 
     *   **Requirement:** Follow the instructions provided inline within the script to complete the code.
