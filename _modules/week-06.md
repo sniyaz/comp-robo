@@ -1,5 +1,5 @@
 ---
-title: Week 6 → TODO
+title: Week 6 → Moving Into Motion Planning
 ---
 
 Oct 13
