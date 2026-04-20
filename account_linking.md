@@ -3,6 +3,7 @@ layout: page
 title: GitHub Linking
 description: >-
     The form that lets me know your GitHub!
+nav_exclude: true
 ---
 
 # GitHub in CS 7680
