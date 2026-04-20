@@ -19,6 +19,8 @@ nav_exclude: true
 
 Welcome to Lab 2! In this lab, we'll combine ROS with the NumPy and Matplotlib scientific computing libraries. NumPy makes computations faster by using vectorization, and Matplotlib creates plots and other data visualizations.
 
+⚠️ **NOTE:** This lab provides **important foundational knowledge** that we will use when we start implementing Hidden Markov Models (HMMs) in later labs. Please pay close attention to these concepts in NumPy, as they will be critical later on!
+
 ## 💻 Coding Questions: NumPy and ROS Subscribers
 
 In this lab, we will compute the Euclidean norm in two ways: with regular Python for loops and with functions from NumPy. We will also create a ROS subscriber to listen to the car's pose.
