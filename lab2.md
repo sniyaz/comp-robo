@@ -94,23 +94,6 @@ In `scripts/pose_listener`, use your `norm_numpy` function to compute the car’
 
 **Requirement:** Use matplotlib to plot this distance as a function of time, and save the resulting plot to `distances.png`. The script already handles plotting the xy-locations to `locations.png`.
 
-## Running Tests
-
-As a reminder, you can run all tests for the introduction package using:
-```bash
-cd ~/mushr_ws
-catkin test introduction
-```
-
-For individual test suites:
-```bash
-# Pure Python unit tests
-python3 $(rospack find introduction)/test/norms.py
-
-# ROS integration tests
-rostest introduction pose_listener.test
-```
-
 ## 📝 Write-up
 
 Create a **new file** `introduction/writeup/lab2.md`, and answer the following questions:
