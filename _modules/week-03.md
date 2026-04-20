@@ -1,5 +1,5 @@
 ---
-title: Week 3 → TODO
+title: Week 3 → Motion Models
 ---
 
 Sep 22

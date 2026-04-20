@@ -1,5 +1,5 @@
 ---
-title: Week 5 → TODO
+title: Week 5 → Particle Sampling for HMMs
 ---
 
 Oct 6

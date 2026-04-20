@@ -1,5 +1,5 @@
 ---
-title: Week 4 → TODO
+title: Week 4 → Sensor Models
 ---
 
 Sep 29
