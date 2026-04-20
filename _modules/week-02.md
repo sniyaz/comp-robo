@@ -11,4 +11,4 @@ Sep 15
 Sep 16
 : **Sense, Plan, Act + Intro to Perception**
   : [slides](#)
-: **Lab 2**{: .label .label-purple } Intro to NumPy!
+: **Lab 2**{: .label .label-purple } [Intro to NumPy!](./lab2)
