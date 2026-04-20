@@ -21,22 +21,25 @@ Welcome to Lab 2! In this lab, we'll combine ROS with the NumPy and Matplotlib s
 
 ⚠️ **NOTE:** This lab provides **important foundational knowledge** that we will use when we start implementing Hidden Markov Models (HMMs) in later labs. Please pay close attention to these concepts in NumPy, as they will be critical later on!
 
-## 💻 Coding Questions: NumPy and ROS Subscribers
+## NumPy Tutorial: Euclidean Norms
 
-In this lab, we will compute the Euclidean norm in two ways: with regular Python for loops and with functions from NumPy. We will also create a ROS subscriber to listen to the car's pose.
-
-### NumPy Tutorial: Euclidean Norms
+In this section, we will compute the Euclidean norm in two ways: with regular Python for loops and with functions from NumPy. 
 
 The input will be a 2D NumPy array of shape (N, D), which contains N vectors each of dimension D. The expected output will be a 1D NumPy array of shape (N,), where each entry is the Euclidean norm of the corresponding vector. For example:
 
 \[ \begin{bmatrix}3 & 4\\5 & 12\\8 & 15\end{bmatrix} \rightarrow \begin{bmatrix}5\\13\\17\end{bmatrix} \]
 
-#### Sub-Tasks and Implementation Requirements
+### Q1: norm_python
 
-*   **Q1:** Complete the `norm_python` function in `introduction/src/introduction/listener.py`. 
-    *   **Requirement:** Use Python for loops to compute the Euclidean norm. To index into a 2D array, NumPy extends the Python indexing syntax to take in multiple indices, with one for each dimension (e.g., `data[i, j]`).
-*   **Q2:** In the same file, complete the `norm_numpy` function. 
-    *   **Requirement:** Use NumPy functions like `np.sqrt`, `np.square`, and `np.sum` to compute the norm without explicit for loops.
+Complete the `norm_python` function in `introduction/src/introduction/listener.py`. 
+
+**Requirement:** Use Python for loops to compute the Euclidean norm. To index into a 2D array, NumPy extends the Python indexing syntax to take in multiple indices, with one for each dimension (e.g., `data[i, j]`).
+
+### Q2: norm_numpy
+
+In the same file, complete the `norm_numpy` function. 
+
+**Requirement:** Use NumPy functions like `np.sqrt`, `np.square`, and `np.sum` to compute the norm without explicit for loops.
 
 #### Testing Norms
 To verify your implementation of the norms, run:
@@ -50,14 +53,21 @@ python3 $(rospack find introduction)/scripts/compare_norm
 ```
 This script will use matplotlib to plot the mean and standard deviation of your run time. Save the figure as `runtime_comparison.png`.
 
-### ROS Subscriber: PoseListener
+## ROS Subscriber: PoseListener
 
 Next, we'll implement a `PoseListener` class that subscribes to the car's pose and stores its location over time.
 
-*   **Q3:** In the `PoseListener` class in `introduction/src/introduction/listener.py`, initialize a subscriber to the car’s pose topic. 
-    *   **Requirement:** You will need the topic name (use `rostopic list` to find it—look for one containing `car_pose`), the message type (use `rostopic info`), and the callback function (`self.callback`).
-*   **Q4:** Fill in the `PoseListener.callback` method.
-    *   **Requirement:** Extract the x and y position from the pose messages and save them in `self.storage`. You can see what a car pose message looks like by running `rostopic echo` on the topic.
+### Q3: Subscriber Initialization
+
+In the `PoseListener` class in `introduction/src/introduction/listener.py`, initialize a subscriber to the car’s pose topic. 
+
+**Requirement:** You will need the topic name (use `rostopic list` to find it—look for one containing `car_pose`), the message type (use `rostopic info`), and the callback function (`self.callback`).
+
+### Q4: Callback Implementation
+
+Fill in the `PoseListener.callback` method.
+
+**Requirement:** Extract the x and y position from the pose messages and save them in `self.storage`. You can see what a car pose message looks like by running `rostopic echo` on the topic.
 
 #### Testing PoseListener
 To verify your subscriber implementation, run:
@@ -65,7 +75,7 @@ To verify your subscriber implementation, run:
 rostest introduction pose_listener.test
 ```
 
-### Data Collection and Visualization
+## Data Collection and Visualization
 
 Now, let's use the `PoseListener` to collect some data while the car follows specific trajectories! 
 
@@ -77,8 +87,12 @@ Now, let's use the `PoseListener` to collect some data while the car follows spe
     ```bash
     roslaunch cse478 path_publisher.launch plan:='$(find cse478)/plans/figure_8.txt'
     ```
-3.  **Q5:** In `scripts/pose_listener`, use your `norm_numpy` function to compute the car’s distance to the origin for all the xy-locations captured by the `PoseListener`. 
-    *   **Requirement:** Use matplotlib to plot this distance as a function of time, and save the resulting plot to `distances.png`. The script already handles plotting the xy-locations to `locations.png`.
+
+### Q5: Distance Calculation and Plotting
+
+In `scripts/pose_listener`, use your `norm_numpy` function to compute the car’s distance to the origin for all the xy-locations captured by the `PoseListener`. 
+
+**Requirement:** Use matplotlib to plot this distance as a function of time, and save the resulting plot to `distances.png`. The script already handles plotting the xy-locations to `locations.png`.
 
 ## Running Tests
 
@@ -117,7 +131,7 @@ Please also include the following images from **Q5** in the `introduction/writeu
 *   **Q1 & Q2:** 10 points if `norms.py` passes.
 *   **Q3 & Q4:** 5 points if `pose_listener.test` passes.
 *   **Write-Up (Question Answers):** 10 points.
-*   **Write-Up (Images):** 15 points for the correct plots.
+*   **Write-Up (Images):** 5 points for the correct plots.
 
 ## 🚀 Submission
 
@@ -146,4 +160,3 @@ $ git push origin submit-lab2
 ```
 
 **Congratulations!** You've completed Lab 2. 🏎️💨
-
