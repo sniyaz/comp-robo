@@ -27,7 +27,7 @@ In this section, we will compute the Euclidean norm in two ways: with regular Py
 
 The input will be a 2D NumPy array of shape (N, D), which contains N vectors each of dimension D. The expected output will be a 1D NumPy array of shape (N,), where each entry is the Euclidean norm of the corresponding vector. For example:
 
-\[ \begin{bmatrix}3 & 4\\5 & 12\\8 & 15\end{bmatrix} \rightarrow \begin{bmatrix}5\\13\\17\end{bmatrix} \]
+![lab2_mat]({{ site.baseurl }}/assets/lab2-assets/lab2_mat.png)
 
 ### Q1: norm_python
 
