@@ -59,9 +59,9 @@ Next, we'll implement a `PoseListener` class that subscribes to the car's pose a
 
 ### Q3: Subscriber Initialization
 
-In the `PoseListener` class in `introduction/src/introduction/listener.py`, initialize a subscriber to the car’s pose topic. 
+In the `PoseListener` class in `introduction/src/introduction/listener.py`, initialize a subscriber to the car’s pose topic. To do so, you will need to pass the topic’s name, the message type being published and a callback function. Each time the subscriber receives a message, it will call the callback function to process the message data.
 
-**Requirement:** You will need the topic name (use `rostopic list` to find it—look for one containing `car_pose`), the message type (use `rostopic info`), and the callback function (`self.callback`).
+To find the right topic name to subscribe to, launch the car simulation again and run `rostopic list` to see all the topics being published. There’s one topic containing `car_pose` in its name. To figure out what type of messages are being sent on that topic, use `rostopic info XXX/car_pose`. When you construct the subscriber, pass self.callback as the callback function.
 
 ### Q4: Callback Implementation
 
