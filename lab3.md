@@ -148,14 +148,14 @@ $$\Delta x_t \sim \mathcal{N}(\Delta x'_t, \mathrm{diag}(\sigma_x^2, \sigma_y^2,
 
 **Requirement:** Implement this noisy motion model in the `KinematicCarMotionModel.apply_motion_model` method. Wrap the resulting $\theta$ component to the interval $(-\pi, \pi]$.
 
+#### A Note on NumPy
+Your implementations for Q3 and Q4 should be **vectorized** using [NumPy indexing](https://numpy.org/doc/stable/user/basics.indexing.html), rather than iterating over each particle with Python for loops. [Boolean array indexing](https://numpy.org/doc/stable/user/basics.indexing.html#boolean-array-indexing) (as we used earlier in this very lab) will be particularly useful when thresholding.
+
 #### Testing The Motion Model
 After completing both Q3 and Q4, expect your code to pass all the test cases when running:
 ```bash
 python3 $(rospack find localization)/test/motion_model.py
 ```
-
-#### A Note on NumPy
-Your implementations for Q3 and Q4 should be **vectorized** using [NumPy indexing](https://numpy.org/doc/stable/user/basics.indexing.html), rather than iterating over each particle with Python for loops. [Boolean array indexing](https://numpy.org/doc/stable/user/basics.indexing.html#boolean-array-indexing) (as we used earlier in this very lab) will be particularly useful when thresholding.
 
 ### Q5: Exploring and Tuning Parameters
 
