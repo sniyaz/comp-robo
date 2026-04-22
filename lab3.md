@@ -10,7 +10,7 @@ nav_exclude: true
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      inlineMath: [ ['\\(','\\)'], ['$$','$$'] ],
       processEscapes: true
     }
   });
@@ -57,11 +57,11 @@ python3 test/indexing.py
 In this section, you will implement the kinematic car motion model, which is a key component of the particle filter algorithm.
 
 ### State Estimation Definitions
-Assume that the MuSHR car drives on a flat plane and localizes within a known map $m$.
+Assume that the MuSHR car drives on a flat plane and localizes within a known map \\(m\\).
 
-*   **States** are defined as $\mathbf{x}_t = (x_t, y_t, \theta_t)$ where $(x_t, y_t)$ is the car’s 2D position and $\theta_t$ is its heading direction, with respect to the map’s reference frame.
-*   **Controls** are defined as $\mathbf{u}_t = (v_t, \delta_t)$ where $v_t$ is the speed and $\delta_t$ is the steering angle, with respect to the car’s rear-axle reference frame.
-*   The **motion model** specifies a probability distribution $P(\mathbf{x}_t | \mathbf{x}_{t-1}, \mathbf{u}_t)$, i.e. the probability of reaching a state $\mathbf{x}_t$ given that control $\mathbf{u}_t$ is applied from state $\mathbf{x}_{t-1}$.
+*   **States** are defined as \\(\mathbf{x}_t = (x_t, y_t, \theta_t)\\) where \\((x_t, y_t)\\) is the car’s 2D position and \\(\theta_t\\) is its heading direction, with respect to the map’s reference frame.
+*   **Controls** are defined as \\(\mathbf{u}_t = (v_t, \delta_t)\\) where \\(v_t\\) is the speed and \\(\delta_t\\) is the steering angle, with respect to the car’s rear-axle reference frame.
+*   The **motion model** specifies a probability distribution \\(P(\mathbf{x}_t | \mathbf{x}_{t-1}, \mathbf{u}_t)\\), i.e. the probability of reaching a state \\(\mathbf{x}_t\\) given that control \\(\mathbf{u}_t\\) is applied from state \\(\mathbf{x}_{t-1}\\).
 
 ### Q3: Kinematic Car Equations (Deterministic)
 
@@ -71,7 +71,7 @@ $$ \dot{x} = v \cos \theta $$
 $$ \dot{y} = v \sin \theta $$
 $$ \dot{\theta} = \omega $$
 
-where $\omega$ is the angular velocity from the center of rotation to the center of the rear axle.
+where \\(\omega\\) is the angular velocity from the center of rotation to the center of the rear axle.
 
 By the definition of angular velocity:
 
@@ -83,7 +83,7 @@ $$ \frac{\partial x}{\partial t} = v \cos \theta $$
 $$ \frac{\partial y}{\partial t} = v \sin \theta $$
 $$ \frac{\partial \theta}{\partial t} = \frac{v}{L} \tan \delta $$
 
-After applying control $\mathbf{u}_t$, integrate over the time step:
+After applying control \\(\mathbf{u}_t\\), integrate over the time step:
 
 $$ \theta_{t+1} = \theta_{t} + \frac{v}{L} \tan \delta \Delta t $$
 $$ x_{t+1} = x_{t} + \frac{L}{\tan \delta} [ \sin \theta_{t+1} - \sin \theta_{t} ] $$
@@ -98,21 +98,21 @@ $$ \theta_{t+1} = \theta_{t} $$
 $$ x_{t+1} = x_{t} + v \cos \theta \Delta t $$
 $$ y_{t+1} = y_{t} + v \sin \theta \Delta t $$
 
-In your implementation, you should treat any steering angle where $|\delta|$ is less than `delta_threshold` as a zero steering angle.
+In your implementation, you should treat any steering angle where \\(|\delta|\\) is less than `delta_threshold` as a zero steering angle.
 
 ### Q4: Noisy Motion Model
 
 In practice, our controls and models are not perfect. We account for this by adding noise:
 
-1.  **Sample noisy controls** $\hat{\mathbf{u}}_t = (\hat{v}_t, \hat{\delta}_t)$ where $\hat{v}_t \sim \mathcal{N}(v_t, \sigma_v^2)$ and $\hat{\delta}_t \sim \mathcal{N}(\delta_t, \sigma_\delta^2)$.
+1.  **Sample noisy controls** \\(\hat{\mathbf{u}}_t = (\hat{v}_t, \hat{\delta}_t)\\) where \\(\hat{v}_t \sim \mathcal{N}(v_t, \sigma_v^2)\\) and \\(\hat{\delta}_t \sim \mathcal{N}(\delta_t, \sigma_\delta^2)\\).
 2.  **Integrate kinematic car equations** with noisy controls using your `compute_changes` method.
-3.  **Add model noise** to the output $\Delta \mathbf{x}_t \sim \mathcal{N}(\Delta \hat{\mathbf{x}}_t, \mathrm{diag}(\sigma_x^2, \sigma_y^2, \sigma_\theta^2))$.
+3.  **Add model noise** to the output \\(\Delta \mathbf{x}_t \sim \mathcal{N}(\Delta \hat{\mathbf{x}}_t, \mathrm{diag}(\sigma_x^2, \sigma_y^2, \sigma_\theta^2))\\).
 
-**Requirement:** Implement this noisy motion model in the `KinematicCarMotionModel.apply_motion_model` method. Wrap the resulting $\theta$ component to the interval $(-\pi, \pi]$.
+**Requirement:** Implement this noisy motion model in the `KinematicCarMotionModel.apply_motion_model` method. Wrap the resulting \\(\theta\\) component to the interval \\((-\pi, \pi]\\).
 
 ### Q5: Exploring and Tuning Parameters
 
-The noise in your motion model is controlled by $\sigma_v, \sigma_\delta$ (action noise) and $\sigma_x, \sigma_y, \sigma_\theta$ (model noise). In this question, you will tune these parameters.
+The noise in your motion model is controlled by \\(\sigma_v, \sigma_\delta\\) (action noise) and \\(\sigma_x, \sigma_y, \sigma_\theta\\) (model noise). In this question, you will tune these parameters.
 
 **Requirement:** Visualize samples using the following command:
 ```bash
