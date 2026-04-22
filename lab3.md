@@ -30,26 +30,26 @@ Complete the `extract_fibonacci_rows` function using **integer array indexing** 
 
 Consider the example from the spec:
 
-```
+```python
 >>> data = np.array([[ 4,  7,  8],
-    ...                  [14, 17, 18],
-    ...                  [24, 27, 28],
-    ...                  [34, 37, 38]])
-    >>> extract_fibonacci_rows(data)
-    array([[ 4,  7,  8],
-           [14, 17, 18],
-           [14, 17, 18],
-           [24, 27, 28],
-           [34, 37, 38]])
+...                  [14, 17, 18],
+...                  [24, 27, 28],
+...                  [34, 37, 38]])
+>>> extract_fibonacci_rows(data)
+array([[ 4,  7,  8],   # Row 0
+       [14, 17, 18],   # Row 1
+       [14, 17, 18],   # Row 1
+       [24, 27, 28],   # Row 2
+       [34, 37, 38]])  # Row 3
 ```
 
-[TODO: Explain this example].
+In this example, we are extracting rows based on the Fibonacci sequence ($F_0=0, F_1=1, F_2=1, F_3=2, F_4=3, \dots$). Specifically, for a given input array, you should return a new array containing the rows at indices $[0, 1, 1, 2, 3, \dots, F_n]$ where $F_n$ is the largest Fibonacci number less than the number of rows in the input.
 
-**Hint 1:** You'll need to add some incudes at the top of the file. One of them is given (in a comment) as a hint. You also will probably want to import `numpy` as `np`.
+**Hint 1:** You'll need to compute the Fibonacci sequence up to the number of rows in your input. You can use the `fibonacci` function you implemented in Lab 1 (you'll need to import it!). 
 
-**Hint 2:** Don't forget to convert the output of your method to a numpy array before returning it (you can use `np.array()` to accomplish this).
+**Hint 2:** You also will probably want to import `numpy` as `np`.
 
-**Hint 3:** [TODO: How to actually compute].
+**Hint 3:** Integer array indexing allows you to pass a list or array of integers as an index to a NumPy array. For example, `data[[0, 1, 1, 2]]` will return a new array with the 0th, 1st, 1st, and 2nd rows of `data`.
 
 ### Q2: Boolean Array Indexing
 
