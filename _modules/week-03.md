@@ -8,5 +8,5 @@ Sep 22
 Sep 23
 : **Building a Motion Model**
   : [slides](#)
-: **Lab 3**{: .label .label-purple } More NumPy, Motion Models
+: **Lab 3**{: .label .label-purple } [More NumPy, Motion Models](./lab3)
 
