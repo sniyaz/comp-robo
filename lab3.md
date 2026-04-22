@@ -128,7 +128,17 @@ $$ y_{t+1} = y_{t} + v \sin \theta \Delta t $$
 
 In practice, our controls and models are **not** perfect. We account for this by adding noise:
 
-1.  **Sample noisy controls** $u'_t = (v'_t, \delta'_t)$ where $v'_t \sim \mathcal{N}(v_t, \sigma_v^2)$ and $\delta'_t \sim \mathcal{N}(\delta_t, \sigma_\delta^2)$.
+1.  **Sample noisy controls** 
+
+$$u'_t = (v'_t, \delta'_t)$$
+
+where
+
+$$v'_t \sim \mathcal{N}(v_t, \sigma_v^2)$$
+
+and
+
+$$\delta'_t \sim \mathcal{N}(\delta_t, \sigma_\delta^2)$$
 
 2.  **Integrate kinematic car equations** with noisy controls using your `compute_changes` method.
 
