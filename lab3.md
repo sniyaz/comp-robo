@@ -51,6 +51,8 @@ In this example, we are extracting rows based on the Fibonacci sequence ($F_0=0,
 
 **Hint 3:** Integer array indexing allows you to pass a list or array of integers as an index to a NumPy array. For example, `data[[0, 1, 1, 2]]` will return a new array with the 0th, 1st, 1st, and 2nd rows of `data`.
 
+**Hint 4:** If you need to, you can use `np.array()` to convert a Python list into a numpy array!
+
 ### Q2: Boolean Array Indexing
 
 Complete the `increment_rows_with_odd_first_element` function using **Boolean array indexing** in `src/introduction/indexing.py`.
