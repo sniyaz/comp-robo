@@ -92,7 +92,7 @@ Now, let’s use the `PoseListener` to actually collect some data! In `scripts/p
     ```bash
     roslaunch cse478 teleop.launch map:='$(find mushr_sim)/maps/sandbox.yaml'
     ```
-2.  **In another terminal**, launch the path publisher to have the car follow a "figure 8" plan:
+2.  **In another terminal**, launch the path publisher to have the car follow a "figure 8" plan (**feel free** to follow along in RViz if you would like!)
     ```bash
     roslaunch introduction path_publisher.launch plan_file:='$(find introduction)/plans/figure_8.txt'
     ```
