@@ -28,6 +28,12 @@ Vectorization isn’t just limited to mathematical operations. NumPy supports a 
 
 Complete the `extract_fibonacci_rows` function using **integer array indexing** in `src/introduction/indexing.py`.
 
+**Hint 1:** You'll need to add some incudes at the top of the file. One of them is given (in a comment) as a hint. You also will probably want to import `numpy` as `np`.
+
+**Hint 2:** Don't forget to convert the output of your method to a numpy array before returning it (you can use `np.array()` to accomplish this).
+
+**Hint 3:** [TODO: How to actually compute].
+
 ### Q2: Boolean Array Indexing
 
 Complete the `increment_rows_with_odd_first_element` function using **Boolean array indexing** in `src/introduction/indexing.py`.
@@ -35,7 +41,7 @@ Complete the `increment_rows_with_odd_first_element` function using **Boolean ar
 #### Testing Indexing
 After completing both Q1 and Q2, expect your code to pass all the test cases when running:
 ```bash
-python3 test/indexing.py
+python3 $(rospack find introduction)/test/indexing.py
 ```
 
 ---
