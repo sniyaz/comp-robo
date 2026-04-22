@@ -17,7 +17,7 @@ nav_exclude: true
 
 ---
 
-Welcome to Lab 3! In this lab, we will dive deeper into NumPy's powerful indexing capabilities and implement a kinematic motion model for our MuSHR car. These concepts are fundamental for state estimation and particle filtering.
+Welcome to Lab 3! In this lab, we will dive deeper into NumPy's powerful indexing capabilities and implement a kinematic motion model for our MuSHR car. These concepts are fundamental for state estimation and (in later labs) particle filtering with HMMs.
 
 ## NumPy: Advanced Indexing
 
