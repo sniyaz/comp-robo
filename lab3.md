@@ -103,7 +103,7 @@ In other words,  the probability of reaching a state $x_{t}$ given that control 
 
 ### Q3: Equations of Motion (Deterministic)
 
-In this question, you will implement the deterministic car motion model. Let’s first review the deterministic equations of motions that we covered today in lecture. Suppose that action $u_{t}$ is applied from state $x_{t-1}$. We can compute the new state as follows:
+In this question, you will implement the deterministic car motion model. Let’s first review the deterministic equations of motion that we covered today in lecture. Suppose that action $u_{t}$ is applied from state $x_{t-1}$. We can compute the new state as follows:
 
 $$ \theta_{t+1} = \theta_{t} + \frac{v}{L} \tan \delta \Delta t $$
 
@@ -122,7 +122,7 @@ $$ x_{t+1} = x_{t} + v \cos \theta \Delta t $$
 
 $$ y_{t+1} = y_{t} + v \sin \theta \Delta t $$
 
-In your implementation, you should treat any steering angle where $|\delta|$ is less than `delta_threshold` as a zero steering angle!
+**Actually**, in your implementation you should treat any steering angle $\delta$ with an **absolute value** of less than `delta_threshold` as a zero steering angle!
 
 ### Q4: Noisy Motion Model
 
