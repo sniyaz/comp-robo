@@ -120,12 +120,16 @@ Please also include the following images from **Q5** in the `introduction/writeu
 
 ## 🔥 Grading Breakdown
 
-**Total Lab Points:** 30
+**Total Lab Points:** 59
 
-*   **Q1 & Q2:** 10 points if `norms.py` passes.
-*   **Q3 & Q4:** 5 points if `pose_listener.test` passes.
+*   **Q1 & Q2:** 24 points if `python3 $(rospack find introduction)/test/norms.py` passes.
+    *   That's 3 points per test.
+*   **Q3 & Q4:** 10 points if `rostest introduction pose_listener.test` passes.
+    *   All or nothing.
 *   **Write-Up (Question Answers):** 10 points.
-*   **Write-Up (Images):** 5 points for the correct plots.
+    *   5 points per question, partial credit may be assigned.
+*   **Write-Up (Images):** 15 points for the correct plots.
+    *   5 points per plot, partial credit may be assigned.
 
 ## 🚀 Submission
 
