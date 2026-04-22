@@ -57,6 +57,26 @@ In this example, we are extracting rows based on the Fibonacci sequence ($F_0=0,
 
 Complete the `increment_rows_with_odd_first_element` function using **Boolean array indexing** in `src/introduction/indexing.py`.
 
+Consider the following example:
+
+```python
+>>> data = np.array([[ 1,  2,  3],
+...                  [ 4,  5,  6],
+...                  [ 7,  8,  9]])
+>>> increment_rows_with_odd_first_element(data)
+array([[ 2,  3,  4],   # Row 0 (1 is odd, so incremented)
+       [ 4,  5,  6],   # Row 1 (4 is even, so unchanged)
+       [ 8,  9, 10]])  # Row 2 (7 is odd, so incremented)
+```
+
+**Hint 1:** Boolean array indexing involves creating a "mask" (an array of True/False values) and using that mask to select elements. For example, `data[mask] += 1` will only increment the elements where `mask` is True.
+
+**Hint 2:** You can create a mask by applying a condition to an entire column. For example, `data[:, 0] % 2 == 1` will return a Boolean array that is True for every row where the first element is odd.
+
+**Hint 3:** You can use this mask to index into the original array and perform an in-place addition: `data[mask] += 1`. This will modify the rows that satisfy your condition while leaving the others untouched.
+
+**NOTE:** This function does not have a return value: your implementation should modify the data argument in-place.
+
 #### Testing Indexing
 After completing both Q1 and Q2, expect your code to pass all the test cases when running:
 ```bash
