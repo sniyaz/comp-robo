@@ -128,7 +128,7 @@ $$ y_{t+1} = y_{t} + v \sin \theta \Delta t $$
 
 In practice, our controls and models are **not** perfect. We account for this by adding noise:
 
-1.  **Sample noisy controls** 
+**Step 1:** Sample noisy controls
 
 $$u'_t = (v'_t, \delta'_t)$$
 
@@ -140,9 +140,11 @@ and
 
 $$\delta'_t \sim \mathcal{N}(\delta_t, \sigma_\delta^2)$$
 
-2.  **Integrate kinematic car equations** with noisy controls using your `compute_changes` method.
+**Step 2:** Apply those noisy controls using your `compute_changes` method (in other words, apply the deterministic equations of motion).
 
-3.  **Add model noise** to the output $\Delta x_t \sim \mathcal{N}(\Delta x'_t, \mathrm{diag}(\sigma_x^2, \sigma_y^2, \sigma_\theta^2))$.
+**Step 3:** Add model noise to the output
+
+$$\Delta x_t \sim \mathcal{N}(\Delta x'_t, \mathrm{diag}(\sigma_x^2, \sigma_y^2, \sigma_\theta^2))$$
 
 **Requirement:** Implement this noisy motion model in the `KinematicCarMotionModel.apply_motion_model` method. Wrap the resulting $\theta$ component to the interval $(-\pi, \pi]$.
 
