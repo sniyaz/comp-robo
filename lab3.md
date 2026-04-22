@@ -28,6 +28,23 @@ Vectorization isn’t just limited to mathematical operations. NumPy supports a 
 
 Complete the `extract_fibonacci_rows` function using **integer array indexing** in `src/introduction/indexing.py`.
 
+Consider the example from the spec:
+
+```
+>>> data = np.array([[ 4,  7,  8],
+    ...                  [14, 17, 18],
+    ...                  [24, 27, 28],
+    ...                  [34, 37, 38]])
+    >>> extract_fibonacci_rows(data)
+    array([[ 4,  7,  8],
+           [14, 17, 18],
+           [14, 17, 18],
+           [24, 27, 28],
+           [34, 37, 38]])
+```
+
+[TODO: Explain this example].
+
 **Hint 1:** You'll need to add some incudes at the top of the file. One of them is given (in a comment) as a hint. You also will probably want to import `numpy` as `np`.
 
 **Hint 2:** Don't forget to convert the output of your method to a numpy array before returning it (you can use `np.array()` to accomplish this).
