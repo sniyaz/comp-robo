@@ -126,10 +126,12 @@ $$ y_{t+1} = y_{t} + v \sin \theta \Delta t $$
 
 ### Q4: Noisy Motion Model
 
-In practice, our controls and models are not perfect. We account for this by adding noise:
+In practice, our controls and models are **not** perfect. We account for this by adding noise:
 
 1.  **Sample noisy controls** $\hat{\mathbf{u}}_t = (\hat{v}_t, \hat{\delta}_t)$ where $\hat{v}_t \sim \mathcal{N}(v_t, \sigma_v^2)$ and $\hat{\delta}_t \sim \mathcal{N}(\delta_t, \sigma_\delta^2)$.
+
 2.  **Integrate kinematic car equations** with noisy controls using your `compute_changes` method.
+
 3.  **Add model noise** to the output $\Delta \mathbf{x}_t \sim \mathcal{N}(\Delta \hat{\mathbf{x}}_t, \mathrm{diag}(\sigma_x^2, \sigma_y^2, \sigma_\theta^2))$.
 
 **Requirement:** Implement this noisy motion model in the `KinematicCarMotionModel.apply_motion_model` method. Wrap the resulting $\theta$ component to the interval $(-\pi, \pi]$.
