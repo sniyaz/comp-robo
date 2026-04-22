@@ -92,12 +92,12 @@ In this section, you will implement the kinematic car motion model, which is a k
 ### State Estimation Definitions
 Recall these definitions from lecture:
 
-*   **States** are defined as $\mathbf{x}_t = (x_t, y_t, \theta_t)$ where $(x_t, y_t)$ is the car’s 2D position and $\theta_t$ is its heading direction, with respect to the map’s reference frame.
-*   **Controls** are defined as $\mathbf{u}_t = (v_t, \delta_t)$ where $v_t$ is the speed and $\delta_t$ is the steering angle, with respect to the car’s rear-axle reference frame.
+*   **States** are defined as $x_t = (x_t, y_t, \theta_t)$ where $(x_t, y_t)$ is the car’s 2D position and $\theta_t$ is its heading direction, with respect to the map’s reference frame.
+*   **Controls** are defined as $u_t = (v_t, \delta_t)$ where $v_t$ is the speed and $\delta_t$ is the steering angle, with respect to the car’s rear-axle reference frame.
 
 With this in mind, the **motion model** specifies a probability distribution:
 
-$$P(\mathbf{x}_t | \mathbf{x}_{t-1}, \mathbf{u}_t)$$
+$$P(x_t | x_{t-1}, u_t)$$
 
 In other words,  the probability of reaching a state $x_{t}$ given that control $u_{t}$ is applied from state $x_{t-1}$.
 
@@ -128,11 +128,11 @@ $$ y_{t+1} = y_{t} + v \sin \theta \Delta t $$
 
 In practice, our controls and models are **not** perfect. We account for this by adding noise:
 
-1.  **Sample noisy controls** $\mathbf{u}'_t = (v'_t, \delta'_t)$ where $v'_t \sim \mathcal{N}(v_t, \sigma_v^2)$ and $\delta'_t \sim \mathcal{N}(\delta_t, \sigma_\delta^2)$.
+1.  **Sample noisy controls** $u'_t = (v'_t, \delta'_t)$ where $v'_t \sim \mathcal{N}(v_t, \sigma_v^2)$ and $\delta'_t \sim \mathcal{N}(\delta_t, \sigma_\delta^2)$.
 
 2.  **Integrate kinematic car equations** with noisy controls using your `compute_changes` method.
 
-3.  **Add model noise** to the output $\Delta \mathbf{x}_t \sim \mathcal{N}(\Delta \mathbf{x}'_t, \mathrm{diag}(\sigma_x^2, \sigma_y^2, \sigma_\theta^2))$.
+3.  **Add model noise** to the output $\Delta x_t \sim \mathcal{N}(\Delta x'_t, \mathrm{diag}(\sigma_x^2, \sigma_y^2, \sigma_\theta^2))$.
 
 **Requirement:** Implement this noisy motion model in the `KinematicCarMotionModel.apply_motion_model` method. Wrap the resulting $\theta$ component to the interval $(-\pi, \pi]$.
 
