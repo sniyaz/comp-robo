@@ -101,30 +101,14 @@ $$P(\mathbf{x}_t | \mathbf{x}_{t-1}, \mathbf{u}_t)$$
 
 In other words,  the probability of reaching a state $x_{t}$ given that control $u_{t}$ is applied from state $x_{t-1}$.
 
-### Q3: Kinematic Car Equations (Deterministic)
+### Q3: Equations of Motion (Deterministic)
 
-In this question, you will implement the kinematic car motion model. Let’s first review the kinematic model of the car and annotate the relevant lengths and angles. First, let’s assume that there is no control and that the velocity was stable and the steering angle is zero. We can then write out the change in states:
-
-$$ \dot{x} = v \cos \theta $$
-$$ \dot{y} = v \sin \theta $$
-$$ \dot{\theta} = \omega $$
-
-where $\omega$ is the angular velocity from the center of rotation to the center of the rear axle.
-
-By the definition of angular velocity:
-
-$$ \omega = \frac{v}{R} = \frac{v}{L} \tan \delta $$
-
-Formally, the changes in states are:
-
-$$ \frac{\partial x}{\partial t} = v \cos \theta $$
-$$ \frac{\partial y}{\partial t} = v \sin \theta $$
-$$ \frac{\partial \theta}{\partial t} = \frac{v}{L} \tan \delta $$
-
-After applying control $\mathbf{u}_t$, integrate over the time step:
+In this question, you will implement the deterministic car motion model. Let’s first review the deterministic equations of motions that we covered today in lecture. Suppose that action $u_{t}$ is applied from state $x_{t-1}$. We can compute the new state as follows:
 
 $$ \theta_{t+1} = \theta_{t} + \frac{v}{L} \tan \delta \Delta t $$
+
 $$ x_{t+1} = x_{t} + \frac{L}{\tan \delta} [ \sin \theta_{t+1} - \sin \theta_{t} ] $$
+
 $$ y_{t+1} = y_{t} + \frac{L}{\tan \delta} [ -\cos \theta_{t+1} + \cos \theta_{t} ] $$
 
 **Requirement:** Implement the kinematic car equations in the `KinematicCarMotionModel.compute_changes` method (`src/localization/motion_model.py`). This method is deterministic.
@@ -133,10 +117,12 @@ $$ y_{t+1} = y_{t} + \frac{L}{\tan \delta} [ -\cos \theta_{t+1} + \cos \theta_{t
 If the steering angle is 0, the update rule simplifies to:
 
 $$ \theta_{t+1} = \theta_{t} $$
+
 $$ x_{t+1} = x_{t} + v \cos \theta \Delta t $$
+
 $$ y_{t+1} = y_{t} + v \sin \theta \Delta t $$
 
-In your implementation, you should treat any steering angle where $|\delta|$ is less than `delta_threshold` as a zero steering angle.
+In your implementation, you should treat any steering angle where $|\delta|$ is less than `delta_threshold` as a zero steering angle!
 
 ### Q4: Noisy Motion Model
 
