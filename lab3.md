@@ -22,7 +22,7 @@ Welcome to Lab 3! In this lab, we will dive deeper into NumPy's powerful indexin
 
 ## NumPy: Advanced Indexing
 
-Vectorization isn’t just limited to mathematical operations. NumPy supports a variety of different forms of indexing, but integer array indexing and Boolean array indexing are especially important for this course.
+Vectorization isn’t just limited to mathematical operations. NumPy supports a variety of different forms of [indexing](https://numpy.org/doc/stable/user/basics.indexing.html), but [integer array indexing](https://numpy.org/doc/stable/user/basics.indexing.html#integer-array-indexing) and [Boolean array indexing](https://numpy.org/doc/stable/user/basics.indexing.html#boolean-array-indexing) are especially important for this course.
 
 ### Q1: Integer Array Indexing
 
