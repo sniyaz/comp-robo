@@ -86,9 +86,9 @@ rostest introduction pose_listener.test
 
 ## Data Collection and Visualization
 
-Now, let's use the `PoseListener` to collect some data while the car follows specific trajectories! 
+Now, let’s use the `PoseListener` to actually collect some data! In `scripts/pose_listener`, we’ve already used `matplotlib` to plot the xy-locations of your car and save the resulting plot to `locations.png`. Use your `norm_numpy` function to compute the car’s distance to the origin for all the xy-locations captured by the PoseListener. Then, use `matplotlib` to plot this distance as a function of `time`, and save the resulting plot to `distances.png`.
 
-1.  **Launch the simulator** using the sandbox map:
+1.  First, you need to **launch the simulator** using the sandbox map:
     ```bash
     roslaunch cse478 teleop.launch map:='$(find cse478)/maps/sandbox.yaml'
     ```
@@ -99,9 +99,9 @@ Now, let's use the `PoseListener` to collect some data while the car follows spe
 
 ### Q5: Distance Calculation and Plotting
 
-In `scripts/pose_listener`, use your `norm_numpy` function to compute the car’s distance to the origin for all the xy-locations captured by the `PoseListener`. 
+In `scripts/pose_listener`, use your `norm_numpy` function (as desbribed above) to compute the car’s distance to the origin for all the xy-locations captured by the `PoseListener`. 
 
-**Requirement:** Use matplotlib to plot this distance as a function of time, and save the resulting plot to `distances.png`. The script already handles plotting the xy-locations to `locations.png`.
+**Requirement:** Use matplotlib to plot this distance as a function of time as desbribed above, and save the resulting plot to `distances.png`. The script already handles plotting the xy-locations to `locations.png`.
 
 ## 📝 Write-up
 
