@@ -99,7 +99,7 @@ With this in mind, the **motion model** specifies a probability distribution:
 
 $$P(\mathbf{x}_t | \mathbf{x}_{t-1}, \mathbf{u}_t)$$
 
-In other words,  the probability of reaching a state $\mathbf{x}_t$ given that control $\mathbf{u}_t$ is applied from state $\mathbf{x}_{t-1}$.
+In other words,  the probability of reaching a state $x_{t}$ given that control $u_{t}$ is applied from state $x_{t-1}$.
 
 ### Q3: Kinematic Car Equations (Deterministic)
 
