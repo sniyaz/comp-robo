@@ -99,9 +99,11 @@ Now, let’s use the `PoseListener` to actually collect some data! In `scripts/p
 
 ### Q5: Distance Calculation and Plotting
 
-In `scripts/pose_listener`, use your `norm_numpy` function (as desbribed above) to compute the car’s distance to the origin for all the xy-locations captured by the `PoseListener`. 
+In `scripts/pose_listener`, use your `norm_numpy` function (as described above) to compute the car’s distance to the origin for all the xy-locations captured by the `PoseListener`. 
 
-**Requirement:** Use matplotlib to plot this distance as a function of time as desbribed above, and save the resulting plot to `distances.png`. The script already handles plotting the xy-locations to `locations.png`.
+**Requirement:** Use matplotlib to plot this distance as a function of time as described above, and save the resulting plot to `distances.png`. The script already handles plotting the xy-locations to `locations.png`.
+
+⚠️ **NOTE:** If you have trouble saving the `.png` images through Python, you can also use `plt.show()` to display the raw figures while the program runs (and save them there).
 
 ## 📝 Write-up
 
