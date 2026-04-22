@@ -87,14 +87,18 @@ python3 $(rospack find introduction)/test/indexing.py
 
 ## Motion Model
 
-In this section, you will implement the kinematic car motion model, which is a key component of the particle filter algorithm.
+In this section, you will implement the kinematic car motion model, which is a key component of our HMM State Estimator.
 
 ### State Estimation Definitions
-Assume that the MuSHR car drives on a flat plane and localizes within a known map $m$.
+Recall these definitions from lecture:
 
 *   **States** are defined as $\mathbf{x}_t = (x_t, y_t, \theta_t)$ where $(x_t, y_t)$ is the car’s 2D position and $\theta_t$ is its heading direction, with respect to the map’s reference frame.
 *   **Controls** are defined as $\mathbf{u}_t = (v_t, \delta_t)$ where $v_t$ is the speed and $\delta_t$ is the steering angle, with respect to the car’s rear-axle reference frame.
-*   The **motion model** specifies a probability distribution $P(\mathbf{x}_t | \mathbf{x}_{t-1}, \mathbf{u}_t)$, i.e. the probability of reaching a state $\mathbf{x}_t$ given that control $\mathbf{u}_t$ is applied from state $\mathbf{x}_{t-1}$.
+
+With this in mind, the **motion model** specifies a probability distribution
+$$P(\mathbf{x}_t | \mathbf{x}_{t-1}, \mathbf{u}_t)$$
+
+i.e. the probability of reaching a state $\mathbf{x}_t$ given that control $\mathbf{u}_t$ is applied from state $\mathbf{x}_{t-1}$.
 
 ### Q3: Kinematic Car Equations (Deterministic)
 
