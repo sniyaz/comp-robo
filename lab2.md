@@ -90,11 +90,11 @@ Now, let’s use the `PoseListener` to actually collect some data! In `scripts/p
 
 1.  First, you need to **launch the simulator** using the sandbox map:
     ```bash
-    roslaunch cse478 teleop.launch map:='$(find cse478)/maps/sandbox.yaml'
+    roslaunch cse478 teleop.launch map:='$(find mushr_sim)/maps/sandbox.yaml'
     ```
 2.  **In another terminal**, launch the path publisher to have the car follow a "figure 8" plan:
     ```bash
-    roslaunch cse478 path_publisher.launch plan:='$(find cse478)/plans/figure_8.txt'
+    roslaunch introduction path_publisher.launch plan_file:='$(find introduction)/plans/figure_8.txt'
     ```
 
 ### Q5: Distance Calculation and Plotting
