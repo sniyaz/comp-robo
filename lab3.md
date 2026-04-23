@@ -111,6 +111,8 @@ $$ x_{t+1} = x_{t} + \frac{L}{\tan \delta} [ \sin \theta_{t+1} - \sin \theta_{t}
 
 $$ y_{t+1} = y_{t} + \frac{L}{\tan \delta} [ -\cos \theta_{t+1} + \cos \theta_{t} ] $$
 
+You can use the `self.car_length` instance variable in your program to figure out what $L$ is in the series of equations above.
+
 **Note on Steering Angle 0:**
 If the steering angle is 0, the update rule simplifies to:
 
@@ -159,13 +161,24 @@ and
 
 $$\delta'_t \sim \mathcal{N}(\delta_t, \sigma_\delta^2)$$
 
+The parameters for **all** random noise sampled in this problem are available as instance variables, i.e. `self.vel_std`, `self.x_std`, etc. You may find the `np.random.normal` function useful to you.
+
 **Step 2:** Apply those noisy controls using your `compute_changes` method (in other words, apply the deterministic equations of motion).
 
 **Step 3:** Add model noise to the output
 
 $$\Delta x_t \sim \mathcal{N}(\Delta x'_t, \mathrm{diag}(\sigma_x^2, \sigma_y^2, \sigma_\theta^2))$$
 
-**Requirement:** Implement this noisy motion model in the `KinematicCarMotionModel.apply_motion_model` method. Wrap the resulting $\theta$ component to the interval $(-\pi, \pi]$.
+**Requirement:** Implement this noisy motion model in the `KinematicCarMotionModel.apply_motion_model` method. Wrap the resulting $\theta$ component to the interval $(-\pi, \pi]$. If you have trouble with this wrapping (the autograder can be a bit picky about it) feel free to use this helper:
+
+```python
+def wrap_angle(angle):
+    wrapped = (angle + np.pi) % (2 * np.pi) - np.pi
+    if (wrapped == -np.pi):
+        return np.pi
+    else:
+        return wrapped
+```
 
 #### Testing The Motion Model
 After completing both Q3 and Q4, expect your code to pass all the test cases when running:
