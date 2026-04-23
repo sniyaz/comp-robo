@@ -111,6 +111,12 @@ $$ x_{t+1} = x_{t} + \frac{L}{\tan \delta} [ \sin \theta_{t+1} - \sin \theta_{t}
 
 $$ y_{t+1} = y_{t} + \frac{L}{\tan \delta} [ -\cos \theta_{t+1} + \cos \theta_{t} ] $$
 
+**Data Format:** In your implementation, you will be working with NumPy arrays that contain multiple states and controls at once:
+*   `states`: A NumPy array of shape $(M, 3)$, where each row represents a state $[x, y, \theta]$.
+*   `controls`: A NumPy array of shape $(M, 2)$, where each row represents a control $[v, \delta]$.
+
+**Make sure** you follow this convention for all subsequent problems!
+
 **Requirement:** Implement the kinematic car equations in the `KinematicCarMotionModel.compute_changes` method (`src/localization/motion_model.py`). This method is deterministic.
 
 **Note on Steering Angle 0:**
