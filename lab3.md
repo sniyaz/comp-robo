@@ -224,11 +224,17 @@ Please also include the following images from **Q5** in the `localization/writeu
 
 ## 🔥 Grading Breakdown
 
-**Total Lab Points:** 50
+**Total Lab Points:** 89
 
-*   **Q1 & Q2:** 10 points for passing `python3 test/indexing.py`.
-*   **Q3 & Q4:** 25 points for correct implementation of the motion model.
-*   **Write-Up & Tuning:** 15 points.
+*   **Q1 & Q2:** 10 points if `python3 $(rospack find introduction)/test/indexing.py` passes.
+    *   That's 5 points per test (all or nothing per test).
+*   **Q3 & Q4:** 54 points if `python3 $(rospack find localization)/test/motion_model.py` passes.
+    *   That's 3 points per test.
+*   **Write-Up (Question Answers):** 10 points.
+    *   5 points per question, partial credit may be assigned.
+*   **Write-Up (Images):** 15 points for (reasonable) plots.
+    *   5 points per plot, partial credit may be assigned.
+    *   Again, we'll try to be generous in grading your `mm3.png`.
 
 ## 🚀 Submission
 
