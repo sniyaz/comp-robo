@@ -111,6 +111,17 @@ $$ x_{t+1} = x_{t} + \frac{L}{\tan \delta} [ \sin \theta_{t+1} - \sin \theta_{t}
 
 $$ y_{t+1} = y_{t} + \frac{L}{\tan \delta} [ -\cos \theta_{t+1} + \cos \theta_{t} ] $$
 
+**Note on Steering Angle 0:**
+If the steering angle is 0, the update rule simplifies to:
+
+$$ \theta_{t+1} = \theta_{t} $$
+
+$$ x_{t+1} = x_{t} + v \cos \theta \Delta t $$
+
+$$ y_{t+1} = y_{t} + v \sin \theta \Delta t $$
+
+**Actually**, in your implementation you should treat any steering angle $\delta$ with an **absolute value** of less than `delta_threshold` as a zero steering angle!
+
 **Data Format:** In your implementation, you will be working with NumPy arrays that contain multiple states and controls at once:
 *   `states`: A NumPy array of shape $(M, 3)$, where each row represents a state $[x, y, \theta]$.
 *   `controls`: A NumPy array of shape $(M, 2)$, where each row represents a control $[v, \delta]$.
@@ -131,17 +142,6 @@ Make sure you follow this convention for all subsequent problems!
 >
 > You have been warned. Go forth and compute changes!
 {: .post-it }
-
-**Note on Steering Angle 0:**
-If the steering angle is 0, the update rule simplifies to:
-
-$$ \theta_{t+1} = \theta_{t} $$
-
-$$ x_{t+1} = x_{t} + v \cos \theta \Delta t $$
-
-$$ y_{t+1} = y_{t} + v \sin \theta \Delta t $$
-
-**Actually**, in your implementation you should treat any steering angle $\delta$ with an **absolute value** of less than `delta_threshold` as a zero steering angle!
 
 ### Q4: Noisy Motion Model
 
