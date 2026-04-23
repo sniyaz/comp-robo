@@ -213,12 +213,12 @@ In your writeup, explain how you tuned parameters to get from `mm1.png` to `mm3.
 
 Create a **new file** `localization/writeup/lab3.md`, and answer the following questions:
 
-1.  Explain in your own words the difference between the particles in Figure 2 vs Figure 3 of the localization project (referring to the effects of different noise parameters).
-2.  Document your tuning process for the motion model parameters. What did you observe when you increased or decreased the different noise values?
+1. Why does the motion model produce more particles within 10cm of the noise-free model prediction in Figure 2 than Figure 3?
+2. Document your tuning process for the motion model parameters. What did you observe when you increased or decreased the different noise values?
 
 Please also include the following images from **Q5** in the `localization/writeup/` directory:
 
-3.  The `mm1.png`, `mm2.png`, and `mm3.png` figures showing your tuned motion model.
+3.  The `mm1.png`, `mm2.png`, and `mm3.png` figures showing your tuned motion model. Again, we'll try to be generous in grading this.
 
 ---
 
