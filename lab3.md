@@ -103,6 +103,8 @@ In other words,  the probability of reaching a state $x_{t}$ given that control 
 
 ### Q3: Equations of Motion (Deterministic)
 
+![lab3_car]({{ site.baseurl }}/assets/lab3-assets/lab3_car.png)
+
 In this question, you will implement the deterministic car motion model. Let’s first review the deterministic equations of motion that we covered today in lecture. Suppose that action $u_{t}$ is applied from state $x_{t-1}$. We can compute the new state as follows:
 
 $$ \theta_{t+1} = \theta_{t} + \frac{v}{L} \tan \delta \Delta t $$
@@ -188,12 +190,15 @@ python3 $(rospack find localization)/test/motion_model.py
 
 ### Q5: Exploring and Tuning Parameters
 
-The noise in your motion model is controlled by $\sigma_v, \sigma_\delta$ (action noise) and $\sigma_x, \sigma_y, \sigma_\theta$ (model noise). In this question, you will tune these parameters.
+The noise in your motion model is controlled by $\sigma_v, \sigma_\delta$ (action noise) and $\sigma_x, \sigma_y, \sigma_\theta$ (model noise). We’ve provided some initial values in `config/parameters.yaml`, but it’ll be up to **you** (and your group) to tune them and make sure they’re reasonable. We’ve provided a script to visualize samples from your probabilistic motion model, under the current noise parameters in config/parameters.yaml.
 
-**Requirement:** Visualize samples using the following command:
 ```bash
 rosrun localization make_motion_model_plot
 ```
+The staff solution produces the following plots with our motion model that is tuned to match the physical MuSHR car. Try to match these plots by tuning your parameters.
+
+![lab3_plots]({{ site.baseurl }}/assets/lab3-assets/lab3_plots.png)
+
 Tune your parameters to match the staff solution plots (as shown in the course materials). Save three versions of the figure representing your progress and final results as `mm1.png`, `mm2.png`, and `mm3.png`.
 
 ---
