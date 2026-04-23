@@ -115,9 +115,22 @@ $$ y_{t+1} = y_{t} + \frac{L}{\tan \delta} [ -\cos \theta_{t+1} + \cos \theta_{t
 *   `states`: A NumPy array of shape $(M, 3)$, where each row represents a state $[x, y, \theta]$.
 *   `controls`: A NumPy array of shape $(M, 2)$, where each row represents a control $[v, \delta]$.
 
-**Make sure** you follow this convention for all subsequent problems!
+Make sure you follow this convention for all subsequent problems!
 
 **Requirement:** Implement the kinematic car equations in the `KinematicCarMotionModel.compute_changes` method (`src/localization/motion_model.py`). This method is deterministic.
+
+> ### 🛑 STOP! READ THIS OR BE SAD! 🛑
+>
+> **CRITICAL WARNING:** The method is called `compute_changes` for a reason. It should return the **DELTA** (the change in $x$, $y$, and $\theta$), **NOT** the new absolute state! 
+>
+> If you return the new state instead of the delta, your car will probably teleport into another dimension (or at least off the map), and you'll spend three hours questioning your reality. Don't be that student. Return the delta:
+>
+> $$\Delta x$$
+> $$\Delta y$$
+> $$\Delta \theta$$
+>
+> You have been warned. Go forth and compute changes!
+{: .post-it }
 
 **Note on Steering Angle 0:**
 If the steering angle is 0, the update rule simplifies to:
