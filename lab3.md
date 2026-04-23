@@ -163,11 +163,11 @@ $$\delta'_t \sim \mathcal{N}(\delta_t, \sigma_\delta^2)$$
 
 The parameters for **all** random noise sampled in this problem are available as instance variables, i.e. `self.vel_std`, `self.x_std`, etc. You may find the `np.random.normal` function useful to you.
 
-**Step 2:** Apply those noisy controls using your `compute_changes` method (in other words, apply the deterministic equations of motion).
+**Step 2:** Apply those noisy controls using your `compute_changes` method (in other words, apply the deterministic equations of motion) to get an updated state $x'_t$.
 
-**Step 3:** Add model noise to the output
+**Step 3:** Add model noise to the output from Step 2
 
-$$\Delta x_t \sim \mathcal{N}(\Delta x'_t, \mathrm{diag}(\sigma_x^2, \sigma_y^2, \sigma_\theta^2))$$
+$$x''_t \sim \mathcal{N}(x'_t, \mathrm{diag}(\sigma_x^2, \sigma_y^2, \sigma_\theta^2))$$
 
 **Requirement:** Implement this noisy motion model in the `KinematicCarMotionModel.apply_motion_model` method. Wrap the resulting $\theta$ component to the interval $(-\pi, \pi]$. If you have trouble with this wrapping (the autograder can be a bit picky about it) feel free to use this helper:
 
