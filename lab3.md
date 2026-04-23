@@ -211,7 +211,7 @@ In your writeup, explain how you tuned parameters to get from `mm1.png` to `mm3.
 
 ## 📝 Write-up
 
-Create a **new file** `localization/writeup/lab3.md`, and answer the following questions:
+Create a **new file** `localization/writeup/lab3.md`. **List the names and Northeastern emails** of students in your lab group at the top, and answer the following questions:
 
 1. Why does the motion model produce more particles within 10cm of the noise-free model prediction in Figure 2 than Figure 3?
 2. Document your tuning process for the motion model parameters. What did you observe when you increased or decreased the different noise values?
@@ -240,6 +240,20 @@ Use the Git tag `submit-lab3` to signal completion:
 $ cd ~/mushr_ws/src/mushr478
 $ git tag submit-lab3
 $ git push origin main submit-lab3
+```
+
+### Re-submitting
+
+If you need to make changes after you have already submitted (and before the deadline), don't panic! You can re-submit by deleting the old tag and creating a new one:
+
+```bash
+# Delete the tag locally
+$ git tag -d submit-lab3
+# Delete the tag on GitHub
+$ git push origin :refs/tags/submit-lab3
+# Create and push the new tag
+$ git tag submit-lab3
+$ git push origin submit-lab3
 ```
 
 **Congratulations!** You've completed Lab 3. 🏎️💨

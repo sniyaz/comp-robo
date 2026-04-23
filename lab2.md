@@ -107,7 +107,7 @@ In `scripts/pose_listener`, use your `norm_numpy` function (as described above) 
 
 ## 📝 Write-up
 
-Create a **new file** `introduction/writeup/lab2.md`, and answer the following questions:
+Create a **new file** `introduction/writeup/lab2.md`. **List the names and Northeastern emails** of students in your lab group at the top, and answer the following questions:
 
 1.  What is "vectorization" in the context of NumPy, and why is it generally faster than using Python for loops?
 2.  Explain the role of a "callback" function in a ROS subscriber.
