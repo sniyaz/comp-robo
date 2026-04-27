@@ -6,7 +6,7 @@ Sep 29
 : **Lab 3 due**{: .label .label-red }
 
 Sep 30
-: **TODO**
+: **Building a Sensor Model**
   : [slides](#)
-: **Lab 4**{: .label .label-purple } TODO
+: **Lab 4**{: .label .label-purple } [LIDAR Sensor Model](./lab4)
 
