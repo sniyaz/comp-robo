@@ -30,7 +30,7 @@ $$P(z_t | x_t) = \prod_{k=1}^K P(z_t^k | x_t)$$
 
 ### Sensor Model Modes
 
-As discussed in Lecture, we use a mixture of four different components to model the probability of a single beam, i.e.
+As discussed in Lecture, we use a mixture of four different components (also called modes) to model the probability of a single beam, i.e.
 
 $$P(z_t^k | x_t)$$
 
