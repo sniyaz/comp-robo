@@ -22,35 +22,35 @@ Welcome to Lab 4! In this lab, we’ll implement the LIDAR sensor model for our 
 
 ## Sensor Model Implementation
 
-The MuSHR car’s LIDAR unit emits infrared laser beams into the environment at fixed angular intervals and returns the measured distance along those beams. For an unsuccessful measurement, it returns NaN or 0. A sensor measurement $\mathbf{z}_t$ is a vector of distances, one for each beam: $\mathbf{z}_t = (z_t^1, \dots, z_t^K)$.
+The MuSHR car’s LIDAR unit emits infrared laser beams into the environment at fixed angular intervals and returns the measured distance along those beams. For an unsuccessful measurement, it returns NaN or 0. A sensor measurement $z_t$ is a vector of distances, one for each beam: $z_t = (z_t^1, \dots, z_t^K)$.
 
-Assuming that each distance $z_t^k$ is conditionally independent (given the state $\mathbf{x}_t$ and map $m$) allows us to consider each beam separately. The total likelihood is the product of the likelihoods of each beam:
+Assuming that each distance $z_t^k$ is conditionally independent (given the state $x_t$ and map $m$) allows us to consider each beam separately. The total likelihood is the product of the likelihoods of each beam:
 
-$$P(\mathbf{z}_t | \mathbf{x}_t, m) = \prod_{k=1}^K P(z_t^k | \mathbf{x}_t, m)$$
+$$P(z_t | x_t, m) = \prod_{k=1}^K P(z_t^k | x_t, m)$$
 
 ### Sensor Model Modes
 
-We model the probability $P(z_t^k | \mathbf{x}_t, m)$ using a mixture of four different modes:
+We model the probability $P(z_t^k | x_t, m)$ using a mixture of four different modes:
 
-1.  **Hit (Gaussian noise):** $p_{\text{hit}}$ models the case where the laser correctly measures the distance to an obstacle, but with some Gaussian measurement noise.
-2.  **Short (Unexpected obstacles):** $p_{\text{short}}$ models the case where an unexpected obstacle (like a person) is between the car and the wall.
-3.  **Max (Sensor failure):** $p_{\text{max}}$ models cases where the sensor fails to return a reading (e.g., due to a highly reflective surface).
-4.  **Random (Phantom readings):** $p_{\text{rand}}$ models completely random "phantom" readings.
+1.  **Hit (Gaussian noise):** $p_{hit}$ models the case where the laser correctly measures the distance to an obstacle, but with some Gaussian measurement noise.
+2.  **Short (Unexpected obstacles):** $p_{short}$ models the case where an unexpected obstacle (like a person) is between the car and the wall.
+3.  **Max (Sensor failure):** $p_{max}$ models cases where the sensor fails to return a reading (e.g., due to a highly reflective surface).
+4.  **Random (Phantom readings):** $p_{rand}$ models completely random "phantom" readings.
 
 The mathematical definitions for these modes are:
 
 $$
 \begin{align}
-p_{\text{hit}}(z_t^k | \mathbf{x}_t, m) &= \begin{cases} \frac{1}{\sqrt{2\pi\sigma_{\text{hit}}^2}} \exp \left\{ -\frac{1}{2} \left( \frac{z_t^k - z_t^{k*}}{\sigma_{\text{hit}}} \right)^2 \right\} & 0 \leq z_t^k \leq z_{\text{max}} \\ 0 & \text{otherwise} \end{cases} \\
-p_{\text{short}}(z_t^k | \mathbf{x}_t, m) &= \begin{cases} 2 \frac{z_t^{k*} - z_t^k}{(z_t^{k*})^2} & z_t^k < z_t^{k*} \\ 0 & \text{otherwise} \end{cases} \\
-p_{\text{max}}(z_t^k | \mathbf{x}_t, m) &= \mathbb{I}(z_t^k = z_{\text{max}}) \\
-p_{\text{rand}}(z_t^k | \mathbf{x}_t, m) &= \begin{cases} \frac{1}{z_{\text{max}}} & 0 \leq z_t^k < z_{\text{max}} \\ 0 & \text{otherwise} \end{cases}
+p_{hit}(z_t^k | x_t, m) &= \begin{cases} \frac{1}{\sqrt{2\pi\sigma_{hit}^2}} \exp \left\{ -\frac{1}{2} \left( \frac{z_t^k - z_t^{k*}}{\sigma_{hit}} \right)^2 \right\} & 0 \leq z_t^k \leq z_{max} \\ 0 & \text{otherwise} \end{cases} \\
+p_{short}(z_t^k | x_t, m) &= \begin{cases} 2 \frac{z_t^{k*} - z_t^k}{(z_t^{k*})^2} & z_t^k < z_t^{k*} \\ 0 & \text{otherwise} \end{cases} \\
+p_{max}(z_t^k | x_t, m) &= \mathbb{I}(z_t^k = z_{max}) \\
+p_{rand}(z_t^k | x_t, m) &= \begin{cases} \frac{1}{z_{max}} & 0 \leq z_t^k < z_{max} \\ 0 & \text{otherwise} \end{cases}
 \end{align}
 $$
 
 The final probability is a weighted sum:
 
-$$P(z_t^k | \mathbf{x}_t, m) = z_{\text{hit}} \cdot p_{\text{hit}} + z_{\text{short}} \cdot p_{\text{short}} + z_{\text{max}} \cdot p_{\text{max}} + z_{\text{rand}} \cdot p_{\text{rand}}$$
+$$P(z_t^k | x_t, m) = z_{hit} \cdot p_{hit} + z_{short} \cdot p_{short} + z_{max} \cdot p_{max} + z_{rand} \cdot p_{rand}$$
 
 ### Q1: Implement the Sensor Model
 
@@ -65,7 +65,7 @@ In this question, you will implement the logic to precompute the sensor model li
 - Your implementation should be **vectorized** (no Python loops!).
 - Accept zero as a possible weight for any factor, as long as at least one weight is nonzero.
 - Make sure each column of the table is normalized to sum to 1.
-- The parameters $z_{\text{hit}}, z_{\text{short}}, z_{\text{max}}, z_{\text{rand}}$ and $\sigma_{\text{hit}}$ are provided as instance variables (e.g., `self.z_hit`).
+- The parameters $z_{hit}, z_{short}, z_{max}, z_{rand}$ and $\sigma_{hit}$ are provided as instance variables (e.g., `self.z_hit`).
 
 #### Testing the Sensor Model
 To verify your implementation, run:
@@ -99,7 +99,7 @@ Then run the likelihood visualization:
 rosrun localization make_sensor_model_likelihood_plot
 ```
 
-**Deliverable:** Tune the parameters of your sensor model ($z_{\text{hit}}, z_{\text{short}}, z_{\text{max}}, z_{\text{rand}}, \sigma_{\text{hit}}$) to match the reference behavior. Save three versions of the conditional probability plot as `sm1.png`, `sm2.png`, and `sm3.png` (where `sm3.png` is your final tuned version). 
+**Deliverable:** Tune the parameters of your sensor model ($z_{hit}, z_{short}, z_{max}, z_{rand}, \sigma_{hit}$) to match the reference behavior. Save three versions of the conditional probability plot as `sm1.png`, `sm2.png`, and `sm3.png` (where `sm3.png` is your final tuned version). 
 
 In your writeup, provide a final likelihood plot for the robot positioned at $(-9.6, 0.0, -2.5)$ in the `maze_0` map. 
 
