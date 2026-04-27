@@ -18,7 +18,7 @@ nav_exclude: true
 
 ---
 
-Welcome to Lab 4! In this lab, we’ll implement the LIDAR sensor model for our MuSHR car in simulation. The sensor model allows us to calculate the likelihood of a LIDAR scan given a hypothesized robot pose and a map. This is the second major component of our HMM State Estimator (the "Observation Model").
+Welcome to Lab 4! In this lab, we’ll implement the LIDAR sensor model for our MuSHR car in simulation. The sensor model allows us to calculate the likelihood of a LIDAR scan given a hypothesized robot pose and a map. This is the second major component of our HMM State Estimator (we already built the Motion Model in Lab 3).
 
 ## Sensor Model Implementation
 
