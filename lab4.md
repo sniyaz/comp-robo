@@ -24,13 +24,13 @@ Welcome to Lab 4! In this lab, we’ll implement the LIDAR sensor model for our 
 
 The MuSHR car’s LIDAR unit emits infrared laser beams into the environment at fixed angular intervals and returns the measured distance along those beams. For an unsuccessful measurement, it returns NaN or 0. A sensor measurement $z_t$ is a vector of distances, one for each beam: $z_t = (z_t^1, \dots, z_t^K)$.
 
-Assuming that each distance $z_t^k$ is conditionally independent (given the state $x_t$ and map $m$) allows us to consider each beam separately. The total likelihood is the product of the likelihoods of each beam:
+Assuming that each beam/return distance $z_t^k$ is conditionally independent (given the state $x_t$) allows us to consider each beam separately. The total likelihood is the product of the likelihoods of each beam:
 
-$$P(z_t | x_t, m) = \prod_{k=1}^K P(z_t^k | x_t, m)$$
+$$P(z_t | x_t) = \prod_{k=1}^K P(z_t^k | x_t)$$
 
 ### Sensor Model Modes
 
-We model the probability $P(z_t^k | x_t, m)$ using a mixture of four different modes:
+As discussed in Lecture, we model the probability $P(z_t^k | x_t)$ using a mixture of four different modes:
 
 1.  **Hit (Gaussian noise):** $p_{hit}$ models the case where the laser correctly measures the distance to an obstacle, but with some Gaussian measurement noise.
 2.  **Short (Unexpected obstacles):** $p_{short}$ models the case where an unexpected obstacle (like a person) is between the car and the wall.
