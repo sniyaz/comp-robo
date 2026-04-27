@@ -18,11 +18,11 @@ nav_exclude: true
 
 ---
 
-Welcome to Lab 4! In this lab, we’ll implement the LIDAR sensor model for our MuSHR car in simulation. The sensor model allows us to calculate the likelihood of a LIDAR scan given a hypothesized robot pose and a map. This is the second major component of our HMM State Estimator (we already built the Motion Model in Lab 3).
+Welcome to Lab 4! In this lab, we’ll implement the LIDAR sensor model for our MuSHR car in simulation. The sensor model allows us to calculate the likelihood of a LIDAR scan given a hypothesized robot pose and a map. This is the second major component of our HMM State Estimator (we already built the Motion Model in Lab 3).    
 
 ## Sensor Model Implementation
 
-The MuSHR car’s LIDAR unit emits infrared laser beams into the environment at fixed angular intervals and returns the measured distance along those beams. A sensor measurement $\mathbf{z}_t$ is a vector of distances, one for each beam: $\mathbf{z}_t = (z_t^1, \dots, z_t^K)$. 
+The MuSHR car’s LIDAR unit emits infrared laser beams into the environment at fixed angular intervals and returns the measured distance along those beams. For an unsuccessful measurement, it returns NaN or 0. A sensor measurement $\mathbf{z}_t$ is a vector of distances, one for each beam: $\mathbf{z}_t = (z_t^1, \dots, z_t^K)$.
 
 Assuming that each distance $z_t^k$ is conditionally independent (given the state $\mathbf{x}_t$ and map $m$) allows us to consider each beam separately. The total likelihood is the product of the likelihoods of each beam:
 
