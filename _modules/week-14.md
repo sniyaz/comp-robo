@@ -8,5 +8,5 @@ Dec 8
 Dec 9
 : **TODO**
   : [slides](#)
-: **Lab 13**{: .label .label-purple } TODO
+: **Lab 13**{: .label .label-purple } Practice Final Work Time
 
