@@ -30,7 +30,11 @@ $$P(z_t | x_t) = \prod_{k=1}^K P(z_t^k | x_t)$$
 
 ### Sensor Model Modes
 
-As discussed in Lecture, we model the probability $P(z_t^k | x_t)$ using a mixture of four different modes:
+As discussed in Lecture, we use a mixture of four different components to model the probability of a single beam, i.e.
+
+$$P(z_t^k | x_t)$$
+
+Just as a refresher, those four glorious components are:
 
 1.  **Hit (Gaussian noise):** $p_{hit}$ models the case where the laser correctly measures the distance to an obstacle, but with some Gaussian measurement noise.
 2.  **Short (Unexpected obstacles):** $p_{short}$ models the case where an unexpected obstacle (like a person) is between the car and the wall.
