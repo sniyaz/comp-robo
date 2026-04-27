@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Lab 3
+title: Lab 4
 description: >-
-    Advanced Indexing with NumPy and Kinematic Car Motion Modeling.
+    Sensor Models!
 mathjax: true
 nav_exclude: true
 ---
