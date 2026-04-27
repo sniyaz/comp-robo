@@ -45,16 +45,16 @@ The mathematical definitions for these modes are:
 
 $$
 \begin{align}
-p_{hit}(z_t^k | x_t, m) &= \begin{cases} \frac{1}{\sqrt{2\pi\sigma_{hit}^2}} \exp \left\{ -\frac{1}{2} \left( \frac{z_t^k - z_t^{k*}}{\sigma_{hit}} \right)^2 \right\} & 0 \leq z_t^k \leq z_{max} \\ 0 & \text{otherwise} \end{cases} \\
-p_{short}(z_t^k | x_t, m) &= \begin{cases} 2 \frac{z_t^{k*} - z_t^k}{(z_t^{k*})^2} & z_t^k < z_t^{k*} \\ 0 & \text{otherwise} \end{cases} \\
-p_{max}(z_t^k | x_t, m) &= \mathbb{I}(z_t^k = z_{max}) \\
-p_{rand}(z_t^k | x_t, m) &= \begin{cases} \frac{1}{z_{max}} & 0 \leq z_t^k < z_{max} \\ 0 & \text{otherwise} \end{cases}
+p_{hit}(z_t^k | x_t) &= \begin{cases} \frac{1}{\sqrt{2\pi\sigma_{hit}^2}} \exp \left\{ -\frac{1}{2} \left( \frac{z_t^k - z_t^{k*}}{\sigma_{hit}} \right)^2 \right\} & 0 \leq z_t^k \leq z_{max} \\ 0 & \text{otherwise} \end{cases} \\
+p_{short}(z_t^k | x_t) &= \begin{cases} 2 \frac{z_t^{k*} - z_t^k}{(z_t^{k*})^2} & z_t^k < z_t^{k*} \\ 0 & \text{otherwise} \end{cases} \\
+p_{max}(z_t^k | x_t) &= \mathbb{I}(z_t^k = z_{max}) \\
+p_{rand}(z_t^k | x_t) &= \begin{cases} \frac{1}{z_{max}} & 0 \leq z_t^k < z_{max} \\ 0 & \text{otherwise} \end{cases}
 \end{align}
 $$
 
-The final probability is a weighted sum:
+The final probability is a weighted dot product:
 
-$$P(z_t^k | x_t, m) = z_{hit} \cdot p_{hit} + z_{short} \cdot p_{short} + z_{max} \cdot p_{max} + z_{rand} \cdot p_{rand}$$
+$$P(z_t^k | x_t) = w_{hit} \cdot p_{hit} + w_{short} \cdot p_{short} + w_{max} \cdot p_{max} + w_{rand} \cdot p_{rand}$$
 
 ### Q1: Implement the Sensor Model
 
