@@ -28,6 +28,8 @@ Assuming that each beam/return distance $z_t^k$ is conditionally independent (gi
 
 $$P(z_t | x_t) = \prod_{k=1}^K P(z_t^k | x_t)$$
 
+**Note:** that we’ve also provided some starter code to generate a simulated observation given that the robot state is $x_{t}$. We actually use a raycasting library called rangelibc (implemented in C++/CUDA), which casts rays into the map from the robot’s state/pose and measures the distance to any obstacle/wall the ray encounters. This is similar to how the physical LIDAR unit measures distances.
+
 ### Sensor Model Modes
 
 As discussed in Lecture, we use a mixture of four different components (also called modes) to model the probability of a single beam, i.e.
@@ -58,7 +60,11 @@ $$P(z_t^k | x_t) = w_{hit} \cdot p_{hit} + w_{short} \cdot p_{short} + w_{max} \
 
 ### Q1: Implement the Sensor Model
 
-In this question, you will implement the logic to precompute the sensor model likelihood table. To speed up calculations at runtime, we pre-calculate a 2D table where:
+In this question, you will implement the LIDAR Sensor Model.
+
+Actually, we're going to do something **even cooler** (if that's even possible). We're going to speed up the sensor model by **pre-calculating** and caching the sensor probabilities. On our 2D map, continuous values are converted to discrete pixel distances. You can then store the LIDAR range values in a table where each row is the actual measured value, the column is the expected value for a given LIDAR range, and the value is the probability. At runtime, you’ll use rangelibc to generate simulated range measurements, then use the cached table to quickly look up sensor probabilities.
+
+Again: in order to speed up calculations at runtime, in this question you will implement logic to **precompute** the following sensor model likelihood table:
 *   **Rows** represent the **real** measured beam/return LIDAR value ($z_t^k$).
 *   **Columns** represent the **simulated** (expected) LIDAR value based on raycasting ($z_t^{k*}$).
 *   **Values** represent the _cached_ probability of each real measured LIDAR reading $z_t^k$ (at that row) assuming the simulated LIDAR value $z_t^{k*}$ (at that column). That is:
