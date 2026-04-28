@@ -61,15 +61,16 @@ $$P(z_t^k | x_t) = w_{hit} \cdot p_{hit} + w_{short} \cdot p_{short} + w_{max} \
 In this question, you will implement the logic to precompute the sensor model likelihood table. To speed up calculations at runtime, we pre-calculate a 2D table where:
 *   **Rows** represent the actual measured LIDAR value ($z_t^k$).
 *   **Columns** represent the expected LIDAR value based on raycasting ($z_t^{k*}$).
-*   **Values** represent the probability $P(z_t^k | z_t^{k*})$.
+*   **Values** represent the probability of each real measured LIDAR reading. That is:
+
+$$P(z_t^k | z_t^{k*})$$
 
 **Requirement:** Implement the sensor model in the `SingleBeamSensorModel.precompute_sensor_model` method (`src/localization/sensor_model.py`). 
 
 **Notes:**
-- Your implementation should be **vectorized** (no Python loops!).
 - Accept zero as a possible weight for any factor, as long as at least one weight is nonzero.
 - Make sure each column of the table is normalized to sum to 1.
-- The parameters $z_{hit}, z_{short}, z_{max}, z_{rand}$ and $\sigma_{hit}$ are provided as instance variables (e.g., `self.z_hit`).
+- The parameters $w_{hit}$, $w_{short}$, $w_{max}$, $w_{rand}$ and $\sigma_{hit}$ are provided as instance variables. Note that for the weights the convention in code is a bit different than in lecture: $w_{hit}$, for example, is accessed by `self.z_hit`.
 
 #### Testing the Sensor Model
 To verify your implementation, run:
