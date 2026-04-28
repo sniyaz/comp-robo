@@ -69,7 +69,7 @@ $$P(z_t^k | x_{t})$$
 
 **Notes:**
 - Accept zero as a possible weight for any factor, as long as at least one weight is nonzero.
-- Make sure each column of the table is normalized to sum to 1.
+- Make sure each column of the table is normalized to sum to 1 (this follows from the basic rule that the probabilities of all possible outcomes for an event must sum to 1).
 - The parameters $w_{hit}$, $w_{short}$, $w_{max}$, $w_{rand}$ and $\sigma_{hit}$ are provided as instance variables. Note that for the weights the convention in code is a bit different than in lecture: $w_{hit}$, for example, is accessed by `self.z_hit`.
 
 #### Testing the Sensor Model
