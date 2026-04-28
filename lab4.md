@@ -81,7 +81,7 @@ $$P(z_t^k | x_{t})$$
 #### Testing the Sensor Model
 To verify your implementation, run:
 ```bash
-python3 test/sensor_model.py
+python3 $(rospack find localization)/test/sensor_model.py
 ```
 
 ---
