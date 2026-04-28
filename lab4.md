@@ -59,11 +59,11 @@ $$P(z_t^k | x_t) = w_{hit} \cdot p_{hit} + w_{short} \cdot p_{short} + w_{max} \
 ### Q1: Implement the Sensor Model
 
 In this question, you will implement the logic to precompute the sensor model likelihood table. To speed up calculations at runtime, we pre-calculate a 2D table where:
-*   **Rows** represent the actual measured LIDAR value ($z_t^k$).
-*   **Columns** represent the expected LIDAR value based on raycasting ($z_t^{k*}$).
-*   **Values** represent the probability of each real measured LIDAR reading. That is:
+*   **Rows** represent the **real** measured beam/return LIDAR value ($z_t^k$).
+*   **Columns** represent the **simulated** (expected) LIDAR value based on raycasting ($z_t^{k*}$).
+*   **Values** represent the _cached_ probability of each real measured LIDAR reading under the **expected** LIDAR value. That is:
 
-$$P(z_t^k | z_t^{k*})$$
+$$P(z_t^k | x_{t})$$
 
 **Requirement:** Implement the sensor model in the `SingleBeamSensorModel.precompute_sensor_model` method (`src/localization/sensor_model.py`). 
 
