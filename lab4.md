@@ -46,15 +46,15 @@ Just as a refresher, those four glorious components are:
 
 1.  **Hit (Gaussian noise):** $p_{hit}$ models the case where the laser correctly measures the distance to an obstacle, but with some Gaussian measurement noise.
 2.  **Short (Unexpected obstacles):** $p_{short}$ models the case where an unexpected obstacle (like a person) is between the car and the wall.
-3.  **Max (Sensor failure):** $p_{max}$ models cases where the sensor fails to return a reading (e.g., due to a highly reflective surface).
-4.  **Random (Phantom readings):** $p_{rand}$ models completely random "phantom" readings.
+3.  **Max (Sensor failure):** $p_{max}$ models cases where the sensor fails to return a reading (e.g., due to an extremely dark surface).
+4.  **Random (Phantom readings):** $p_{rand}$ models completely unexplainable "phantom" readings.
 
 The mathematical definitions for these modes are:
 
 $$
 \begin{align}
 p_{hit}(z_t^k | x_t) &= \begin{cases} \frac{1}{\sqrt{2\pi\sigma_{hit}^2}} \exp \left\{ -\frac{1}{2} \left( \frac{z_t^k - z_t^{k*}}{\sigma_{hit}} \right)^2 \right\} & 0 \leq z_t^k \leq z_{max} \\ 0 & \text{otherwise} \end{cases} \\
-p_{short}(z_t^k | x_t) &= \begin{cases} 2 \frac{z_t^{k*} - z_t^k}{(z_t^{k*})^2} & z_t^k < z_t^{k*} \\ 0 & \text{otherwise} \end{cases} \\
+p_{short}(z_t^k | x_t) &= \begin{cases} 2 \frac{z_t^{k*} - z_t^k}{z_t^{k*}} & z_t^k < z_t^{k*} \\ 0 & \text{otherwise} \end{cases} \\
 p_{max}(z_t^k | x_t) &= \mathbb{I}(z_t^k = z_{max}) \\
 p_{rand}(z_t^k | x_t) &= \begin{cases} \frac{1}{z_{max}} & 0 \leq z_t^k < z_{max} \\ 0 & \text{otherwise} \end{cases}
 \end{align}
