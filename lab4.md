@@ -83,7 +83,7 @@ Again: in order to speed up the Sensor Model at runtime, in this question you wi
 
 $$P(z_t^k | x_{t})$$
 
-**Requirement:** Implement the`SingleBeamSensorModel.precompute_sensor_model` method in `src/localization/sensor_model.py`. We have already set up the dimensions of the output table (`prob_table`) for you, but you need to fill it in.
+**Requirement:** Implement the `SingleBeamSensorModel.precompute_sensor_model` method in `src/localization/sensor_model.py`. We have already set up the dimensions of the output table (`prob_table`) for you, but you need to fill it in.
 
 **Notes:**
 - Accept zero as a possible weight for any factor, as long as at least one weight is nonzero.
