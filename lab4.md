@@ -66,18 +66,24 @@ $$P(z_t^k | x_t) = w_{hit} \cdot p_{hit} + w_{short} \cdot p_{short} + w_{max} \
 
 ### Q1: Implement the Sensor Model
 
-In this question, you will implement the LIDAR Sensor Model.
+As mentioned earlier, in this question you will implement the computation of single beam/return probabilities. All the other machinery of the Sensor Model is handled by the skeleton class we provide you.
 
-Actually, we're going to do something **even cooler** (if that's even possible). We're going to speed up the sensor model by **pre-calculating** and caching the sensor probabilities. On our 2D map, continuous values are converted to discrete pixel distances. You can then store the LIDAR range values in a table where each row is the actual measured value, the column is the expected value for a given LIDAR range, and the value is the probability. At runtime, you’ll use rangelibc to generate simulated range measurements, then use the cached table to quickly look up sensor probabilities.
+Actually, we're going to do something **even cooler** (if that's even possible). We're going to speed up the sensor model by pre-computing and caching **every single possible** single-beam probability.
 
-Again: in order to speed up calculations at runtime, in this question you will implement logic to **precompute** the following sensor model likelihood table:
+How is this even possible? That's actually one of the nice things about this being a **computational robotics** class: we're working completely in simulation. In the simulated MuSHR car world, we don't measure distance in meters or (as freedom-loving people do) feet. Instead, we measure distance in **integer numbers of pixels**. 
+
+The fact that our beam/return distances are integer values means we can build a 2D table of all possible probabilities! Specifically, we will store the LIDAR range values in a table where the index of each row represents the actual measured value, the index of each column represents the expected value for a given LIDAR range, and the value at those coordinates is the probability.
+
+Once you build this 2D table for us representing all possible single-beam probabilities, the rest of our code will take that table and use it to (very quickly) compute the rest of the Sensor Model.
+
+Again: in order to speed up the Sensor Model at runtime, in this question you will implement logic to **precompute** the following sensor model likelihood table:
 *   **Rows** represent the **real** measured beam/return LIDAR value ($z_t^k$).
 *   **Columns** represent the **simulated** (expected) LIDAR value based on raycasting ($z_t^{k*}$).
 *   **Values** represent the _cached_ probability of each real measured LIDAR reading $z_t^k$ (at that row) assuming the simulated LIDAR value $z_t^{k*}$ (at that column). That is:
 
 $$P(z_t^k | x_{t})$$
 
-**Requirement:** Implement the sensor model in the `SingleBeamSensorModel.precompute_sensor_model` method (`src/localization/sensor_model.py`).
+**Requirement:** Implement the sensor model in the `SingleBeamSensorModel.precompute_sensor_model` method (`src/localization/sensor_model.py`). We have already set up the dimensions of the output table (`prob_table`) for you, but you need to fill it in.
 
 **Notes:**
 - Accept zero as a possible weight for any factor, as long as at least one weight is nonzero.
