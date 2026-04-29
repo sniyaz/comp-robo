@@ -115,31 +115,33 @@ A little hint for you as well: which between $w_{hit}$, $w_{short}$, $w_{max}$, 
 
 ### Q2: Exploring and Tuning Parameters
 
-We’ve provided two tools for tuning. The first visualizes the likelihood for a single observation:
+We’ve provided two tools for tuning. The first visualizes the likelihood for a **single observation**:
 
 ```bash
 rosrun localization make_sensor_model_single_plot
 ```
 
-The second visualizes the likelihood of different poses given a full LIDAR scan. Launch the simulator first:
+The second pair of scripts visualizes the likelihood of different states (poses) given a **full** LIDAR scan. Launch the simulator first with a custom map, such as:
 
 ```bash
 roslaunch cse478 teleop.launch map:='$(find cse478)/maps/shapes_world_small.yaml'
 ```
 
-Then run the likelihood visualization:
+The more interesting the map, the more interesting the laser scan! Try some different maps and poses! To reposition the robot in simulation, use the `Publish Point` tool in the RViz toolbar: select the tool, then click where on the map you want the robot to be. You can, of course, teleoperate the robot too. Reposition the robot, then when you’re happy run the likelihood visualization:
 
 ```bash
 rosrun localization make_sensor_model_likelihood_plot
 ```
 
-**Deliverable:** Tune the parameters of your sensor model ($z_{hit}, z_{short}, z_{max}, z_{rand}, \sigma_{hit}$) to match the reference behavior. Save three versions of the conditional probability plot as `sm1.png`, `sm2.png`, and `sm3.png` (where `sm3.png` is your final tuned version). 
+The node may take a few minutes to calculate all of the probabilities for larger maps. When it’s done, a plot will open showing you what your model “thinks” about each position in the map. Color is key here: the darker purple pixels below have low probability assigned, while the brighter, yellower pixels are assigned higher probability:
 
-In your writeup, provide a final likelihood plot for the robot positioned at $(-9.6, 0.0, -2.5)$ in the `maze_0` map. 
+![lab4_sensor]({{ site.baseurl }}/assets/lab4-assets/lab4_sensor.png)
 
-```bash
-roslaunch cse478 teleop.launch map:='$(find cse478)/maps/maze_0.yaml' initial_x:=-9.6 initial_y:=0 initial_theta:=-2.5
-```
+The staff solution produces the above plots with our sensor model that is tuned to match the physical MuSHR LIDAR. Try to match these plots by tuning your parameters.
+
+**Note:** In general, you should expect the model to have multiple modes when the scan is ambiguous, i.e. if the car could’ve been in any number of places and “seen” the same thing with its sensor. This pattern is especially obvious in environments with symmetry and happens all the time in realistic maps. For instance, expect hallways to produce a similar effect, with a mode becoming a streak along the axis of the passage. Tuning won’t change the fact that the sensor can’t tell some locations from others, but it will adjust how much confidence the model puts in different types of plausible locations.
+
+**Deliverable:** Tune the parameters of your sensor model ($w_{hit}, w_{short}, w_{max}, w_{rand}, \sigma_{hit}$) to match the reference images above. Save three versions of the conditional probability plot as `sm1.png`, `sm2.png`, and `sm3.png` (where `sm3.png` is your final tuned version).
 
 ---
 
