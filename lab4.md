@@ -109,7 +109,9 @@ python3 $(rospack find localization)/test/sensor_model.py
 
 ## Parameter Tuning
 
-Once your sensor model is implemented, you need to find the right weights and noise parameters to match the physical car's performance.
+Congrats! Thanks to your hard work, our Sensor Model is fully implemented. Now we just need to find weights and noise parameters that approximate the real car's performance.
+
+Just a little hint for you though: between $w_{hit}$, $w_{short}$, $w_{max}$, and $w_{rand}$...which should have the largest weight?
 
 ### Q2: Exploring and Tuning Parameters
 
