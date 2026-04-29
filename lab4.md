@@ -85,10 +85,19 @@ $$P(z_t^k | x_{t})$$
 
 **Requirement:** Implement the `SingleBeamSensorModel.precompute_sensor_model` method in `src/localization/sensor_model.py`. We have already set up the dimensions of the output table (`prob_table`) for you, but you need to fill it in.
 
-**Notes:**
-- Accept zero as a possible weight for any factor, as long as at least one weight is nonzero.
-- Make sure each column of the table is normalized to sum to 1 (this follows from the basic rule that the probabilities of all possible outcomes for an event must sum to 1).
-- The parameters $w_{hit}$, $w_{short}$, $w_{max}$, $w_{rand}$ and $\sigma_{hit}$ are provided as instance variables. Note that for the weights the convention in code is a bit different than in lecture: $w_{hit}$, for example, is accessed by `self.z_hit`.
+> ### 🛑 HERE BE DRAGONS! (Read This!) 🛑
+> CS 7680 is a graduate class, so we're going to hold your hand on this problem a bit less than we would in an undergraduate one. That said, this problem is **really hard**. Read these hints to save yourself a lot of existential dread and despair.
+> 
+> **Helper Functions:** We've intentionally left it open-ended how you should structure your code. The main thing we'll say though: if you try to do everything in one giant function, you're probably in for a bad time. Break things up.
+>
+> **Normalizing:** As an implementation detail, you'll need to make sure each column of `prob_table` is normalized to sum to 1 (this follows from the basic rule that the probabilities of all possible outcomes for an event must sum to 1). You can actually do this in a single line with NumPy: a quick Google search here will help a lot.
+>
+> **Parameters:** The parameters $w_{hit}$, $w_{short}$, $w_{max}$, $w_{rand}$ and $\sigma_{hit}$ are provided as instance variables. Note that for the weights the convention in code is a bit different than in lecture: $w_{hit}$, for example, is accessed by `self.z_hit`.
+>
+> **Max Sensor Range:** The max sensor range $z_{max}$ is actually passed as the `max_r` parameter to `precompute_sensor_model()`. Not `self.z_max`, which is actually $w_{max}$ (I'm so sorry guys).
+>
+> **Gaussian of Zero Standard Deviation** Because your TA and I are evil, we've included a test case where $\sigma_{hit}$ is set to zero. If you just plug this into the standard Gaussian equation, it actually causes a **divide by zero** error (you can stare at the formula and see why). If you see these errors in the autograder, it's probably this. Luckily, computing the probability of a Gaussian of zero standard deviation is actually pretty simple: the probability is 1 at the mean and zero everywhere else. In other words, setting $\sigma$ for a Gaussian to zero turns it into a Dirac Delta (where all the probability is stuffed into a single point).
+{: .post-it }
 
 #### Testing the Sensor Model
 To verify your implementation, run:
