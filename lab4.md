@@ -20,19 +20,25 @@ nav_exclude: true
 
 Welcome to Lab 4! In this lab, we’ll implement the LIDAR sensor model for our MuSHR car in simulation. The sensor model allows us to calculate the likelihood of a LIDAR scan given a hypothesized robot state (aka pose) and a map. This is the second major component of our HMM State Estimator (we already built the Motion Model in Lab 3). 
 
-## Sensor Model Implementation
+## Sensor Model Review
 
-The MuSHR car’s LIDAR unit emits infrared laser beams into the environment at fixed angular intervals and returns the measured distance along those beams. For an unsuccessful measurement, it returns NaN or 0. A sensor measurement $z_t$ is a vector of distances, one for each beam: $z_t = (z_t^1, \dots, z_t^K)$.
+The MuSHR car’s LIDAR unit emits infrared laser beams into the environment at fixed angular intervals and returns the measured distance along those beams. A sensor measurement $z_t$ is a vector of distances, one for each beam: $z_t = (z_t^1, \dots, z_t^K)$.
 
-Assuming that each beam/return distance $z_t^k$ is conditionally independent (given the state $x_t$) allows us to consider each beam separately. The total likelihood is the product of the likelihoods of each beam:
+Assuming that each beam/return distance $z_t^k$ is conditionally independent (given the state $x_t$) allows us to consider each beam separately. The total likelihood of the sensor measurement (i.e. the entire LIDAR scan) is thus the product of the likelihoods of each beam:
 
 $$P(z_t | x_t) = \prod_{k=1}^K P(z_t^k | x_t)$$
 
-**Note:** that we’ve also provided some starter code to generate a simulated observation given that the robot state is $x_{t}$. We actually use a raycasting library called rangelibc (implemented in C++/CUDA), which casts rays into the map from the robot’s state/pose and measures the distance to any obstacle/wall the ray encounters. This is similar to how the physical LIDAR unit measures distances.
+**Note:** We actually handle **a lot** of the computation of the sensor model for you in Lab 4 (otherwise the Lab would take you several days). First, we’ve handled the code that generates simulated observations given that the robot state is $x_{t}$. If you're interested, we actually use a raycasting library called rangelibc (implemented in C++/CUDA), which casts rays into the map from the robot’s state/pose and measures the distance to any obstacle/wall the ray encounters.
 
-### Sensor Model Modes
+We **also** handle the multiplying out of the individual beam/return probabilities (under our conditional probability assumption) to get the final probability of the entire LIDAR scan. The **only** thing we're asking you to compute in Lab 4 is the probability of an **individual** beam/return:
 
-As discussed in Lecture, we use a mixture of four different components (also called modes) to model the probability of a single beam, i.e.
+$$P(z_t^k | x_t)$$
+
+Why? Because this is by far the hardest (and most important) part of the entire Sensor Model, of course! 😄 I'm nice, but I'm not _that_ nice 😊
+
+### Sensor Model Modes For Single LIDAR Beam
+
+As discussed in Lecture, we use a mixture of four different components (also called modes) to model the probability of a **single** beam, i.e.
 
 $$P(z_t^k | x_t)$$
 
