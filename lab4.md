@@ -109,7 +109,11 @@ python3 $(rospack find localization)/test/sensor_model.py
 
 ## Parameter Tuning
 
-Congrats! Thanks to your hard work, our Sensor Model is fully implemented. Now we just need to find weights and noise parameters that approximate the real car's performance.
+Congrats! Thanks to your hard work, our Sensor Model is fully implemented. Now we just need to find weights and noise parameters that approximate the real car's performance. Note that parameters for the sensor model are stored in
+
+```bash
+mushr478/localization/config/parameters.yaml
+```
 
 A little hint for you as well: which between $w_{hit}$, $w_{short}$, $w_{max}$, and $w_{rand}$ do you think should have the largest weight?
 
