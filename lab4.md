@@ -159,7 +159,7 @@ roslaunch cse478 teleop.launch map:='$(find cse478)/maps/shapes_world_small.yaml
 
 **Deliverables:** Tune the parameters of your sensor model ($w_{hit}, w_{short}, w_{max}, w_{rand}, \sigma_{hit}$) to match the reference images above. Place the robot at `[9, 9, 0]`. Then save three versions of the inverse sensor model probability plot as `sm1.png`, `sm2.png`, and `sm3.png` (where `sm3.png` is your final tuned version). Try to get _as close_ to the right figure above as possible, but don't go crazy trying to match it exactly.
 
-**Again:** We will be generous in grading this portion of the lab. As long as your plot looks _vaguely_ similar you should be fine. So don't pull your hair out or drive yourself crazy trying to match the figures exactly. This is more about what you learn from the _journey_ of tuning the parameters!
+**Again:** We will be generous in grading this portion of the lab. As long as your plot looks _vaguely_ similar you should be fine...so don't pull your hair out or drive yourself crazy trying to match the figures exactly. This is more about what you learn from the _journey_ of tuning the parameters!
 
 ---
 
@@ -167,13 +167,12 @@ roslaunch cse478 teleop.launch map:='$(find cse478)/maps/shapes_world_small.yaml
 
 Create a **new file** `localization/writeup/lab4.md`. **List the names and Northeastern emails** of students in your lab group at the top, and answer the following questions:
 
-1.  What are the drawbacks of the conditional independence assumption for LIDAR beams? How does the `LaserScanSensorModelROS` class (which you can find in the codebase) mitigate these drawbacks?
-2.  Document your tuning process for the sensor model parameters. What did you observe as you changed the weights for the four different modes?
+1.  Food for though: what could be some drawbacks of the conditional independence assumption for LIDAR beams in our sensor model?
+2.  Explain your tuning process for the sensor model parameters. What did you observe as you changed the weights for the four different modes?
 
-Please also include the following images in the `localization/writeup/` directory:
+Please also include the following images from **Q2** in the `localization/writeup/` directory:
 
-3.  The `sm1.png`, `sm2.png`, and `sm3.png` figures showing your tuning process.
-4.  The final sensor model likelihood plot for the `maze_0` pose specified in Q2.
+3.  The `sm1.png`, `sm2.png`, and `sm3.png` figures showing your tuning process. Again, we'll try to be generous in grading this.
 
 ---
 
