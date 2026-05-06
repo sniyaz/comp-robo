@@ -115,11 +115,17 @@ A little hint for you as well: which between $w_{hit}$, $w_{short}$, $w_{max}$, 
 
 ### Q2: Exploring and Tuning Parameters
 
-We’ve provided two scripts you can use to tune the Sensor Model. Together these scripts will help you visualize the likelihood of different states (poses) given a **full** LIDAR scan. In other words, the scripts are (approximately) visualizing:
+We’ve provided two scripts you can use to tune the Sensor Model. Together these scripts will help you visualize the likelihood of different states (poses) given a **full** LIDAR scan. In other words, the scripts are **approximately** visualizing:
+
+$$P(x_t | z_t)$$
+
+Note that this is the **inverse** of what the sensor model itself computes:
 
 $$P(z_t | x_t)$$
 
-First, you'll need to launch the simulator first with a custom map, such as:
+In short, we're using some fancy math (mainly Bayes Rule) to compute these plots. The inverse probability (the first one) is much more intuitive for a human being to understand!
+
+With that out of the way, let's use these two scripts! First, you'll need to launch the simulator first with a custom map, such as:
 
 ```bash
 roslaunch cse478 teleop.launch map:='$(find cse478)/maps/shapes_world_small.yaml'
