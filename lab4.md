@@ -131,7 +131,7 @@ With that out of the way, let's use these two scripts! First, you'll need to lau
 roslaunch cse478 teleop.launch map:='$(find cse478)/maps/shapes_world_small.yaml'
 ```
 
-The more interesting the map, the more interesting the laser scan! Try some different maps and poses! To reposition the robot in simulation, use the `Publish Point` tool in the RViz toolbar: select the tool, then click where on the map you want the robot to be. You can, of course, teleoperate the robot too. Reposition the robot, then when you’re happy run the likelihood visualization script:
+The more interesting the map, the more interesting the laser scan! Try some different maps and poses! To reposition the robot in simulation, use the `Publish Point` tool in the RViz toolbar: select the tool, then click where on the map you want the robot to be. You can, of course, teleoperate the robot too. Reposition the robot, then when you’re happy run the likelihood visualization script. This compute the inverse probability of the sensor model, which we mentioned above:
 
 ```bash
 rosrun localization make_sensor_model_likelihood_plot
