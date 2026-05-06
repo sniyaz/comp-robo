@@ -115,7 +115,9 @@ Congrats! Thanks to your hard work, our Sensor Model is fully implemented. Now w
 mushr478/localization/config/parameters.yaml
 ```
 
-A little hint for you as well: which between $w_{hit}$, $w_{short}$, $w_{max}$, and $w_{rand}$ do you think should have the largest weight?
+**Hint:** which between $w_{hit}$, $w_{short}$, $w_{max}$, and $w_{rand}$ do you think should have the largest weight?
+
+**Pro Tip:** Because of how you implemented the sensor model (normalizing each column to 1), we can actually get away here with _not_ having every component weight sum to 1 (though that's usually still best practice). So don't worry about that in your final submission.
 
 ### Q2: Exploring and Tuning Parameters
 
@@ -155,7 +157,9 @@ roslaunch cse478 teleop.launch map:='$(find cse478)/maps/shapes_world_small.yaml
 
 **Note:** In general, you should expect the model to have multiple modes when the scan is ambiguous, i.e. if the car could’ve been in any number of places and “seen” the same thing with its sensor. This pattern is especially obvious in environments with symmetry and happens all the time in realistic maps. For instance, expect hallways to produce a similar effect, with a mode becoming a streak along the axis of the passage. Tuning won’t change the fact that the sensor can’t tell some locations from others, but it will adjust how much confidence the model puts in different types of plausible locations.
 
-**Deliverables:** Tune the parameters of your sensor model ($w_{hit}, w_{short}, w_{max}, w_{rand}, \sigma_{hit}$) to match the reference images above. Place the robot at `[4.25, 5.50, 0]`. Then save three versions of the inverse sensor model probability plot as `sm1.png`, `sm2.png`, and `sm3.png` (where `sm3.png` is your final tuned version). Try to get _as close_ to the left figure above as possible, but don't go crazy trying to match it exactly. We'll be generous in grading this portion of the lab.
+**Deliverables:** Tune the parameters of your sensor model ($w_{hit}, w_{short}, w_{max}, w_{rand}, \sigma_{hit}$) to match the reference images above. Place the robot at `[9, 9, 0]`. Then save three versions of the inverse sensor model probability plot as `sm1.png`, `sm2.png`, and `sm3.png` (where `sm3.png` is your final tuned version). Try to get _as close_ to the right figure above as possible, but don't go crazy trying to match it exactly.
+
+**Again:** We will be generous in grading this portion of the lab. As long as your plot looks _vaguely_ similar you should be fine. So don't pull your hair out or drive yourself crazy trying to match the figures exactly. This is more about what you learn from the _journey_ of tuning the parameters!
 
 ---
 
