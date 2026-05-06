@@ -141,11 +141,17 @@ The node may take a few minutes to calculate all of the probabilities for larger
 
 ![lab4_sensor]({{ site.baseurl }}/assets/lab-4-assets/lab4_sensor.png)
 
-The staff solution produces the above plots with our sensor model that is tuned to match the physical MuSHR LIDAR. Try to match these plots by tuning your parameters.
+The staff solution produces the above plots with our sensor model that is tuned to match the physical MuSHR LIDAR. Try to match these plots by tuning your parameters. Note that the left plot was generated with the robot placed at `[4.25, 5.50, 0]`, while the right plot was generated with the robot placed at `[9, 9, 0]`.
+
+To make plot generation easier, you can position the robot **precisely** by providing arguments to the simulation launch file. For example:
+
+```bash
+roslaunch cse478 teleop.launch map:='$(find cse478)/maps/shapes_world_small.yaml' initial_x:=4.25 initial_y:=5.5 initial_theta:=0
+```
 
 **Note:** In general, you should expect the model to have multiple modes when the scan is ambiguous, i.e. if the car could’ve been in any number of places and “seen” the same thing with its sensor. This pattern is especially obvious in environments with symmetry and happens all the time in realistic maps. For instance, expect hallways to produce a similar effect, with a mode becoming a streak along the axis of the passage. Tuning won’t change the fact that the sensor can’t tell some locations from others, but it will adjust how much confidence the model puts in different types of plausible locations.
 
-**Deliverable:** Tune the parameters of your sensor model ($w_{hit}, w_{short}, w_{max}, w_{rand}, \sigma_{hit}$) to match the reference images above. Save three versions of the conditional probability plot as `sm1.png`, `sm2.png`, and `sm3.png` (where `sm3.png` is your final tuned version).
+**Deliverables:** Tune the parameters of your sensor model ($w_{hit}, w_{short}, w_{max}, w_{rand}, \sigma_{hit}$) to match the reference images above. Place the robot at `[4.25, 5.50, 0]`. Then save three versions of the inverse sensor model probability plot as `sm1.png`, `sm2.png`, and `sm3.png` (where `sm3.png` is your final tuned version). Try to get _as close_ to the left figure above as possible, but don't go crazy trying to match it exactly. We'll be generous in grading this portion of the lab.
 
 ---
 
