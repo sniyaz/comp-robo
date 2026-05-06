@@ -115,19 +115,17 @@ A little hint for you as well: which between $w_{hit}$, $w_{short}$, $w_{max}$, 
 
 ### Q2: Exploring and Tuning Parameters
 
-We’ve provided two tools for tuning. The first visualizes the likelihood for a **single observation**:
+We’ve provided two scripts you can use to tune the Sensor Model. Together these scripts will help you visualize the likelihood of different states (poses) given a **full** LIDAR scan. In other words, the scripts are (approximately) visualizing:
 
-```bash
-rosrun localization make_sensor_model_single_plot
-```
+$$P(z_t | x_t)$$
 
-The second pair of scripts visualizes the likelihood of different states (poses) given a **full** LIDAR scan. Launch the simulator first with a custom map, such as:
+First, you'll need to launch the simulator first with a custom map, such as:
 
 ```bash
 roslaunch cse478 teleop.launch map:='$(find cse478)/maps/shapes_world_small.yaml'
 ```
 
-The more interesting the map, the more interesting the laser scan! Try some different maps and poses! To reposition the robot in simulation, use the `Publish Point` tool in the RViz toolbar: select the tool, then click where on the map you want the robot to be. You can, of course, teleoperate the robot too. Reposition the robot, then when you’re happy run the likelihood visualization:
+The more interesting the map, the more interesting the laser scan! Try some different maps and poses! To reposition the robot in simulation, use the `Publish Point` tool in the RViz toolbar: select the tool, then click where on the map you want the robot to be. You can, of course, teleoperate the robot too. Reposition the robot, then when you’re happy run the likelihood visualization script:
 
 ```bash
 rosrun localization make_sensor_model_likelihood_plot
