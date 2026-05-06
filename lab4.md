@@ -123,7 +123,7 @@ Note that this is the **inverse** of what the sensor model itself computes:
 
 $$P(z_t | x_t)$$
 
-In short, we're using some fancy math (mainly Bayes Rule) to compute these plots. The inverse probability (the first one) is much more intuitive for a human being to understand!
+In short, we're using some fancy math (mainly Bayes Rule) to compute these plots. The inverse probability (the first one above) is much more intuitive for a human being to understand!
 
 With that out of the way, let's use these two scripts! First, you'll need to launch the simulator first with a custom map, such as:
 
