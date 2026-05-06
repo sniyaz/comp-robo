@@ -133,7 +133,7 @@ rosrun localization make_sensor_model_likelihood_plot
 
 The node may take a few minutes to calculate all of the probabilities for larger maps. When it’s done, a plot will open showing you what your model “thinks” about each position in the map. Color is key here: the darker purple pixels below have low probability assigned, while the brighter, yellower pixels are assigned higher probability:
 
-![lab4_sensor]({{ site.baseurl }}/assets/lab4-assets/lab4_sensor.png)
+![lab4_sensor]({{ site.baseurl }}/assets/lab-4-assets/lab4_sensor.png)
 
 The staff solution produces the above plots with our sensor model that is tuned to match the physical MuSHR LIDAR. Try to match these plots by tuning your parameters.
 
