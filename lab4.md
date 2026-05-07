@@ -167,7 +167,7 @@ roslaunch cse478 teleop.launch map:='$(find cse478)/maps/shapes_world_small.yaml
 
 Create a **new file** `localization/writeup/lab4.md`. **List the names and Northeastern emails** of students in your lab group at the top, and answer the following questions:
 
-1.  Food for though: what could be some drawbacks of the conditional independence assumption for LIDAR beams in our sensor model?
+1.  Food for thought: what could be some drawbacks of the conditional independence assumption for LIDAR beams in our sensor model?
 2.  Explain your tuning process for the sensor model parameters. What did you observe as you changed the weights for the four different modes?
 
 Please also include the following images from **Q2** in the `localization/writeup/` directory:
