@@ -178,11 +178,15 @@ Please also include the following images from **Q2** in the `localization/writeu
 
 ## 🔥 Grading Breakdown
 
-**Total Lab Points:** 60 (Estimated)
+**Total Lab Points:** 85
 
-*   **Q1 Implementation:** 30 points if `python3 test/sensor_model.py` passes.
+*   **Q1:** 60 points if `python3 $(rospack find localization)/test/sensor_model.py` passes.
+    *   That's 10 points per test (all or nothing per test).
 *   **Write-Up (Question Answers):** 10 points.
-*   **Write-Up (Images):** 20 points for the tuning plots and final likelihood plot.
+    *   5 points per question, partial credit may be assigned.
+*   **Write-Up (Images):** 15 points for (reasonable) plots.
+    *   5 points per plot, partial credit may be assigned.
+    *   We wil be generous in grading your `sm3.png`.
 
 ## 🚀 Submission
 
