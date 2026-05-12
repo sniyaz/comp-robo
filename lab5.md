@@ -43,7 +43,7 @@ To ensure efficiency, the `particles` and `weights` NumPy arrays are **shared** 
 
 ## Q1: Particle Initialization
 
-When the robot first starts, or when a user provides a new "pose estimate" in RViz, we need to initialize our particles. Instead of spreading them randomly across the entire map (which is called "Global Localization"), we will sample them from a Gaussian distribution centered around a known starting state.
+When the robot first starts, or when a user provides a new "pose estimate" in RViz, we need to initialize our particles. Instead of spreading them randomly across the entire map (which is called "Global Initialization"), we will sample them from a Gaussian distribution centered around a known starting state.
 
 **Requirement:** Implement the `ParticleInitializer.reset_click_pose` method in `src/localization/particle_filter.py`. 
 
