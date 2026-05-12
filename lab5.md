@@ -67,9 +67,9 @@ python3 $(rospack find localization)/test/particle_initializer.py
 
 ## Q2: Low-Variance Resampling
 
-Resampling is the process of dropping low-probability particles and duplicating high-probability ones. This focuses our computational resources on the parts of the state space where the robot is most likely to be.
+Resampling is the process of dropping low-probability particles and duplicating high-probability ones. As mentioned in Lecture, this focuses our computational resources on the parts of the HMM belief where the robot is most likely to be.
 
-We will implement the **Low-Variance Resampler**, which covers the sample space more systematically than basic random sampling and preserves particles more effectively when weights are equal.
+To implement our resampling, we will also use the **low-variance** approach to random number generation mentioned towards the end of Lecture. This has the appraoch of covering the sample space more systematically than basic random sampling.
 
 **Algorithm:**
 1. Choose a random number $r \in [0, 1/M]$.
