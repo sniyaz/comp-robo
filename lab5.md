@@ -18,7 +18,7 @@ nav_exclude: true
 
 ---
 
-Welcome to Lab 5! In this final lab of the localization project, we’ll combine the Motion Model (from Lab 3) and the Sensor Model (from Lab 4) to implement an **Advanced Particle Filter** with Low-Variance Resampling. As mentioned in Lecture, this Particle Filter is an approximate/sampled version of the full state estimation HMM.
+Welcome to Lab 5! In this final lab of the perception module, we’ll combine the Motion Model (from Lab 3) and the Sensor Model (from Lab 4) to implement an **Advanced Particle Filter** with Low-Variance Resampling. As mentioned in Lecture, this Particle Filter is an approximate/sampled version of the full state estimation HMM.
 
 We will also learn how to use **ROS bag files** to test our implementation on real-world data.
 
