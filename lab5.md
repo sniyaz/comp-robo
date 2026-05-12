@@ -18,13 +18,15 @@ nav_exclude: true
 
 ---
 
-Welcome to Lab 5! In this final lab of the localization project, we’ll combine the Motion Model (from Lab 3) and the Sensor Model (from Lab 4) to implement a **Particle Filter**. The Particle Filter is a powerful algorithm for state estimation that uses a set of discrete "particles" to represent the robot's belief about its state.
+Welcome to Lab 5! In this final lab of the localization project, we’ll combine the Motion Model (from Lab 3) and the Sensor Model (from Lab 4) to implement an **Advanced Particle Filter** with Low-Variance Resampling. As mentioned in Lecture, this Particle Filter is an approximate/sampled version of the full state estimation HMM.
 
 We will also learn how to use **ROS bag files** to test our implementation on real-world data.
 
 ## Important Implementation Details
 
-The Particle Filter is a complex system, but we’ve provided a lot of the scaffolding for you in `particle_filter.py`. Here are a few key things to keep in mind:
+As we mentioned in Lecture, you’ve actually already done most of the heavy lifting in Labs 3 and 4! The Particle Filter is really just the "glue" that brings those models together. We provide scaffolding in `particle_filter.py` that handles applying the motion model (when controls arrive) and weighing particles by the sensor model (when LIDAR scans arrive). You just need to implement the two remaining algorithmic steps: **initialization** and **resampling**.
+
+That said, here are a few **important things** to keep in mind:
 
 ### Asynchronous Updates
 The particle filter does not operate in a single synchronous loop. Instead, it uses an **asynchronous structure** to update particles and weights:
