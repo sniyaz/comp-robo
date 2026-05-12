@@ -55,6 +55,8 @@ When the robot first starts, or when a user provides a new "pose estimate" in RV
 
 **Hint 3:** Each particle should have the same starting weight: $1/M$.
 
+**Hint 4:** As always, read the comments in the function for more on what exactly you need to do!
+
 #### Testing Initialization
 To verify your implementation, run:
 ```bash
