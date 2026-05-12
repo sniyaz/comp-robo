@@ -39,11 +39,7 @@ To ensure efficiency, the `particles` and `weights` NumPy arrays are **shared** 
 
 ---
 
-## Q1: Particle Filter Implementation
-
-In this section, you will implement the two missing pieces of the Particle Filter algorithm: initialization and resampling.
-
-### Q1.1: Particle Initialization
+## Q1: Particle Initialization
 
 When the robot first starts, or when a user provides a new "pose estimate" in RViz, we need to initialize our particles. Instead of spreading them randomly across the entire map (which is called "Global Localization"), we will sample them from a Gaussian distribution centered around a known starting state.
 
@@ -57,7 +53,9 @@ To verify your implementation, run:
 python3 $(rospack find localization)/test/particle_initializer.py
 ```
 
-### Q1.2: Low-Variance Resampling
+---
+
+## Q2: Low-Variance Resampling
 
 Resampling is the process of dropping low-probability particles and duplicating high-probability ones. This focuses our computational resources on the parts of the state space where the robot is most likely to be.
 
@@ -80,13 +78,13 @@ python3 $(rospack find localization)/test/resample.py
 
 ---
 
-## Q2: Testing and Bag Files
+## Q3: Bag File Test
 
-Now that your filter is implemented, it's time to see it in action!
+Now that your filter is implemented, it's time to see it in action! A "bag file" is a recording of ROS topics (laser scans, odometry, etc.) from a real or simulated run. We can "play back" these bags to test our localization algorithm offline.
 
-### Simulation Tests
+### Simulation and Visualization
 
-You can test your particle filter in simulation using teleoperation:
+Before running the official tests, you can test your particle filter in simulation using teleoperation:
 
 ```bash
 roslaunch localization particle_filter_teleop_sim.launch map:='$(find cse478)/maps/cse2_2.yaml'
@@ -96,17 +94,15 @@ roslaunch localization particle_filter_teleop_sim.launch map:='$(find cse478)/ma
 *   Use the **Publish Point** tool to move the robot to a new location (teleporting).
 *   Drive the car around and watch the particles converge!
 
-### Running on Recorded Bag Files
-
-A "bag file" is a recording of ROS topics (laser scans, odometry, etc.) from a real or simulated run. We can "play back" these bags to test our localization algorithm offline.
+### Running the Tests
 
 1.  **Download the test bags:**
     ```bash
     rosrun localization download_bags.sh
     ```
-2.  **Run the filter on a bag:**
+2.  **Run the filter on the "full" bag:**
     ```bash
-    rostest localization particle_filter.test bag_name:="circle" --text
+    rostest localization particle_filter.test bag_name:="full" --text
     ```
     You can add `rviz:=true` to see the visualization, or `plot:=true` to generate a path plot.
 
@@ -118,7 +114,7 @@ A "bag file" is a recording of ROS topics (laser scans, odometry, etc.) from a r
 
 Create a **new file** `localization/writeup/lab5.md`. **List the names and Northeastern emails** of students in your lab group at the top, and answer the following questions:
 
-1.  Explain the "Kidnapped Robot Problem." How does your particle filter handle it if you manually move the robot in RViz using the "Publish Point" tool?
+1.  Consider the "Kidnapped Robot Problem": this is a classic challenge in robotics where an autonomous robot, while operating, is abruptly moved to an unknown location. How does your particle filter react to it if you manually move the robot in RViz using the "Publish Point" tool?
 2.  What is the purpose of the "Low-Variance" part of the resampler? How does it differ from simply sampling $M$ particles independently based on their weights?
 
 Please also include the following in your submission:
@@ -131,9 +127,9 @@ Please also include the following in your submission:
 
 **Total Lab Points:** 100
 
-*   **Q1.1 Initialization:** 20 points if `test/particle_initializer.py` passes.
-*   **Q1.2 Resampling:** 30 points if `test/resample.py` passes.
-*   **Q2.1 Bag Tests:** 30 points if `rostest localization particle_filter.test bag_name:="full"` passes with errors < 0.1.
+*   **Q1 Initialization:** 20 points if `test/particle_initializer.py` passes.
+*   **Q2 Resampling:** 30 points if `test/resample.py` passes.
+*   **Q3 Bag Tests:** 30 points if `rostest localization particle_filter.test bag_name:="full"` passes with errors < 0.1.
 *   **Write-Up (Question Answers):** 10 points.
 *   **Write-Up (Path Plot):** 10 points for the path plot.
 
