@@ -51,7 +51,7 @@ When the robot first starts, or when a user provides a new "pose estimate" in RV
 
 **Hint 1:** Before you start sampling the Gaussian centered at the specified initial pose, you'll need to convert it to the $[x, y, \theta]$ state representation we use in Lecture (this is also the state formulation we will use to store your particles). You will likely find the ROS [documentation](https://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/Pose.html) for `geometry_msgs/Pose` useful.
 
-**Hint 2:** When converting from the ROS message with the initial state (as mentioned in Hint 1), you'll notice the orientation component is stored as a **quaternion**. Don't worry too much about what this is: but there's a hint in the code on how you can convert this to $\theta$. You can read more about quaternions as well if you're interested (or just hate yourself and want to suffer).
+**Hint 2:** When converting from the ROS message with the initial state (as mentioned in Hint 1), you'll notice the orientation component is stored as a **quaternion**. Don't worry too much about what this is: but there's a hint in the code on how you can convert this to $\theta$. You can [read more](https://en.wikipedia.org/wiki/Quaternion) about quaternions as well if you're interested (or just hate yourself and want to suffer).
 
 **Hint 3:** Each particle should have the same starting weight: $1/M$.
 
