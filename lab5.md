@@ -20,7 +20,7 @@ nav_exclude: true
 
 Welcome to Lab 5! In this final lab of the localization project, we’ll combine the Motion Model (from Lab 3) and the Sensor Model (from Lab 4) to implement a **Particle Filter**. The Particle Filter is a powerful algorithm for state estimation that uses a set of discrete "particles" to represent the robot's belief about its state.
 
-We will also learn how to use **ROS bag files** to test our implementation on real-world data and record our own experiments on the physical car.
+We will also learn how to use **ROS bag files** to test our implementation on real-world data.
 
 ## Important Implementation Details
 
@@ -112,16 +112,6 @@ A "bag file" is a recording of ROS topics (laser scans, odometry, etc.) from a r
 
 **Success Criteria:** For the `full.bag` test, your median errors for $x, y$, and $\theta$ should all be less than **0.1**.
 
-### Recording Your Own Bag
-
-Once you have your filter running on the physical car, you need to record a successful localization run.
-
-**Requirement:** Record a bag file of the car driving for at least **25 feet**. The recording must include the initial pose, inferred pose, particles, laser scan, and joystick controls.
-
-```bash
-rosbag record -O localization.bag /initialpose /car/particle_filter/inferred_pose /car/particle_filter/particles /car/teleop/joy /map
-```
-
 ---
 
 ## 📝 Write-up
@@ -134,7 +124,6 @@ Create a **new file** `localization/writeup/lab5.md`. **List the names and North
 Please also include the following in your submission:
 
 3.  A **path plot** generated from a 60-second drive through the CSE2 map in simulation.
-4.  Your **localization.bag** file from the physical car.
 
 ---
 
@@ -144,9 +133,9 @@ Please also include the following in your submission:
 
 *   **Q1.1 Initialization:** 20 points if `test/particle_initializer.py` passes.
 *   **Q1.2 Resampling:** 30 points if `test/resample.py` passes.
-*   **Q2.1 Bag Tests:** 20 points if `rostest localization particle_filter.test bag_name:="full"` passes with errors < 0.1.
+*   **Q2.1 Bag Tests:** 30 points if `rostest localization particle_filter.test bag_name:="full"` passes with errors < 0.1.
 *   **Write-Up (Question Answers):** 10 points.
-*   **Write-Up (Images & Bag):** 20 points for the path plot and your recorded bag file.
+*   **Write-Up (Path Plot):** 10 points for the path plot.
 
 ## 🚀 Submission
 
