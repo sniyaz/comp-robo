@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Lab 4
+title: Lab 5
 description: >-
-    LIDAR Sensor Models and Parameter Tuning.
+    Particle Filters and Recorded Bag Files.
 mathjax: true
 nav_exclude: true
 ---
 
-# Lab 4
+# Lab 5
 {:.no_toc}
 
 ## Table of contents
@@ -18,197 +18,157 @@ nav_exclude: true
 
 ---
 
-Welcome to Lab 4! In this lab, we’ll implement the LIDAR sensor model for our MuSHR car in simulation. The sensor model allows us to calculate the likelihood of a LIDAR scan given a hypothesized robot state (aka pose) and a map. This is the second major component of our HMM State Estimator (we already built the Motion Model in Lab 3). 
+Welcome to Lab 5! In this final lab of the localization project, we’ll combine the Motion Model (from Lab 3) and the Sensor Model (from Lab 4) to implement a **Particle Filter**. The Particle Filter is a powerful algorithm for state estimation that uses a set of discrete "particles" to represent the robot's belief about its state.
 
-## Sensor Model Review
+We will also learn how to use **ROS bag files** to test our implementation on real-world data and record our own experiments on the physical car.
 
-The MuSHR car’s LIDAR unit emits infrared laser beams into the environment at fixed angular intervals and returns the measured distance along those beams. A sensor measurement $z_t$ is a vector of distances, one for each beam: $z_t = (z_t^1, \dots, z_t^K)$.
+## Important Implementation Details
 
-Assuming that each beam/return distance $z_t^k$ is conditionally independent (given the state $x_t$) allows us to consider each beam separately. The total likelihood of the sensor measurement (i.e. the entire LIDAR scan) is thus the product of the likelihoods of each beam:
+The Particle Filter is a complex system, but we’ve provided a lot of the scaffolding for you in `particle_filter.py`. Here are a few key things to keep in mind:
 
-$$P(z_t | x_t) = \prod_{k=1}^K P(z_t^k | x_t)$$
+### Asynchronous Updates
+The particle filter does not operate in a single synchronous loop. Instead, it uses an **asynchronous structure** to update particles and weights:
+*   The **motion model** is applied whenever the filter receives a control message (containing motor speed and steering angle).
+*   The **sensor model** is applied whenever the filter receives a laser scan.
+*   This allows the filter to utilize all incoming messages as they arrive, rather than being limited by the rate of the slowest topic.
 
-**Note:** We actually handle **a lot** of the computation of the sensor model for you in Lab 4 (otherwise the Lab would take you several days). First, we’ve handled the code that generates simulated observations given that the robot state is $x_{t}$. If you're interested, we actually use a raycasting library called rangelibc (implemented in C++/CUDA), which casts rays into the map from the robot’s state/pose and measures the distance to any obstacle/wall the ray encounters.
+### Shared State and Synchronization
+To ensure efficiency, the `particles` and `weights` NumPy arrays are **shared** across the main classes. 
+*   **Concurrency Control:** Because updates are asynchronous (e.g., a laser scan might arrive while a control message is being processed), access to these arrays is synchronized using a Python `Lock` object (`self.state_lock`).
+*   **In-place Modification:** Your implementations should modify the entries of the shared NumPy arrays **in-place** whenever possible to avoid the overhead of copying large arrays.
 
-We **also** handle the multiplying out of the individual beam/return probabilities (under our conditional probability assumption) to get the final probability of the entire LIDAR scan. The **only** thing we're asking you to compute in Lab 4 is the probability of an **individual** beam/return:
+---
 
-$$P(z_t^k | x_t)$$
+## Q1: Particle Filter Implementation
 
-Why? Because this is by far the hardest (and most important) part of the entire Sensor Model, of course! 😄 I'm nice, but I'm not _that_ nice 😊
+In this section, you will implement the two missing pieces of the Particle Filter algorithm: initialization and resampling.
 
-### Sensor Model Modes For Single LIDAR Beam
+### Q1.1: Particle Initialization
 
-As discussed in Lecture, we use a mixture of four different components (also called modes) to model the probability of a **single** beam, i.e.
+When the robot first starts, or when a user provides a new "pose estimate" in RViz, we need to initialize our particles. Instead of spreading them randomly across the entire map (which is called "Global Localization"), we will sample them from a Gaussian distribution centered around a known starting state.
 
-$$P(z_t^k | x_t)$$
+**Requirement:** Implement the `ParticleInitializer.reset_click_pose` method in `src/localization/particle_filter.py`. 
 
-Just as a refresher, those four glorious components are:
+**Task:** Initialize the robot's belief by sampling $M$ particles from a Gaussian distribution centered around the state provided by a `geometry_msgs/Pose` message. The spread of this distribution is controlled by parameters you can find in the class.
 
-1.  **Hit (Gaussian noise):** $p_{hit}$ models the case where the laser correctly measures the distance to an obstacle, but with some Gaussian measurement noise.
-2.  **Short (Unexpected obstacles):** $p_{short}$ models the case where an unexpected obstacle (like a person) is between the car and the wall.
-3.  **Max (Sensor failure):** $p_{max}$ models cases where the sensor fails to return a reading (e.g., due to an extremely dark surface).
-4.  **Random (Phantom readings):** $p_{rand}$ models completely unexplainable "phantom" readings.
-
-The mathematical definitions for these modes are:
-
-$$
-\begin{align}
-p_{hit}(z_t^k | x_t) &= \begin{cases} \frac{1}{\sqrt{2\pi\sigma_{hit}^2}} \exp \left\{ -\frac{1}{2} \left( \frac{z_t^k - z_t^{k*}}{\sigma_{hit}} \right)^2 \right\} & 0 \leq z_t^k \leq z_{max} \\ 0 & \text{otherwise} \end{cases} \\
-p_{short}(z_t^k | x_t) &= \begin{cases} 2 \frac{z_t^{k*} - z_t^k}{z_t^{k*}} & z_t^k < z_t^{k*} \\ 0 & \text{otherwise} \end{cases} \\
-p_{max}(z_t^k | x_t) &= \mathbb{I}(z_t^k = z_{max}) \\
-p_{rand}(z_t^k | x_t) &= \begin{cases} \frac{1}{z_{max}} & 0 \leq z_t^k < z_{max} \\ 0 & \text{otherwise} \end{cases}
-\end{align}
-$$
-
-The final probability is a weighted dot product:
-
-$$P(z_t^k | x_t) = w_{hit} \cdot p_{hit} + w_{short} \cdot p_{short} + w_{max} \cdot p_{max} + w_{rand} \cdot p_{rand}$$
-
-### Q1: Implement the Sensor Model
-
-As mentioned earlier, in this question you will implement the computation of single beam/return probabilities. All the other machinery of the Sensor Model is handled by the skeleton class we provide you.
-
-Actually, we're going to do something **even cooler** (if that's even possible). We're going to speed up the sensor model by pre-computing and caching **every single possible** single-beam probability.
-
-How is this even possible? That's actually one of the nice things about this being a **computational robotics** class: we're working completely in simulation. In the simulated MuSHR car world, we don't measure distance in meters or (as freedom-loving people do) feet. Instead, we measure distance in **integer numbers of pixels**. 
-
-The fact that our beam/return distances are integer values means we can build a 2D table of all possible probabilities! Specifically, we will store the LIDAR range values in a table where the index of each row represents the actual measured value, the index of each column represents the expected value for a given LIDAR range, and the value at those coordinates is the probability.
-
-Once you build this 2D table for us representing all possible single-beam probabilities, the rest of our code will take that table and use it to (very quickly) compute the rest of the Sensor Model.
-
-Again: in order to speed up the Sensor Model at runtime, in this question you will implement logic to **precompute** the following sensor model likelihood table:
-*   **Rows** represent the **real** measured beam/return LIDAR value ($z_t^k$).
-*   **Columns** represent the **simulated** (expected) LIDAR value based on raycasting ($z_t^{k*}$).
-*   **Values** represent the _cached_ probability of each real measured LIDAR reading $z_t^k$ (at that row) assuming the simulated LIDAR value $z_t^{k*}$ (at that column). That is:
-
-$$P(z_t^k | x_{t})$$
-
-**Requirement:** Implement the `SingleBeamSensorModel.precompute_sensor_model` method in `src/localization/sensor_model.py`. We have already set up the dimensions of the output table (`prob_table`) for you, but you need to fill it in.
-
-> ### 🛑 HERE BE DRAGONS! (Read This!) 🛑
-> CS 7680 is a graduate class, so we're going to hold your hand on this problem a bit less than we would in an undergraduate one. That said, this problem is **really hard**. Read these hints to save yourself a lot of existential dread and despair.
-> 
-> **Helper Functions:** We've intentionally left it open-ended how you should structure your code. The main thing we'll say though: if you try to do everything in one giant function, you're probably in for a bad time. Break things up.
->
-> **Normalizing:** As an implementation detail, you'll need to make sure each column of `prob_table` is normalized to sum to 1 (this follows from the basic rule that the probabilities of all possible outcomes for an event must sum to 1). You can actually do this in a single line with NumPy: a quick Google search here will help a lot.
->
-> **Parameters:** The parameters $w_{hit}$, $w_{short}$, $w_{max}$, $w_{rand}$ and $\sigma_{hit}$ are provided as instance variables. Note that for the weights the convention in code is a bit different than in lecture: $w_{hit}$, for example, is accessed by `self.z_hit`.
->
-> **Max Sensor Range:** The max sensor range $z_{max}$ is actually passed as the `max_r` parameter to `precompute_sensor_model()`. Not `self.z_max`, which is actually $w_{max}$ (I'm so sorry guys).
->
-> **Gaussian of Zero Standard Deviation** Because your TA and I are evil, we've included a test case where $\sigma_{hit}$ is set to zero. If you just plug this into the standard Gaussian equation, it actually causes a **divide by zero** error (you can stare at the formula and see why). If you see these errors in the autograder, it's probably this. Luckily, computing the probability of a Gaussian of zero standard deviation is actually pretty simple: the probability is 1 at the mean and zero everywhere else. In other words, setting $\sigma$ for a Gaussian to zero turns it into a Dirac Delta (where all the probability is stuffed into a single point).
-{: .post-it }
-
-#### Testing the Sensor Model
+#### Testing Initialization
 To verify your implementation, run:
 ```bash
-python3 $(rospack find localization)/test/sensor_model.py
+python3 $(rospack find localization)/test/particle_initializer.py
+```
+
+### Q1.2: Low-Variance Resampling
+
+Resampling is the process of dropping low-probability particles and duplicating high-probability ones. This focuses our computational resources on the parts of the state space where the robot is most likely to be.
+
+We will implement the **Low-Variance Resampler**, which covers the sample space more systematically than basic random sampling and preserves particles more effectively when weights are equal.
+
+**Algorithm:**
+1. Choose a random number $r \in [0, 1/M]$.
+2. Draw samples corresponding to the sequence of values $r, r + 1/M, r + 2/M, \dots, r + (M-1)/M$.
+3. For each value in the sequence, find the particle whose cumulative weight corresponds to that value.
+
+**Requirement:** Implement the `LowVarianceSampler.resample` method in `src/localization/resampler.py`.
+
+**Tip:** You can use `np.searchsorted` to vectorize the lookup of particles based on the cumulative sum of weights. This is much faster than using a Python loop!
+
+#### Testing Resampling
+To verify your implementation, run:
+```bash
+python3 $(rospack find localization)/test/resample.py
 ```
 
 ---
 
-## Parameter Tuning
+## Q2: Testing and Bag Files
 
-Congrats! Thanks to your hard work, our Sensor Model is fully implemented. Now we just need to find weights and noise parameters that approximate the real car's performance. Note that parameters for the sensor model are stored in
+Now that your filter is implemented, it's time to see it in action!
 
-```bash
-mushr478/localization/config/parameters.yaml
-```
+### Simulation Tests
 
-**Hint:** which between $w_{hit}$, $w_{short}$, $w_{max}$, and $w_{rand}$ do you think should have the largest weight?
-
-**Pro Tip:** Because of how you implemented the sensor model (normalizing each column to 1), we can actually get away here with _not_ having every component weight sum to 1 (though that's usually still best practice). So don't worry about that in your final submission.
-
-### Q2: Exploring and Tuning Parameters
-
-We’ve provided two scripts you can use to tune the Sensor Model. Together these scripts will help you visualize the likelihood of different states (poses) given a **full** LIDAR scan. In other words, the scripts are **approximately** visualizing:
-
-$$P(x_t | z_t)$$
-
-Note that this is the **inverse** of what the sensor model itself computes:
-
-$$P(z_t | x_t)$$
-
-In short, we're using some fancy math (mainly Bayes Rule) to compute these plots. The inverse probability (the first one above) is much more intuitive for a human being to understand!
-
-With that out of the way, let's use these two scripts! First, you'll need to launch the simulator first with a custom map, such as:
+You can test your particle filter in simulation using teleoperation:
 
 ```bash
-roslaunch cse478 teleop.launch map:='$(find cse478)/maps/shapes_world_small.yaml'
+roslaunch localization particle_filter_teleop_sim.launch map:='$(find cse478)/maps/cse2_2.yaml'
 ```
 
-The more interesting the map, the more interesting the laser scan! Try some different maps and poses! To reposition the robot in simulation, **launch RViz** and use the `Publish Point` tool in the RViz toolbar: select the tool, then click where on the map you want the robot to be. You can, of course, teleoperate the robot too. Reposition the robot, then when you’re happy run the likelihood visualization script. This computes the **inverse** probability of the sensor model, which we mentioned above:
+*   Use the **2D Pose Estimate** tool in RViz to initialize the filter.
+*   Use the **Publish Point** tool to move the robot to a new location (teleporting).
+*   Drive the car around and watch the particles converge!
+
+### Running on Recorded Bag Files
+
+A "bag file" is a recording of ROS topics (laser scans, odometry, etc.) from a real or simulated run. We can "play back" these bags to test our localization algorithm offline.
+
+1.  **Download the test bags:**
+    ```bash
+    rosrun localization download_bags.sh
+    ```
+2.  **Run the filter on a bag:**
+    ```bash
+    rostest localization particle_filter.test bag_name:="circle" --text
+    ```
+    You can add `rviz:=true` to see the visualization, or `plot:=true` to generate a path plot.
+
+**Success Criteria:** For the `full.bag` test, your median errors for $x, y$, and $\theta$ should all be less than **0.1**.
+
+### Recording Your Own Bag
+
+Once you have your filter running on the physical car, you need to record a successful localization run.
+
+**Requirement:** Record a bag file of the car driving for at least **25 feet**. The recording must include the initial pose, inferred pose, particles, laser scan, and joystick controls.
 
 ```bash
-rosrun localization make_sensor_model_likelihood_plot
+rosbag record -O localization.bag /initialpose /car/particle_filter/inferred_pose /car/particle_filter/particles /car/teleop/joy /map
 ```
-
-The node may take a few minutes to calculate all of the probabilities for larger maps. When it’s done, a plot will open showing you what your model “thinks” about each position in the map. Color is key here: the darker purple pixels below have low probability assigned, while the brighter, yellower pixels are assigned higher probability:
-
-![lab4_sensor]({{ site.baseurl }}/assets/lab-4-assets/lab4_sensor.png)
-
-The staff solution produces the above plots with our sensor model that is tuned to match the physical MuSHR LIDAR. Try to match these plots by tuning your parameters. Note that the left plot was generated with the robot placed at `[4.25, 5.50, 0]`, while the right plot was generated with the robot placed at `[9, 9, 0]`.
-
-To make plot generation easier, you can position the robot **precisely** by providing arguments to the simulation launch file. For example:
-
-```bash
-roslaunch cse478 teleop.launch map:='$(find cse478)/maps/shapes_world_small.yaml' initial_x:=4.25 initial_y:=5.5 initial_theta:=0
-```
-
-**Note:** In general, you should expect the model to have multiple modes when the scan is ambiguous, i.e. if the car could’ve been in any number of places and “seen” the same thing with its sensor. This pattern is especially obvious in environments with symmetry and happens all the time in realistic maps. For instance, expect hallways to produce a similar effect, with a mode becoming a streak along the axis of the passage. Tuning won’t change the fact that the sensor can’t tell some locations from others, but it will adjust how much confidence the model puts in different types of plausible locations.
-
-**Deliverables:** Tune the parameters of your sensor model ($w_{hit}, w_{short}, w_{max}, w_{rand}, \sigma_{hit}$) to match the reference images above. Place the robot at `[9, 9, 0]`. Then save three versions of the inverse sensor model probability plot as `sm1.png`, `sm2.png`, and `sm3.png` (where `sm3.png` is your final tuned version). Try to get _as close_ to the right figure above as possible, but don't go crazy trying to match it exactly.
-
-**Again:** We will be generous in grading this portion of the lab. As long as your plot looks _vaguely_ similar you should be fine...so don't pull your hair out or drive yourself crazy trying to match the figures exactly. This is more about what you learn from the _journey_ of tuning the parameters!
 
 ---
 
 ## 📝 Write-up
 
-Create a **new file** `localization/writeup/lab4.md`. **List the names and Northeastern emails** of students in your lab group at the top, and answer the following questions:
+Create a **new file** `localization/writeup/lab5.md`. **List the names and Northeastern emails** of students in your lab group at the top, and answer the following questions:
 
-1.  Food for thought: what could be some drawbacks of the conditional independence assumption for LIDAR beams in our sensor model?
-2.  Explain your tuning process for the sensor model parameters. What did you observe as you changed the weights for the four different modes?
+1.  Explain the "Kidnapped Robot Problem." How does your particle filter handle it if you manually move the robot in RViz using the "Publish Point" tool?
+2.  What is the purpose of the "Low-Variance" part of the resampler? How does it differ from simply sampling $M$ particles independently based on their weights?
 
-Please also include the following images from **Q2** in the `localization/writeup/` directory:
+Please also include the following in your submission:
 
-3.  The `sm1.png`, `sm2.png`, and `sm3.png` figures showing your tuning process. Again, we'll try to be generous in grading this.
+3.  A **path plot** generated from a 60-second drive through the CSE2 map in simulation.
+4.  Your **localization.bag** file from the physical car.
 
 ---
 
 ## 🔥 Grading Breakdown
 
-**Total Lab Points:** 85
+**Total Lab Points:** 100
 
-*   **Q1:** 60 points if `python3 $(rospack find localization)/test/sensor_model.py` passes.
-    *   That's 10 points per test (all or nothing per test).
+*   **Q1.1 Initialization:** 20 points if `test/particle_initializer.py` passes.
+*   **Q1.2 Resampling:** 30 points if `test/resample.py` passes.
+*   **Q2.1 Bag Tests:** 20 points if `rostest localization particle_filter.test bag_name:="full"` passes with errors < 0.1.
 *   **Write-Up (Question Answers):** 10 points.
-    *   5 points per question, partial credit may be assigned.
-*   **Write-Up (Images):** 15 points for (reasonable) plots.
-    *   5 points per plot, partial credit may be assigned.
-    *   We wil be generous in grading your `sm3.png`.
+*   **Write-Up (Images & Bag):** 20 points for the path plot and your recorded bag file.
 
 ## 🚀 Submission
 
 When you are finished with the lab, **make sure** to commit all your changes and push them to your private GitHub repository.
 
-Use the Git tag `submit-lab4` to signal completion:
+Use the Git tag `submit-lab5` to signal completion:
 
 ```bash
 $ cd ~/mushr_ws/src/mushr478
-$ git tag submit-lab4
-$ git push origin main submit-lab4
+$ git tag submit-lab5
+$ git push origin main submit-lab5
 ```
 
 ### Re-submitting
 
-If you need to make changes after you have already submitted, follow the same process as Lab 2 and 3:
+If you need to make changes after you have already submitted, follow the standard process:
 
 ```bash
-$ git tag -d submit-lab4
-$ git push origin :refs/tags/submit-lab4
-$ git tag submit-lab4
-$ git push origin submit-lab4
+$ git tag -d submit-lab5
+$ git push origin :refs/tags/submit-lab5
+$ git tag submit-lab5
+$ git push origin submit-lab5
 ```
 
-**Congratulations!** You've completed Lab 4. 🏎️💨
+**Congratulations!** You've completed the Localization project! 🏎️💨
