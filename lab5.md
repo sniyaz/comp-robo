@@ -74,7 +74,11 @@ To implement our resampling, we will also use the **low-variance** approach to r
 **Algorithm:**
 1. Choose a random number $r \in [0, 1/M]$.
 2. Draw samples corresponding to the sequence of values $r, r + 1/M, r + 2/M, \dots, r + (M-1)/M$.
-3. For each value in the sequence, find the particle whose cumulative weight corresponds to that value.
+3. For each value in the sequence, find the particle whose cumulative weight corresponds to that value (referring back to the resampling example from Lecture may be helpful here).
+
+Here's a figure that illustrates this process:
+
+![low-var-resample]({{ site.baseurl }}/assets/lab5-assets/low-var-resample.png)
 
 **Requirement:** Implement the `LowVarianceSampler.resample` method in `src/localization/resampler.py`.
 
