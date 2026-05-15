@@ -157,7 +157,7 @@ Please also include the following in your submission:
 
 *   **Q1:** 30 points if `python3 $(rospack find localization)/test/particle_initializer.py` passes.
     *   That's 15 points per test (all or nothing per test).
-*   **Q3 & Q4:** 60 points if `python3 $(rospack find localization)/test/resample.py` passes.
+*   **Q2:** 60 points if `python3 $(rospack find localization)/test/resample.py` passes.
     *  That's 15 points per test (all or nothing per test).
 *   **Write-Up (Question Answers):** 15 points.
     *   5 points per question, partial credit may be assigned.
