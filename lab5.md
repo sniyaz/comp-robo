@@ -143,6 +143,7 @@ Create a **new file** `localization/writeup/lab5.md`. **List the names and North
 
 1.  Consider the "Kidnapped Robot Problem": this is a classic challenge in robotics where an autonomous robot, while operating, is abruptly moved to an unknown location. How does your particle filter react to it if you manually move the robot in RViz using the "Publish Point" tool?
 2.  What is the purpose of the "Low-Variance" part of the resampler? How does it differ from simply sampling $M$ particles independently based on their weights?
+3. In your path comparison figure from Q3, what do you notice about the error of the estimated path from the ground truth path over time?
 
 Please also include the following in your submission:
 
