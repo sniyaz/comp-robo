@@ -125,6 +125,16 @@ The second script above will let you watch the car drive around in RViz while th
 
 ![low-var-resample]({{ site.baseurl }}/assets/lab5-assets/sherdil-PF.png)
 
+### Path Comparison Deliverable
+
+Once your filter is working, you'll need to generate a figure that compares the ground truth path (from the bag file) with your filter's estimated path. Just like the one from me above!
+
+**Grading Policy:** I want to stress that your path just has to look **somewhat reasonable** compared to the ground truth! As I've said before, the point of this class is for you to learn these fundamental algorithms, not to spend forty hours tuning parameters. If your path follows the general shape of the ground truth, I will be very nice in grading.
+
+**Tuning for Performance:** That said, if you *do* want to see better performance, you can always go back and tune your sensor model weights (from Lab 4) or your motion model noise parameters (from Lab 3). Finding the right balance between the two is a big part of "real" robotics engineering!
+
+**Note on Variability:** Each time you run the plotting script, the car might follow a slightly different path (since the particle filter is a stochastic algorithm) or the script might pick a different bag file. Feel free to try a few runs until you get a plot you're happy with!
+
 ---
 
 ## 📝 Write-up
