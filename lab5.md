@@ -69,7 +69,7 @@ python3 $(rospack find localization)/test/particle_initializer.py
 
 Resampling is the process of dropping low-probability particles and duplicating high-probability ones. As mentioned in Lecture, this focuses our computational resources on the regions of the HMM belief where the robot is most likely to be.
 
-To implement our resampling, we will also use the **low-variance** approach to random number generation mentioned towards the end of Lecture. This has the appraoch of covering the sample space more systematically than basic random sampling.
+To implement our resampling, we will also use the **low-variance** approach to random number generation mentioned towards the end of Lecture. This has the approach of covering the sample space more systematically than basic random sampling.
 
 **Algorithm:**
 1. Choose a random number $r \in [0, 1/M]$.
@@ -84,11 +84,17 @@ Here's a figure that illustrates this process:
 
 **Tip:** You can use `np.searchsorted` to vectorize the lookup of particles based on the cumulative sum of weights. This is much faster than using a Python loop!
 
+**Hint 1:** One of the tests _specifically_ makes sure that you don't resample particles of zero weight. Make sure when you're putting things together that you don't introduce a bug where this happens.
+
+**Hint 2:** This is quite a difficult problem, so it might be useful to print things to debug. Note that when you run the Python test below, print statements don't show up. They get saved to an `.xml` file (the test will give you the exact path).
+
 #### Testing Resampling
 To verify your implementation, run:
 ```bash
 python3 $(rospack find localization)/test/resample.py
 ```
+
+# WHAT IN PLACE MEANS DAMMIT
 
 ---
 
@@ -116,9 +122,9 @@ roslaunch localization particle_filter_teleop_sim.launch map:='$(find cse478)/ma
     ```
 2.  **Run the filter on the "full" bag:**
     ```bash
-    rostest localization particle_filter.test bag_name:="full" --text
+    rostest localization particle_filter.test bag_name:="full" rviz:="true" plot:="true" --text
     ```
-    You can add `rviz:=true` to see the visualization, or `plot:=true` to generate a path plot.
+    
 
 **Success Criteria:** For the `full.bag` test, your median errors for $x, y$, and $\theta$ should all be less than **0.1**.
 
