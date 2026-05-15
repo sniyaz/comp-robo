@@ -153,13 +153,17 @@ Please also include the following in your submission:
 
 ## 🔥 Grading Breakdown
 
-**Total Lab Points:** 100
+**Total Lab Points:** 120
 
-*   **Q1 Initialization:** 20 points if `test/particle_initializer.py` passes.
-*   **Q2 Resampling:** 30 points if `test/resample.py` passes.
-*   **Q3 Bag Tests:** 30 points if `rostest localization particle_filter.test bag_name:="full"` passes with errors < 0.1.
-*   **Write-Up (Question Answers):** 10 points.
-*   **Write-Up (Path Plot):** 10 points for the path plot.
+*   **Q1:** 30 points if `python3 $(rospack find localization)/test/particle_initializer.py` passes.
+    *   That's 15 points per test (all or nothing per test).
+*   **Q3 & Q4:** 60 points if `python3 $(rospack find localization)/test/resample.py` passes.
+    *  That's 15 points per test (all or nothing per test).
+*   **Write-Up (Question Answers):** 15 points.
+    *   5 points per question, partial credit may be assigned.
+*   **Write-Up (Figure):** 15 points for a reasonable path comparison plot.
+    *   Partial credit may be assigned.
+    *   Again, we'll try to be generous in grading your `path_compare.png`. See the notes in Q3 for more details.
 
 ## 🚀 Submission
 
@@ -184,4 +188,4 @@ $ git tag submit-lab5
 $ git push origin submit-lab5
 ```
 
-**Congratulations!** You've completed the Localization project! 🏎️💨
+**Congratulations!** You've completed the Perception module in CS 7680! 🏎️💨
