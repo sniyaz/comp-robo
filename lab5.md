@@ -110,29 +110,20 @@ Now that your filter is implemented, it's time to see it in action! A "bag file"
 
 ### Simulation and Visualization
 
-Before running the official tests, you can test your particle filter in simulation using teleoperation:
-
-```bash
-roslaunch localization particle_filter_teleop_sim.launch map:='$(find cse478)/maps/cse2_2.yaml'
-```
-
-*   Use the **2D Pose Estimate** tool in RViz to initialize the filter.
-*   Use the **Publish Point** tool to move the robot to a new location (teleporting).
-*   Drive the car around and watch the particles converge!
-
-### Running the Tests
+We'll replay some _real_ sensor readings from a _real_ MuSHR car using a bag file as mentioned above. To do this:
 
 1.  **Download the test bags:**
     ```bash
     rosrun localization download_bags.sh
     ```
-2.  **Run the filter on the "full" bag:**
+2.  **Run your particle filter on one of the test bags:**
     ```bash
     rostest localization particle_filter.test bag_name:="full" rviz:="true" plot:="true" --text
     ```
-    
 
-**Success Criteria:** For the `full.bag` test, your median errors for $x, y$, and $\theta$ should all be less than **0.1**.
+The second script above will let you watch the car drive around in RViz while the particles converge! It will also (more importantly) show you a figure of the **most likely** path according to your particle filter versus the path we know the car took when recording that particular bag file. Here's an example with my solution:
+
+![low-var-resample]({{ site.baseurl }}/assets/lab5-assets/sherdil-PF.png)
 
 ---
 
