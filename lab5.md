@@ -88,13 +88,19 @@ Here's a figure that illustrates this process:
 
 **Hint 2:** This is quite a difficult problem, so it might be useful to print things to debug. Note that when you run the Python test below, print statements don't show up. They get saved to an `.xml` file (the test will give you the exact path).
 
+**Hint 3:** 
+> ### 🛑 STOP! READ THIS OR BE SAD! 🛑
+>
+> **WHAT DOES IN-PLACE MEAN?** In this lab, the `particles` and `weights` arrays are **shared** between several different classes. To make sure your changes actually "stick," you MUST modify the original objects in memory. 
+> 
+> **DO NOT** reassign the instance variables to a new object (e.g., `self.particles = new_particles`). This will break the shared memory link and your filter will stop working. Instead, you MUST edit the original array **index by index** to ensure the changes persist across the entire system!
+{: .post-it }
+
 #### Testing Resampling
 To verify your implementation, run:
 ```bash
 python3 $(rospack find localization)/test/resample.py
 ```
-
-# WHAT IN PLACE MEANS DAMMIT
 
 ---
 
