@@ -43,5 +43,5 @@ schedule:
         - name: Office Hours
           start: 10:00 AM
           end: 11:00 AM
-          location: TEAMS
+          location: '<a href="https://meet.google.com/rwx-emaz-oci">GMEET</a>'
 ---

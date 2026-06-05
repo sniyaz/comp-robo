@@ -90,6 +90,11 @@
     .time,
     .location {
       @extend .fs-2;
+
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
     }
 
     &.lecture {

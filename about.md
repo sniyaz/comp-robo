@@ -28,7 +28,7 @@ description: >-
 
 **Lab:** 6:50 - 8:20PM Wednesdays
 
-**Office Hours:** 10-11AM Saturdays, via Teams
+**Office Hours:** 10-11AM Saturdays, via [Google Meet](https://meet.google.com/rwx-emaz-oci)
 
 ## Course Description
 
