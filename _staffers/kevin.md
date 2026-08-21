@@ -1,7 +1,7 @@
 ---
 name: Sherdil Niyaz
 role: Instructor
-email:  TODO@northeastern.edu
+email: s.niyaz@northeastern.edu
 website: https://sniyaz.weebly.com
 photo: sniyaz-blue.png
 ---

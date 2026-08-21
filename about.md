@@ -20,7 +20,7 @@ description: >-
 
 **Instructor:** Sherdil Niyaz
 
-**Northeastern Email:** TODO AT northeastern DOT edu
+**Northeastern Email:** [s.niyaz@northeastern.edu](mailto:s.niyaz@northeastern.edu)
 
 **Final Exam Time:** TBD Dec 2026
 
