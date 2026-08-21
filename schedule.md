@@ -4,13 +4,15 @@ title: Office Hours + Schedule
 description: The weekly event schedule.
 ---
 
-## Office Hours Instructions
+## Office Hour Details
 
-**Google Meet link** for Sherdil's office hours: click [here](https://meet.google.com/rwx-emaz-oci).
+**Sherdil Office Hours (Virtual)** Google Meet [here](https://meet.google.com/rwx-emaz-oci).
 
-### How to Queue
+**TA Office Hours (In-Person):** TBD
 
-To queue for office hours, please follow these steps:
+### How to Queue Online
+
+To queue for online (virtual) office hours, please follow these steps:
 
 1.  **Find the Thread:** Go to Piazza and find the **pinned post** for the current week's office hours (e.g., "Week 1 Office Hours Queue").
 2.  **Post Your Question:** Add a comment to that thread with a short description of what you're working on and the specific issue you're facing. For example:
