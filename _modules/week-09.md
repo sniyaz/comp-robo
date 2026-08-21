@@ -1,12 +1,12 @@
 ---
-title: Week 9 → TODO
+title: Week 9 → Search
 ---
 
 Nov 3
 : **Lab 7 due**{: .label .label-red }
 
 Nov 4
-: **TODO**
+: **Searching Graphs**
   : [slides](#)
-: **Lab 8**{: .label .label-purple } TODO
+: **Lab 8**{: .label .label-purple } A* Search
 

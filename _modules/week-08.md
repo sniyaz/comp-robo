@@ -1,9 +1,9 @@
 ---
-title: Week 8 → TODO
+title: Week 8 → Configuration Space
 ---
 
 Oct 28
-: **TODO**
+: **Configuration Space + Roadmaps**
   : [slides](#)
-: **Lab 7**{: .label .label-purple } TODO
+: **Lab 7**{: .label .label-purple } Sampling
 
