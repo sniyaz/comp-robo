@@ -40,7 +40,7 @@ schedule:
   - name: Friday
   - name: Saturday
     events:
-        - name: Office Hours
+        - name: Sherdil's Office Hours
           start: 10:00 AM
           end: 11:00 AM
           location: '<a href="https://meet.google.com/rwx-emaz-oci">GMEET</a>'
