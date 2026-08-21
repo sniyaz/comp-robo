@@ -151,7 +151,7 @@ I have gotten pretty good at spotting LLM-generated code, both in teaching and i
 
 ## Final Thoughts
 
-I don't want this document to end with a scary section about cheating, so instead I'll end with this: I am **super excited** to be your instructor this semester. I love to teach, and I can't wait to see how you'll learn and grow this term. Welcome to CS 7680! 🎉
+I don't want this document to end with a scary section about cheating, so instead I'll end with this: I am **super excited** to be your instructor this semester. I love to teach, and I can't wait to see how you'll learn and grow this term. Welcome to CS 6983! 🎉
 
 Some other closing notes:
 

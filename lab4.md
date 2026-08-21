@@ -86,7 +86,7 @@ $$P(z_t^k | x_{t})$$
 **Requirement:** Implement the `SingleBeamSensorModel.precompute_sensor_model` method in `src/localization/sensor_model.py`. We have already set up the dimensions of the output table (`prob_table`) for you, but you need to fill it in.
 
 > ### 🛑 HERE BE DRAGONS! (Read This!) 🛑
-> CS 7680 is a graduate class, so we're going to hold your hand on this problem a bit less than we would in an undergraduate one. That said, this problem is **really hard**. Read these hints to save yourself a lot of existential dread and despair.
+> CS 6983 is a graduate class, so we're going to hold your hand on this problem a bit less than we would in an undergraduate one. That said, this problem is **really hard**. Read these hints to save yourself a lot of existential dread and despair.
 > 
 > **Helper Functions:** We've intentionally left it open-ended how you should structure your code. The main thing we'll say though: if you try to do everything in one giant function, you're probably in for a bad time. Break things up.
 >

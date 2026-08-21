@@ -6,10 +6,10 @@ description: >-
 nav_exclude: true
 ---
 
-# GitHub in CS 7680
+# GitHub in CS 6983
 {:.no_toc}
 
-Heads up: we will use GitHub to submit the Labs in CS 7680. Please do all of the following **before** the first day of class, or you **will be behind**!
+Heads up: we will use GitHub to submit the Labs in CS 6983. Please do all of the following **before** the first day of class, or you **will be behind**!
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -29,7 +29,7 @@ You will create **your own** copy of our class repository in this step. You will
 
 ### Create a Copy of the Template Repository
 
-Here is the template repository for Lab assignments in CS 7680 (we are borrowing a lot of infrastructure from the Computational Robotics course at the University of Washington):
+Here is the template repository for Lab assignments in CS 6983 (we are borrowing a lot of infrastructure from the Computational Robotics course at the University of Washington):
 
 [https://github.com/sniyaz/mushr478](https://github.com/sniyaz/mushr478)
 

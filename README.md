@@ -1,16 +1,16 @@
 ---
 layout: home
-title: CS 7680
+title: CS 6983
 nav_exclude: true
 permalink: /:path/
 seo:
   type: Course
-  name: CS 7680
+  name: CS 6983
 ---
 
-# CS 7680, Fall 2026
+# CS 6983, Fall 2026
 
-Welcome to CS 7680 (Computational Robotics) at Northeastern! This course page is intended as a "home page" for our course where you can find all of the resources we will use this term.
+Welcome to CS 6983 (Computational Robotics) at Northeastern! This course page is intended as a "home page" for our course where you can find all of the resources we will use this term.
 
 If you have any questions, feel free to reach out to Sherdil directly :)
 

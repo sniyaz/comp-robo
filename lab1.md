@@ -2,7 +2,7 @@
 layout: page
 title: Lab 1
 description: >-
-    Instructions for setting up the CS 7680 Virtual Machine.
+    Instructions for setting up the CS 6983 Virtual Machine.
 nav_exclude: true
 ---
 
@@ -17,7 +17,7 @@ nav_exclude: true
 
 ---
 
-Welcome to Lab 1! Here, we'll set up the class VM for the rest of the semester and learn a bit about ROS. We'll also get familiar with the GitHub process you'll use to submit your assignments in CS 7680.
+Welcome to Lab 1! Here, we'll set up the class VM for the rest of the semester and learn a bit about ROS. We'll also get familiar with the GitHub process you'll use to submit your assignments in CS 6983.
 
 ## GitHub Account and Class Repo
 
@@ -264,7 +264,7 @@ You can use whichever way you like, but note that single quotes (') are importan
 
 ⚠️ **NOTE:** Remember, RViz is a **node** that is subscribing to the **specific** simulator node you launch in the other terminal. That means that if you already have a pair of a simulator + RViz node running that were launched with _one_ map, you'll need to close them both, relaunch the simulator node with the `cse2_2.yaml` map, and _then_ relaunch RViz to see the new map environment.
 
-## Running Tests in CS 7680
+## Running Tests in CS 6983
 
 Each package contains a test directory with unit and integration tests built with the `rosunit` framework. The `catkin test` command provides a summary view of all test suites.
 
@@ -297,7 +297,7 @@ $ python3 $(rospack find introduction)/test/fibonacci.py
 
 Now that you have the simulator running and understand how to run tests, it's time to write some code! You will be working in the `introduction` folder inside your `mushr478` repository. Note that there is only one coding question on this lab- but usually we will have more!
 
-⚠️ NOTE: The class VM already comes with VSCode installed. This is the recommended editor for CS 7680: make sure to pin it to the "favorites" sidebar in the VM as well!
+⚠️ NOTE: The class VM already comes with VSCode installed. This is the recommended editor for CS 6983: make sure to pin it to the "favorites" sidebar in the VM as well!
 
 ### Your First Publisher Node!
 

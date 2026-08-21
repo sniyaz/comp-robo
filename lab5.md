@@ -188,4 +188,4 @@ $ git tag submit-lab5
 $ git push origin submit-lab5
 ```
 
-**Congratulations!** You've completed the Perception module in CS 7680! 🏎️💨
+**Congratulations!** You've completed the Perception module in CS 6983! 🏎️💨
