@@ -6,9 +6,9 @@ description: The weekly event schedule.
 
 ## Office Hour Details
 
-**Sherdil Office Hours (Virtual)** Google Meet [here](https://meet.google.com/rwx-emaz-oci).
-
 **TA Office Hours (In-Person):** TBD
+
+**Sherdil Office Hours (Virtual)** Google Meet [here](https://meet.google.com/rwx-emaz-oci).
 
 ### How to Queue Online
 
