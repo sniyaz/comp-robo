@@ -27,27 +27,41 @@ You will create **your own** copy of our class repository in this step. You will
 
 **⚠️ Danger! ⚠️** Please make sure to follow these instructions **exactly** and to the letter. If you make any mistakes, it will interfere with the tools I use to grade your work from GitHub.
 
-### Create a Copy of the Template Repository
+### Creating Your (Empty) Repo
 
-Here is the template repository for Lab assignments in CS 6983 (we are borrowing a lot of infrastructure from the Computational Robotics course at the University of Washington):
-
-[https://github.com/sniyaz/mushr478](https://github.com/sniyaz/mushr478)
-
-On the GitHub repo page, you'll see a button to `use this template` (see red box in photo below). Click that button and select the `create a new repository` option.
-
-![Create new repo from template]({{ site.baseurl }}/assets/lab1-assets/create-template.png)
-
-This should take you to the screen below. Make sure you fill this out exactly as shown below. That means:
+You'll start off by creating a **new** (empty) repository on GitHub as you usually would. However, are there are a few **mandatory** settings you must use:
 
 **⚠️ MANDATORY SETTINGS ⚠️**
 - **Repository name:** You **MUST** name your repository `mushr478`.
-- **Privacy:** You **MUST** set the repository to **Private**. 
+- **Privacy:** You **MUST** set the repository to **Private**.
 
 Failure to set your repository to Private will result in a **5 point penalty** on Lab 1. I need these settings to be exactly as specified to be able to grade your work.
 
-![Repository settings screen]({{ site.baseurl }}/assets/lab1-assets/repo-screen.png)
+Go ahead and **clone** this (empty) repo to your laptop, then go to the next step below.
 
-Once you have these settings set **exactly**, go ahead and click the `create repository button`! We're almost done.
+### Link To Skeleton Repo
+
+Now, we will add the `skeleton` remote repository. You will pull from this
+remote repository to get the starter code for the labs this semester. (Make sure that you are
+within your newly created repository folder when you continue with these
+commands.) Enter the following command to add the `skeleton` remote.
+
+```shell
+git remote add skeleton git@github.com:sniyaz/mushr478.git
+```
+
+Listing the remotes should now show both the `origin` and `skeleton` remotes.
+
+```shell
+git remote -v
+```
+
+{: .info}
+> If you see an error like `fatal: not a git repository` make sure you have properly moved into your class repo's directory using `cd`.
+
+### Pulling Lab Code
+
+TODO
 
 ### Add Collaborator
 
