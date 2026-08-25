@@ -37,8 +37,6 @@ You'll start off by creating a **new** (empty) repository on GitHub as you usual
 
 Failure to set your repository to Private will result in a **5 point penalty** on Lab 1. I need these settings to be exactly as specified to be able to grade your work.
 
-Go ahead and **clone** this (empty) repo to your laptop, then go to the next step below.
-
 ### Link To Skeleton Repo
 
 Now, we will add the `skeleton` remote repository. You will pull from this
@@ -61,7 +59,23 @@ git remote -v
 
 ### Pulling Lab Code
 
-TODO
+This `skeleton` remote repository contains the skeleton code for the Labs! It already contains all the assignments (but you may need to re-pull at some point this semester if we need to update an assignment).
+
+For now, pull from the skeleton for the first time, filling your (previously) empty repo! First ensure that you are in your class repository's directory, then:
+
+```shell
+git pull skeleton main
+```
+
+This fetches all remote files from the repo named `skeleton` (which is located at `https://github.com/sniyaz/mushr478`) and copies them into your current folder.
+
+{: .warning}
+> If you get an error similar to `fatal: refusing to merge unrelated histories`,
+> you can fix this each time by using
+> 
+> ```shell
+> git pull --no-rebase --allow-unrelated-histories skeleton main
+> ```
 
 ### Add Collaborator
 
