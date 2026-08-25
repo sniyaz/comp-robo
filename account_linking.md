@@ -36,9 +36,12 @@ You'll start off by creating a **new** (empty) repository on GitHub as you usual
 - **Privacy:** You **MUST** set the repository to **Private**.
 
 Failure to set your repository to Private will result in a **5 point penalty** on Lab 1. I need these settings to be exactly as specified to be able to grade your work.
+
+**Note:** The repository you just made should stay empty until Lab 1 in class! Don't worry about having nothing there yet.
+
 ### Add Collaborator
 
-Finally, you **MUST** add me (`sniyaz`) as a collaborator on your private repository. This is how I will access and grade your code throughout the semester.
+Next, you **MUST** add my GitHub handle (`sniyaz`) and the TA's (`RipZou`) as collaborators on your private repository. This is how we will access and grade your code throughout the semester.
 
 1. In your new `mushr478` repository, go to **Settings** -> **Collaborators**.
 2. Click **Add people**.
@@ -49,6 +52,8 @@ See the photos **below** for a visual guide!
 ![Collab 1]({{ site.baseurl }}/assets/lab1-assets/collab-1.png)
 
 ![Collab 2]({{ site.baseurl }}/assets/lab1-assets/collab-2.png)
+
+**Repeat** this process to add the TA as a collaborator as well.
 
 ## ⚠️ Linking Form ⚠️
 
