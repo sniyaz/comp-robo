@@ -86,6 +86,65 @@ If you see an error stating "Not enough physical memory is available," navigate 
 #### 3D Graphics Acceleration
 It is highly recommended to enable **3D Graphics Acceleration** in the VM settings to improve the frame rate in RViz and other simulation tools. This usually requires a full VM shutdown before the setting can be changed.
 
+## Link to Skeleton Repo and Pulling Lab Code
+
+To set the `skeleton` remote and pull the starter code, you must first clone your class repository into the VM.
+
+First, clone your class repository into the `~/mushr_ws/src` folder:
+
+```bash
+$ cd ~/mushr_ws/src/
+$ git clone git@github.com:<your-github-handle>/mushr478.git
+```
+
+Now, enter your class repository folder:
+
+```bash
+$ cd ~/mushr_ws/src/mushr478
+```
+
+### Link To Skeleton Repo
+
+Now, we will add the `skeleton` remote repository. You will pull from this remote repository to get the starter code for the labs this semester. Enter the following command to add the `skeleton` remote.
+
+```bash
+$ git remote add skeleton git@github.com:sniyaz/mushr478.git
+```
+
+Listing the remotes should now show both the `origin` and `skeleton` remotes.
+
+```bash
+$ git remote -v
+```
+
+{: .info}
+> If you see an error like `fatal: not a git repository` make sure you have properly moved into your class repo's directory using `cd`.
+
+### Pulling Lab Code
+
+This `skeleton` remote repository contains the skeleton code for the Labs! It already contains all the assignments (but you may need to re-pull at some point this semester if we need to update an assignment).
+
+For now, pull from the skeleton for the first time, filling your (previously) empty repo! First ensure that you are in your class repository's directory, then:
+
+```bash
+$ git pull skeleton main
+```
+
+This fetches all remote files from the repo named `skeleton` (which is located at `https://github.com/sniyaz/mushr478`) and copies them into your current folder.
+
+{: .warning}
+> If you get an error similar to `fatal: refusing to merge unrelated histories`, you can fix this each time by using:
+> 
+> ```bash
+> $ git pull --no-rebase --allow-unrelated-histories skeleton main
+> ```
+
+Finally, push the pulled code back to your own private repository so that your GitHub copy is up to date:
+
+```bash
+$ git push origin main
+```
+
 ## Getting Started with ROS
 
 The Robot Operating System (ROS) is a robotics middleware framework (not actually an operating system) that is commonly used in robotics platforms. ROS is used as an interprocess communications provider. By implementing functionalities in many separate “nodes” (each their own process) and relying on ROS mechanisms to communicate, we can seamlessly integrate custom software with existing, off-the-shelf ROS components. **Gaining a grasp of fundamental ROS concepts will help you make the most of the many robots which use ROS.**
@@ -144,12 +203,7 @@ $ source ~/dependencies_ws/devel/setup.bash
 
 **Great!** We've built the dependencies workspace. Now we’re going to build and activate the main project workspace (`mushr_ws`).
 
-First, clone your class repository into the `~/mushr_ws/src` folder:
-
-```bash
-$ cd ~/mushr_ws/src/
-$ git clone git@github.com:<your-github-handle>/mushr478.git
-```
+*(If you followed the instructions in the **Link to Skeleton Repo and Pulling Lab Code** section above, your repository is already cloned into `~/mushr_ws/src`.)*
 
 **With your class repo cloned**, we can now build and activate the main project workspace (`mushr_ws`):
 
