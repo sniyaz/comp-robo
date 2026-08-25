@@ -23,7 +23,7 @@ First, you can create a GitHub account [here](https://github.com/signup) if you 
 
 ## Create Your Class Repo
 
-You will create **your own** copy of our class repository in this step. You will use the same repository this semester for all labs: many of the lab assignments actually build on each other!
+You will create **your own** class repository in this step. You will use the same repository this semester for all labs: many of the lab assignments actually build on each other!
 
 **⚠️ Danger! ⚠️** Please make sure to follow these instructions **exactly** and to the letter. If you make any mistakes, it will interfere with the tools I use to grade your work from GitHub.
 
