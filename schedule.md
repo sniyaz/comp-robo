@@ -6,7 +6,7 @@ description: The weekly event schedule.
 
 ## Office Hour Details
 
-**TA Office Hours (In-Person):** TBD
+**TA Office Hours (In-Person):** 10th Floor Student Lounge & Kitchen
 
 **Sherdil Office Hours (Virtual)** Google Meet [here](https://meet.google.com/rwx-emaz-oci).
 

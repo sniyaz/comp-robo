@@ -30,6 +30,8 @@ description: >-
 
 **Sherdil's Office Hours:** 10-11AM Saturdays, via [Google Meet](https://meet.google.com/rwx-emaz-oci)
 
+**TA Office Hours:** 10-11AM Fridays, 10th Floor Student Lounge & Kitchen
+
 ## Course Description
 
 This course explores the computational foundations of autonomous systems, organized around the **Sense, Plan, Act** paradigm: the fundamental cycle that enables robots to interact intelligently with the physical world. While robotics is inherently interdisciplinary, this class focuses **strictly** on the algorithmic and software challenges of autonomy, rather than mechanical design or hardware construction.

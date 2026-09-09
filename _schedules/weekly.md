@@ -38,10 +38,17 @@ schedule:
         end: 8:20 PM
   - name: Thursday
   - name: Friday
+    events:
+      - name: TA Office Hours
+        class: office-hours
+        start: 10:00 AM
+        end: 11:00 AM
+        location: 10th Floor Student Lounge & Kitchen
   - name: Saturday
     events:
-        - name: Sherdil's Office Hours
-          start: 10:00 AM
-          end: 11:00 AM
-          location: '<a href="https://meet.google.com/rwx-emaz-oci">GMEET</a>'
+      - name: Sherdil's Office Hours
+        class: office-hours
+        start: 10:00 AM
+        end: 11:00 AM
+        location: '<a href="https://meet.google.com/rwx-emaz-oci">GMEET</a>'
 ---
