@@ -41,14 +41,14 @@ schedule:
   - name: Thursday
   - name: Friday
     events:
-      - name: TA Office Hours
+      - name: TA OH
         class: office-hours
         start: 10:00 AM
         end: 11:00 AM
-        location: 10th Floor Student Lounge & Kitchen
+        location: 10th Floor Lounge
   - name: Saturday
     events:
-      - name: Sherdil's Office Hours
+      - name: Sherdil's OH
         class: office-hours
         start: 10:00 AM
         end: 11:00 AM
