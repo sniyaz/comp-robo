@@ -22,7 +22,7 @@ description: >-
 
 **Northeastern Email:** [s.niyaz@northeastern.edu](mailto:s.niyaz@northeastern.edu)
 
-**Final Exam Time:** TBD Dec 2026
+**Final Exam Time:** Wednesday, Dec 16, 5:00 - 8:20PM
 
 **Lecture:** 5:00 - 6:30PM Wednesdays
 
