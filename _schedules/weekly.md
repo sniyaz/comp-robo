@@ -43,14 +43,14 @@ schedule:
     events:
       - name: TA OH
         class: office-hours
-        start: 10:00 AM
-        end: 11:00 AM
+        start: 10 AM
+        end: 11 AM
         location: 10th Floor Lounge
   - name: Saturday
     events:
       - name: Sherdil's OH
         class: office-hours
-        start: 10:00 AM
-        end: 11:00 AM
+        start: 10 AM
+        end: 11 AM
         location: '<a href="https://meet.google.com/rwx-emaz-oci">GMEET</a>'
 ---
