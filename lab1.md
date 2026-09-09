@@ -408,7 +408,7 @@ To see the output directly without the automated tests, follow these steps acros
 
 ## 📝 Write-up
 
-Our labs will also have a write-up portion (usually)! Create a **new file** `introduction/writeup/lab1.md`, and answer the following questions:
+Our labs will also have a write-up portion (usually)! Create a **new file** `introduction/writeup/lab1.md`. **List the names and Northeastern emails** of students in your lab group at the top, and answer the following questions:
 
 1.  Explain ROS nodes, topics, publishers, and subscribers in your own words.
 2.  Explain what a ROS launch file is and why it's useful.
