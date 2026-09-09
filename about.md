@@ -24,9 +24,9 @@ description: >-
 
 **Final Exam Time:** Wednesday, Dec 16, 5:00 - 8:20PM
 
-**Lecture:** 5:00 - 6:30PM Wednesdays
+**Lecture:** 5:00 - 6:30PM Wednesdays, Room 916
 
-**Lab:** 6:50 - 8:20PM Wednesdays
+**Lab:** 6:50 - 8:20PM Wednesdays, Room 916
 
 **Sherdil's Office Hours:** 10-11AM Saturdays, via [Google Meet](https://meet.google.com/rwx-emaz-oci)
 

@@ -30,12 +30,14 @@ schedule:
       - name: Lecture
         start: 5:00 PM
         end: 6:30 PM
+        location: Room 916
       - name: Break
         start: 6:30 PM
         end: 6:50 PM
       - name: Lab
         start: 6:50 PM
         end: 8:20 PM
+        location: Room 916
   - name: Thursday
   - name: Friday
     events:
