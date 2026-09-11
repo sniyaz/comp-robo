@@ -6,7 +6,7 @@ Oct 13
 : **Lab 5 due**{: .label .label-red }
 
 Oct 14
-: **Intro to Planning**
+: **Introduction to Motion Planning**
   : [slides](#)
 : **Lab 6**{: .label .label-purple } Practice Midterm Work Time
 
