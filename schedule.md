@@ -14,7 +14,7 @@ description: The weekly event schedule.
 
 To queue for help (either online or in-person) please join the online queue [here](https://queuestatus.com/queues/3521). This is also accessible from the top right bar of the webpage.
 
-**Note:** To join the queue, you will need to sign up for an account using QueueStatus (the service provider).
+**Note:** To join the queue, you will need to sign up for an account using QueueStatus (the service provider) **using your Northeastern email**.
 
 **Don't worry** if you don't see the instructor in the main Google Meet call: they are helping another student in a breakout room.
 
