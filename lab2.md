@@ -92,9 +92,20 @@ Now, let’s use the `PoseListener` to actually collect some data! In `scripts/p
     ```bash
     roslaunch cse478 teleop.launch map:='$(find mushr_sim)/maps/sandbox.yaml'
     ```
-2.  **In another terminal**, launch the path publisher to have the car follow a "figure 8" plan (**feel free** to follow along in RViz if you would like!)
+
+2. Launch **rviz** so you can see the simulated robot!
+    ```bash
+    rosrun rviz rviz -d ~/mushr_ws/src/mushr478/cse478/config/default.rviz
+    ```
+
+3.  **In another terminal**, launch the path publisher to have the car follow a "figure 8" plan (**feel free** to follow along in RViz if you would like!)
     ```bash
     roslaunch introduction path_publisher.launch plan_file:='$(find introduction)/plans/figure_8.txt'
+    ```
+
+4. **Only once you've coded Q5 below** (and right after the car starts moving in Step 3) run the script from Q5 for some cool plots about the car's trajectory!
+    ```bash
+    ./scripts/pose_listener
     ```
 
 ### Q5: Distance Calculation and Plotting
