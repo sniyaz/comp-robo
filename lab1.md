@@ -351,7 +351,10 @@ $ python3 $(rospack find introduction)/test/fibonacci.py
 
 Now that you have the simulator running and understand how to run tests, it's time to write some code! You will be working in the `introduction` folder inside your `mushr478` repository. Note that there is only one coding question on this lab- but usually we will have more!
 
-⚠️ NOTE: The class VM already comes with VSCode installed. This is the recommended editor for CS 6983: make sure to pin it to the "favorites" sidebar in the VM as well!
+⚠️ **NOTE:** VS Code is the recommended editor for CS 6983: make sure to pin it to the "favorites" sidebar in the VM as well!
+
+{: .warning}
+> ⚠️ **Windows Host Users:** For Windows host users, the VM may not come with VS Code pre-installed. If it is not present on your VM, you will need to install VS Code inside the VM.
 
 ### Your First Publisher Node!
 

@@ -182,6 +182,9 @@ def wrap_angle(angle):
         return wrapped
 ```
 
+{: .warning}
+> ⚠️ **Important Warning on `wrap_angle`:** This method is meant to be applied to a **scalar value**. Do **not** try to pass entire NumPy vectors or matrices to it directly! We recommend iterating through your final states after applying the motion model and applying this scalar clamping/wrapping with a `for` loop (or something similar).
+
 #### Testing The Motion Model
 After completing both Q3 and Q4, expect your code to pass all the test cases when running:
 ```bash
