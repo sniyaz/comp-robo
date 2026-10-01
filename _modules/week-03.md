@@ -2,6 +2,9 @@
 title: Week 3 → Motion Models
 ---
 
+Prep
+: **Prep 3**{: .label .label-green} [Gaussian Notes](https://cs229.stanford.edu/section/gaussians.pdf)
+
 Sep 22
 : **Lab 2 due**{: .label .label-red }
 
