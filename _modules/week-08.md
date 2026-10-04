@@ -5,5 +5,5 @@ title: Week 8 → Configuration Space
 Oct 28
 : **Configuration Space + Roadmaps**
   : [slides](#)
-: **Lab 7**{: .label .label-purple } Sampling
+: **Lab 7**{: .label .label-purple } [Sampling](./lab7)
 
