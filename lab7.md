@@ -18,7 +18,7 @@ nav_exclude: true
 
 ---
 
-![Planning]({{ site.baseurl }}/assets/lab7-assets/plan.svg)
+![Planning]({{ site.baseurl }}/assets/lab7-assets/plan.png)
 
 ## Overview
 
