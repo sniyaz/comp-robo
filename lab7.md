@@ -18,7 +18,7 @@ nav_exclude: true
 
 ---
 
-![Planning]({{ site.baseurl }}/assets/lab7-assets/plan.png)
+![Planning]({{ site.baseurl }}/assets/lab7-assets/plan.png){: style="width: 60%;" }
 
 ## Overview
 
