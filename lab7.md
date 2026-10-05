@@ -53,7 +53,7 @@ The `Roadmap` class contains many useful methods and fields. Three fields are of
 
 ## Q1: Halton Sampling
 
-Complete the `HaltonSampler` class in `samplers.py`. The `HaltonSampler` maintains a separate generator (with a separate `base`) for each dimension of the configuration space. The `compute_sample` method returns a deterministic sample between 0 and 1 for a given `index` and `base`, which is later scaled by the `sample` method to match the extents of the configuration space. This [blog post](https://observablehq.com/@jrus/halton) on Halton sequences might be a useful reference for implementing `compute_sample`.
+Complete the `HaltonSampler` class in `samplers.py`. The `HaltonSampler` maintains a separate generator (with a separate `base`) for each dimension of the configuration space. The `compute_sample` method returns a deterministic sample between 0 and 1 for a given `index` and `base`, which is later scaled by the `sample` method to match the extents of the configuration space. This [blog post](https://observablehq.com/@jrus/halton) on Halton sequences might be a useful reference for implementing `compute_sample` (in addition to the slides from Lecture).
 
 The extents describe the lower and upper bounds of the space being sampled. Your implementation of `sample` should scale them linearly: a 0 returned by `compute_sample` corresponds to the lower bound, while a 1 corresponds to the upper bound.
 
