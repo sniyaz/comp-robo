@@ -22,7 +22,7 @@ nav_exclude: true
 
 ## Overview
 
-In Labs 7 through 9, you will implement a graph-based motion planner. We begin in this Lab by constructing roadmaps for various environments and motion planning problems.
+In Labs 7 through 9, you will implement the Probabilistic Roadmap (PRM) motion planner from Lecture. We begin in this Lab by constructing roadmaps for various environments and motion planning problems.
 
 ## Getting Started
 
@@ -40,13 +40,13 @@ If the build succeeds and you can run `roscd planning`, you’re ready to start!
 
 ## Code Overview
 
-Labs 7 through 9 share a common codebase to handle the various components of the motion planning problem. We provide a walkthrough here, though please note that not all of these components will be implemented in **this** Lab. 
+Labs 7 through 9 share a common codebase to handle the various components of the PRM motion planning problem. We provide a walkthrough here, though please note that not all of these components will be implemented in **this** Lab. 
 
 The first step of motion planning is to define the C-space (`src/planning/problems.py`). These labs only considers `PlanarProblem`s: we focus on the `R2Problem` child class **exclusively**. The `R2Problem` configuration space only considers `x` and `y` positions: as mentioned in Lecture, this space is used since it makes the visualizations easier to understand.
 
 The `PlanarProblem` class implements shared functionality, such as collision-checking. The specific problems implement their own heuristic and steering function to connect two configurations. After defining these classes, the rest of your planning algorithm can abstract away these particulars of the configuration space. (To solve a new type of problem, just implement a corresponding problem class.)
 
-The next step of sampling-based motion planning is to construct a roadmap by sampling configurations. Sampler classes include `HaltonSampler`, `LatticeSampler`, and `RandomSampler` (`src/planning/samplers.py`). You will fill in `HaltonSampler` to generate samples using the [Halton pseudorandom sampler](https://observablehq.com/@jrus/halton). Then, you will complete the `Roadmap` class (`src/planning/roadmap.py`) to finish constructing roadmaps. To search the roadmap, you will implement Lazy A* and path shortcutting (`src/planning/search.py`).
+The next step in building our Probabilistic Roadmap (PRM) is to construct the roadmap by sampling configurations. Sampler classes include `HaltonSampler`, `LatticeSampler`, and `RandomSampler` (`src/planning/samplers.py`). You will fill in `HaltonSampler` to generate samples using the [Halton pseudorandom sampler](https://observablehq.com/@jrus/halton). Then, you will complete the `Roadmap` class (`src/planning/roadmap.py`) to finish constructing roadmaps. To search the roadmap, you will implement Lazy A* and path shortcutting (`src/planning/search.py`).
 
 The `Roadmap` class contains many useful methods and fields. Three fields are of particular importance: `graph`, `vertices`, and `weighted_edges`. `Roadmap.graph` is a [NetworkX](https://networkx.org/) graph, either [undirected](https://networkx.org/documentation/stable/reference/classes/graph.html) or [directed](https://networkx.org/documentation/stable/reference/classes/digraph.html) depending on the problem type. The starter code already handles interacting with this object. Nodes in the NetworkX graph have integer labels. These are indices into `Roadmap.vertices`, a NumPy array of configurations corresponding to each node in the graph. `Roadmap.weighted_edges` is a NumPy array of edges and edge weights; each row `(u, v, w)` describes an edge where `u` and `v` are the same integer-labeled nodes and `w` is the length of the edge between them.
 
@@ -107,7 +107,7 @@ python3 scripts/roadmap --text-map test/share/map1.txt --num-vertices 100 --lazy
 
 Create a **new file** `planning/writeup/lab7.md`. **List the names and Northeastern emails** of students in your lab group at the top, and answer the following question:
 
-1. How do quasi-random sequences like the Halton sequence differ from pseudo-random uniform sampling? What advantages does Halton sampling provide when constructing roadmaps for motion planning?
+1. How do quasi-random sequences like the Halton sequence differ from pseudo-random uniform sampling? What advantages does Halton sampling provide when constructing roadmaps for motion planning (specifically in a PRM)?
 
 Please also include the following images in the `planning/writeup/` directory:
 
