@@ -65,7 +65,7 @@ python3 $(rospack find planning)/test/samplers.py
 ```
 *(or `python3 test/samplers.py` from within the `planning` directory)*
 
-You can visualize the sampled configurations with the following command. Note that you must be in the `planning` package directory (run `roscd planning`) to run the plotting script. Your plot should match the reference plot below.
+You can visualize the sampled configurations with the following command. Note that you must be in the `planning` package directory (run `roscd planning`) to run the plotting script. Your plot should match the reference plot below. Save your generated plot as `halton_empty.png`.
 
 ```bash
 python3 scripts/roadmap --num-vertices 100 --lazy
@@ -93,7 +93,7 @@ python3 $(rospack find planning)/test/problems.py
 ```
 *(or `python3 test/problems.py` from within the `planning` directory)*
 
-The following command will now sample until there are 100 collision-free vertices. Your plot should match the reference plot below.
+The following command will now sample until there are 100 collision-free vertices. Your plot should match the reference plot below. Save your generated plot as `halton_map1.png`.
 
 ```bash
 python3 scripts/roadmap --text-map test/share/map1.txt --num-vertices 100 --lazy
@@ -111,8 +111,8 @@ Create a **new file** `planning/writeup/lab7.md`. **List the names and Northeast
 
 Please also include the following images in the `planning/writeup/` directory:
 
-2. The plot of 100 Halton samples on empty space (`r2_empty.png`) generated in Q1.
-3. The plot of 100 collision-free Halton samples on `map1.txt` (`r2_map1.png`) generated in Q2.
+2. `halton_empty.png`: The plot of 100 Halton samples on empty space generated in Q1.
+3. `halton_map1.png`: The plot of 100 collision-free Halton samples on `map1.txt` generated in Q2.
 
 ---
 
@@ -125,7 +125,7 @@ Please also include the following images in the `planning/writeup/` directory:
 *   **Q2:** 30 points if `python3 $(rospack find planning)/test/problems.py` passes.
     *   That's 6 points per test (all or nothing per test).
 *   **Write-Up (Question Answer):** 10 points (partial credit may be assigned).
-*   **Write-Up (Plots):** 20 points (10 points per plot).
+*   **Write-Up (Plots):** 20 points (10 points per plot: `halton_empty.png` and `halton_map1.png`).
 
 ---
 
