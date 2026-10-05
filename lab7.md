@@ -22,23 +22,14 @@ nav_exclude: true
 
 ## Overview
 
-In this project, you will implement a sampling-based motion planning system. You will construct roadmaps for different environments and planning problems. You will implement the Lazy A* algorithm to search this graph efficiently, and implement a postprocessor to locally improve the path on the graph. By the end of this project, you will have an integrated system that combines all the components you’ve previously developed in this course!
-
-Please complete this assignment with your group from the previous assignment.
-
-The relevant lectures are:
-* Introduction to Planning
-* Heuristic Search
-* Sampling-Based Motion Planning
-* Lazy Search, Planning for Vehicles
+In Labs 7 through 9, you will implement a graph-based motion planner. We begin in this Lab by constructing roadmaps for various environments and motion planning problems.
 
 ## Getting Started
 
-The MuSHR dependencies are the same as when Project 3 was released. To pull the planning starter code from our starter repository, follow these instructions (assuming you’ve already set the `upstream` remote previously):
+The motion planning code for CS 6983 lives in the `planning` subdirectory. The workflow to run these Labs is similar to the perception module (**remember** to always source)!
 
 ```bash
 $ cd ~/mushr_ws/src/mushr478
-$ git pull upstream main
 $ cd ..
 $ catkin build
 $ source ~/mushr_ws/devel/setup.bash
@@ -48,15 +39,15 @@ If the build succeeds and you can run `roscd planning`, you’re ready to start!
 
 ## Code Overview
 
-The first step of motion planning is to define the problem space (`src/planning/problems.py`). This project only considers `PlanarProblem`s like `R2Problem` and `SE2Problem`. The `R2Problem` configuration space only considers x- and y- position, while the `SE2Problem` also includes orientation. The `PlanarProblem` class implements shared functionality, such as collision-checking. The specific problems implement their own heuristic and steering function to connect two configurations. After defining these classes, the rest of your planning algorithm can abstract away these particulars of the configuration space. (To solve a new type of problem, just implement a corresponding problem class.)
+Labs 7 through 9 share a common codebase to handle the various components of the motion planning problem. We provide a walkthrough here, though please note than not all of these components will be implemented in **this** Lab. 
 
-The next step of sampling-based motion planning is to construct a roadmap by sampling configurations. Sampler classes include `HaltonSampler`, `LatticeSampler`, and `RandomSampler` (`src/planning/samplers.py`). You will fill in `HaltonSampler` to generate samples using the [Halton pseudorandom sampler](https://observablehq.com/@jrus/halton). Then, you will complete the `Roadmap` class (`src/planning/roadmap.py`) to finish constructing roadmaps. To search the roadmap, you will implement (Lazy) A* and path shortcutting (`src/planning/search.py`).
+The first step of motion planning is to define the problem space (`src/planning/problems.py`). These labs only considers `PlanarProblem`s: we focus on `R2Problem` specifically. The `R2Problem` configuration space only considers `x` and `y` positions: as mentioned in Lecture, this space is used since it makes the visualizations easier to understand.
 
-The `Roadmap` class contains many useful methods and fields. Three fields are of particular importance: `graph`, `vertices`, and `weighted_edges`. `Roadmap.graph` is a [NetworkX](https://networkx.org/) graph, either [undirected](https://networkx.org/documentation/stable/reference/classes/graph.html) or [directed](https://networkx.org/documentation/stable/reference/classes/digraph.html) depending on the problem type.[^1] The starter code already handles interacting with this object. Nodes in the NetworkX graph have integer labels. These are indices into `Roadmap.vertices`, a NumPy array of configurations corresponding to each node in the graph. `Roadmap.weighted_edges` is a NumPy array of edges and edge weights; each row `(u, v, w)` describes an edge where `u` and `v` are the same integer-labeled nodes and `w` is the length of the edge between them.
+The `PlanarProblem` class implements shared functionality, such as collision-checking. The specific problems implement their own heuristic and steering function to connect two configurations. After defining these classes, the rest of your planning algorithm can abstract away these particulars of the configuration space. (To solve a new type of problem, just implement a corresponding problem class.)
 
-The `PlannerROS` class in `src/control/planner_ros.py` provides a ROS interface to your planning algorithms. It adds the current robot state (estimated with your particle filter from Project 2) and the desired goal to the roadmap as the start and goal nodes. Then, it invokes Lazy A* and shortcutting to compute a path. Finally, this path is sent to a path tracking controller (your MPC algorithm from Project 3).
+The next step of sampling-based motion planning is to construct a roadmap by sampling configurations. Sampler classes include `HaltonSampler`, `LatticeSampler`, and `RandomSampler` (`src/planning/samplers.py`). You will fill in `HaltonSampler` to generate samples using the [Halton pseudorandom sampler](https://observablehq.com/@jrus/halton). Then, you will complete the `Roadmap` class (`src/planning/roadmap.py`) to finish constructing roadmaps. To search the roadmap, you will implement Lazy A* and path shortcutting (`src/planning/search.py`).
 
-[^1]: `SE2Problem`s require directed edges.
+The `Roadmap` class contains many useful methods and fields. Three fields are of particular importance: `graph`, `vertices`, and `weighted_edges`. `Roadmap.graph` is a [NetworkX](https://networkx.org/) graph, either [undirected](https://networkx.org/documentation/stable/reference/classes/graph.html) or [directed](https://networkx.org/documentation/stable/reference/classes/digraph.html) depending on the problem type. The starter code already handles interacting with this object. Nodes in the NetworkX graph have integer labels. These are indices into `Roadmap.vertices`, a NumPy array of configurations corresponding to each node in the graph. `Roadmap.weighted_edges` is a NumPy array of edges and edge weights; each row `(u, v, w)` describes an edge where `u` and `v` are the same integer-labeled nodes and `w` is the length of the edge between them.
 
 ---
 
