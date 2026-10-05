@@ -77,9 +77,14 @@ python3 scripts/roadmap --num-vertices 100 --lazy
 
 ## Q2: State Collision Checking
 
-Implement `PlanarProblem.check_state_validity` in `problems.py`. *(Tip: While not strictly required, we strongly recommend vectorizing your implementation using NumPy to make collision checking run much faster!)*
+Implement `PlanarProblem.check_state_validity` in `problems.py`.
 
 This method will be used to collision-check batches of many states (states that have been sampled as potential vertices or interpolated states along an edge). Your implementation should ensure that configurations are within the extents of the problem space (`PlanarProblem.extents`), and that the x and y components are collision-free (i.e. that they lie completely within `PlanarProblem.permissible_region`). For simplicity, we will assume that the robot is a point, so you only need to check one entry of the permissible region for each state.
+
+> ### 🛑 STOP! READ THIS OR BE SAD! 🛑
+>
+> **READ IN-CODE COMMENTS AND HINTS CAREFULLY:** There are lots of subtle details and things that can go wrong when checking state validity and collision boundaries. Make sure to read the inline comments, docstrings, and hints in `check_state_validity` (`src/planning/problems.py`) very carefully before writing your code!
+{: .post-it }
 
 #### Testing State Validity
 You can verify your implementation on the provided test suites by running:
@@ -113,11 +118,12 @@ Please also include the following images in the `planning/writeup/` directory:
 
 ## 🔥 Grading Breakdown
 
-**Total Lab Points:** 80
+**Total Lab Points:** 90
 
 *   **Q1:** 30 points if `python3 $(rospack find planning)/test/samplers.py` passes.
     *   That's 3 points per test (all or nothing per test).
-*   **Q2:** 20 points if `python3 $(rospack find planning)/test/problems.py` passes.
+*   **Q2:** 30 points if `python3 $(rospack find planning)/test/problems.py` passes.
+    *   That's 6 points per test (all or nothing per test).
 *   **Write-Up (Question Answer):** 10 points (partial credit may be assigned).
 *   **Write-Up (Plots):** 20 points (10 points per plot).
 
