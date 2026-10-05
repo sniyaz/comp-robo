@@ -65,7 +65,7 @@ python3 $(rospack find planning)/test/samplers.py
 ```
 *(or `python3 test/samplers.py` from within the `planning` directory)*
 
-You can visualize the sampled configurations with the following command. Your plot should match the reference plot below.
+You can visualize the sampled configurations with the following command. Note that you must be in the `planning` package directory (run `roscd planning`) to run the plotting script. Your plot should match the reference plot below.
 
 ```bash
 python3 scripts/roadmap --num-vertices 100 --lazy
@@ -111,9 +111,10 @@ Please also include the following images in the `planning/writeup/` directory:
 
 ## 🔥 Grading Breakdown
 
-**Total Lab Points:** 70
+**Total Lab Points:** 80
 
-*   **Q1:** 20 points if `python3 $(rospack find planning)/test/samplers.py` passes.
+*   **Q1:** 30 points if `python3 $(rospack find planning)/test/samplers.py` passes.
+    *   That's 3 points per test (all or nothing per test).
 *   **Q2:** 20 points if `python3 $(rospack find planning)/test/problems.py` passes.
 *   **Write-Up (Question Answer):** 10 points (partial credit may be assigned).
 *   **Write-Up (Plots):** 20 points (10 points per plot).
