@@ -2,7 +2,7 @@
 layout: page
 title: Lab 7
 description: >-
-    Sampling-Based Motion Planning, Halton Sampling, and State Validity.
+    Sampling and Collision Checking.
 mathjax: true
 nav_exclude: true
 ---
