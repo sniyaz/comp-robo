@@ -26,10 +26,11 @@ In Labs 7 through 9, you will implement a graph-based motion planner. We begin i
 
 ## Getting Started
 
-The motion planning code for CS 6983 lives in the `planning` subdirectory. The workflow to run these Labs is similar to the perception module (**remember** to always source)!
+The motion planning code for CS 6983 lives in the `planning` subdirectory. We recently pushed an upstream bug fix to the starter repository, so you **must** pull the latest changes from `skeleton main` before starting:
 
 ```bash
 $ cd ~/mushr_ws/src/mushr478
+$ git pull skeleton main
 $ cd ..
 $ catkin build
 $ source ~/mushr_ws/devel/setup.bash
