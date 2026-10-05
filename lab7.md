@@ -75,7 +75,7 @@ python3 scripts/roadmap --num-vertices 100 --lazy
 
 ---
 
-## Q2: State Validity Checking
+## Q2: State Collision Checking
 
 Implement `PlanarProblem.check_state_validity` in `problems.py`. *(Tip: While not strictly required, we strongly recommend vectorizing your implementation using NumPy to make collision checking run much faster!)*
 
