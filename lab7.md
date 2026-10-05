@@ -39,9 +39,9 @@ If the build succeeds and you can run `roscd planning`, you’re ready to start!
 
 ## Code Overview
 
-Labs 7 through 9 share a common codebase to handle the various components of the motion planning problem. We provide a walkthrough here, though please note than not all of these components will be implemented in **this** Lab. 
+Labs 7 through 9 share a common codebase to handle the various components of the motion planning problem. We provide a walkthrough here, though please note that not all of these components will be implemented in **this** Lab. 
 
-The first step of motion planning is to define the problem space (`src/planning/problems.py`). These labs only considers `PlanarProblem`s: we focus on `R2Problem` specifically. The `R2Problem` configuration space only considers `x` and `y` positions: as mentioned in Lecture, this space is used since it makes the visualizations easier to understand.
+The first step of motion planning is to define the C-space (`src/planning/problems.py`). These labs only considers `PlanarProblem`s: we focus on the `R2Problem` child class **exclusively**. The `R2Problem` configuration space only considers `x` and `y` positions: as mentioned in Lecture, this space is used since it makes the visualizations easier to understand.
 
 The `PlanarProblem` class implements shared functionality, such as collision-checking. The specific problems implement their own heuristic and steering function to connect two configurations. After defining these classes, the rest of your planning algorithm can abstract away these particulars of the configuration space. (To solve a new type of problem, just implement a corresponding problem class.)
 
