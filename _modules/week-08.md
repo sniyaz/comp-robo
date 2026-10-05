@@ -1,5 +1,5 @@
 ---
-title: Week 8 → Configuration Space
+title: Week 8 → Sampling-Based Planning
 ---
 
 Oct 28
