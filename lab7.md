@@ -77,7 +77,9 @@ python3 scripts/roadmap --num-vertices 100 --lazy
 
 ## Q2: State Validity Checking
 
-Implement `PlanarProblem.check_state_validity` in `problems.py`. *(Tip: While not strictly required, we strongly recommend vectorizing your implementation using NumPy to make collision checking run much faster!)* This method will be used to collision-check batches of many states (states that have been sampled as potential vertices or interpolated states along an edge). Your implementation should ensure that configurations are within the extents of the problem space (`PlanarProblem.extents`), and that the x and y components are collision-free (i.e. that they lie completely within `PlanarProblem.permissible_region`). For simplicity, we will assume that the robot is a point, so you only need to check one entry of the permissible region for each state.
+Implement `PlanarProblem.check_state_validity` in `problems.py`. *(Tip: While not strictly required, we strongly recommend vectorizing your implementation using NumPy to make collision checking run much faster!)*
+
+This method will be used to collision-check batches of many states (states that have been sampled as potential vertices or interpolated states along an edge). Your implementation should ensure that configurations are within the extents of the problem space (`PlanarProblem.extents`), and that the x and y components are collision-free (i.e. that they lie completely within `PlanarProblem.permissible_region`). For simplicity, we will assume that the robot is a point, so you only need to check one entry of the permissible region for each state.
 
 #### Testing State Validity
 You can verify your implementation on the provided test suites by running:
