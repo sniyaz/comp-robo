@@ -76,7 +76,7 @@ python3 scripts/roadmap --num-vertices 100 --lazy
 
 ## Q2: State Validity Checking
 
-Implement `PlanarProblem.check_state_validity` in `problems.py`. Remember to vectorize! This method will be used to collision-check batches of many states (states that have been sampled as potential vertices or interpolated states along an edge), so it needs to be efficient. Your implementation should ensure that configurations are within the extents of the problem space (`PlanarProblem.extents`), and that the x and y components are collision-free (i.e. that they lie completely within `PlanarProblem.permissible_region`). For simplicity, we will assume that the robot is a point, so you only need to check one entry of the permissible region for each state.
+Implement `PlanarProblem.check_state_validity` in `problems.py`. *(Tip: While not strictly required, we strongly recommend vectorizing your implementation using NumPy to make collision checking run much faster!)* This method will be used to collision-check batches of many states (states that have been sampled as potential vertices or interpolated states along an edge). Your implementation should ensure that configurations are within the extents of the problem space (`PlanarProblem.extents`), and that the x and y components are collision-free (i.e. that they lie completely within `PlanarProblem.permissible_region`). For simplicity, we will assume that the robot is a point, so you only need to check one entry of the permissible region for each state.
 
 #### Testing State Validity
 You can verify your implementation on the provided test suites by running:
@@ -97,26 +97,25 @@ python3 scripts/roadmap --text-map test/share/map1.txt --num-vertices 100 --lazy
 
 ## 📝 Write-up
 
-Create a **new file** `planning/writeup/lab7.md`. **List the names and Northeastern emails** of students in your lab group at the top, and answer the following questions:
+Create a **new file** `planning/writeup/lab7.md`. **List the names and Northeastern emails** of students in your lab group at the top, and answer the following question:
 
 1. How do quasi-random sequences like the Halton sequence differ from pseudo-random uniform sampling? What advantages does Halton sampling provide when constructing roadmaps for motion planning?
-2. Why is vectorization critical for `check_state_validity` when constructing roadmaps and evaluating edges?
 
 Please also include the following images in the `planning/writeup/` directory:
 
-3. The plot of 100 Halton samples on empty space (`r2_empty.png`) generated in Q1.
-4. The plot of 100 collision-free Halton samples on `map1.txt` (`r2_map1.png`) generated in Q2.
+2. The plot of 100 Halton samples on empty space (`r2_empty.png`) generated in Q1.
+3. The plot of 100 collision-free Halton samples on `map1.txt` (`r2_map1.png`) generated in Q2.
 
 ---
 
 ## 🔥 Grading Breakdown
 
-**Total Lab Points:** 60
+**Total Lab Points:** 70
 
 *   **Q1:** 20 points if `python3 $(rospack find planning)/test/samplers.py` passes.
 *   **Q2:** 20 points if `python3 $(rospack find planning)/test/problems.py` passes.
-*   **Write-Up (Questions):** 10 points (5 points per question, partial credit may be assigned).
-*   **Write-Up (Plots):** 10 points (5 points per plot).
+*   **Write-Up (Question Answer):** 10 points (partial credit may be assigned).
+*   **Write-Up (Plots):** 20 points (10 points per plot).
 
 ---
 
