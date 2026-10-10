@@ -29,9 +29,9 @@ If you require an accommodation during the exam, please reach out to me directly
 
 ## Midterm Material
 
-The midterm will cover **Lectures 1 through 5 inclusive** (and Labs 1 through 5). Only **perception** topics will be tested: there will be **nothing on Motion Planning**.
+The midterm will cover **Lectures 1 through 5 inclusive** (and Labs 1 through 5). Only **Perception** topics will be tested: there will be **nothing on Motion Planning or ROS**.
 
-Otherwise, if a concept is on the slides or used in the labs for Lectures 1 through 5, you should know it.
+Otherwise, if a concept is on the slides or used in the labs for Lectures 1 through 5, you should know it (with the exception, of course, of ROS).
 
 ## How to Study
 
