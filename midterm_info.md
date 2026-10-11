@@ -31,6 +31,10 @@ If you require an accommodation during the exam, please reach out to me directly
 
 The midterm will cover **Lectures 1 through 5 inclusive** (and Labs 1 through 5). Only **Perception** topics will be tested: there will be **nothing on Motion Planning or ROS**.
 
+You should also be familiar with the two prep reading notes assigned earlier in the semester:
+- [**Probability Notes**]({{ site.baseurl }}/assets/reading/probability-note.pdf)
+- [**Gaussian Notes**](https://cs229.stanford.edu/section/gaussians.pdf)
+
 Otherwise, if a concept is on the slides or used in the labs for Lectures 1 through 5, you should know it (with the exception, of course, of ROS).
 
 ## How to Study
@@ -46,11 +50,13 @@ Other good resources:
 
 1. **The lecture slides** (pay attention to derivations!).
 
-2. **Problems from our optional textbooks** (feel free to ask me whether a problem is relevant or not):
+2. **The prep reading notes**: [**Probability Notes**]({{ site.baseurl }}/assets/reading/probability-note.pdf) and [**Gaussian Notes**](https://cs229.stanford.edu/section/gaussians.pdf).
+
+3. **Problems from our optional textbooks** (feel free to ask me whether a problem is relevant or not):
    - [**Probabilistic Robotics**](http://www.probabilistic-robotics.org/) by Sebastian Thrun, Wolfram Burgard, and Dieter Fox
    - [**Underactuated Robotics**](https://underactuated.csail.mit.edu/) by Russ Tedrake
    - [**Planning Algorithms**](https://lavalle.pl/planning/) by Steven M. LaValle
 
-3. **Googling practice problems from other schools** on the topics we've learned so far (again, feel free to ask me whether a problem is relevant).
+4. **Googling practice problems from other schools** on the topics we've learned so far (again, feel free to ask me whether a problem is relevant).
 
-4. **[Piazza](https://piazza.com/northeastern/fall2026/cs6983r)**: post here if you have a question on a topic while studying for the exam.
+5. **[Piazza](https://piazza.com/northeastern/fall2026/cs6983r)**: post here if you have a question on a topic while studying for the exam.
