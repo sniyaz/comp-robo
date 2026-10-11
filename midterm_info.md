@@ -44,7 +44,7 @@ Your best friend when studying is the practice exam:
 - **Practice Exam Blank** *(coming soon)*
 - **Practice Exam Solutions** *(coming soon)*
 
-I will write this to be very similar in topics/format to the actual exam (although you may of course see things not on the practice exam as well). I suggest working on it quite a bit before peeking at the answers.
+I will write this to be very similar in topics/format to the actual exam (although you may of course see things not on the practice exam as well). I suggest working on it quite a bit before peeking at the answers. **If you get stuck, you can ask in the per-question threads on Piazza for help with specific questions!**
 
 Other good resources:
 
@@ -59,4 +59,4 @@ Other good resources:
 
 4. **Googling practice problems from other schools** on the topics we've learned so far (again, feel free to ask me whether a problem is relevant).
 
-5. **[Piazza](https://piazza.com/northeastern/fall2026/cs6983r)**: post here if you have a question on a topic while studying for the exam.
+5. **[Piazza](https://piazza.com/northeastern/fall2026/cs6983r)**: post here if you have a question on a topic while studying for the exam, or **check/ask in the per-question threads for help with specific questions**.
