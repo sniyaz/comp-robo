@@ -41,7 +41,7 @@ Otherwise, if a concept is on the slides or used in the labs for Lectures 1 thro
 
 Your best friend when studying is the practice exam:
 
-[**Practice Exam Blank**](https://drive.google.com/file/d/1XZmsPqPbo5uCKl5W_85_hxpuowhny_Xz/view?usp=share_link)
+[**Practice Exam Blank**](https://drive.google.com/file/d/1AE4uWsxgZPDLgyuzBexXhz-5BRknaKuk/view?usp=sharing)
 
 [**Practice Exam Solutions**](https://drive.google.com/file/d/1FNqlM3jaQyUheR6R0a628zvngVF-EDSJ/view?usp=sharing)
 
