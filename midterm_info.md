@@ -41,8 +41,8 @@ Otherwise, if a concept is on the slides or used in the labs for Lectures 1 thro
 
 Your best friend when studying is the practice exam:
 
-- **Practice Exam Blank** *(coming soon)*
-- **Practice Exam Solutions** *(coming soon)*
+[**Practice Exam Blank**](https://drive.google.com/file/d/1XZmsPqPbo5uCKl5W_85_hxpuowhny_Xz/view?usp=share_link)
+[**Practice Exam Solutions**](https://drive.google.com/file/d/1FNqlM3jaQyUheR6R0a628zvngVF-EDSJ/view?usp=sharing)
 
 I will write this to be very similar in topics/format to the actual exam (although you may of course see things not on the practice exam as well). I suggest working on it quite a bit before peeking at the answers. **If you get stuck, you can ask in the per-question threads on Piazza for help with specific questions!**
 
