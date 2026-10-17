@@ -8,5 +8,5 @@ Nov 3
 Nov 4
 : **Searching Graphs**
   : [slides](#)
-: **Lab 8**{: .label .label-purple } [A* Search](./lab8)
+: **Lab 8**{: .label .label-purple } [Steering and Graph Search](./lab8)
 

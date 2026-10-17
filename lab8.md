@@ -2,7 +2,7 @@
 layout: page
 title: Lab 8
 description: >-
-    Graph Construction and A* Search.
+    Steering and Graph Search.
 mathjax: true
 nav_exclude: true
 ---
@@ -22,7 +22,7 @@ nav_exclude: true
 
 Welcome to Lab 8! In Lab 7, we sampled configurations and implemented collision checking for states. In this lab, we will complete our roadmap graph construction by validating and adding weighted edges, and then implement the classic **A* search algorithm** to compute shortest paths across our roadmap graph.
 
-As a reminder, all motion planning labs (Labs 7 through 9) share the common architecture and problem representation described in the [Lab 7 Code Overview](./lab7#code-overview).
+As a reminder, all motion planning labs (Labs 7 through 9) share the common architecture and problem representation described in the [Lab 7 Code Overview]({{ site.baseurl }}/lab7#code-overview).
 
 ## Getting Started
 
