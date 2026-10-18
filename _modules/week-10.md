@@ -8,5 +8,5 @@ Nov 10
 Nov 11
 : **Lazy Motion Planning**
   : [slides](#)
-: **Lab 9**{: .label .label-purple } Building Lazy PRM
+: **Lab 9**{: .label .label-purple } [Building Lazy PRM](./lab9)
 
