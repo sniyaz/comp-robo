@@ -22,7 +22,7 @@ nav_exclude: true
 
 Welcome to Lab 9! In Lab 7, we sampled configurations and implemented collision checking for states. In Lab 8, we completed roadmap graph construction by validating and adding weighted edges, and implemented the A* search algorithm to compute shortest paths across our roadmap graph.
 
-In this lab—the last motion planning lab—we will optimize our PRM planner. First, we will implement **Lazy A\***, which avoids collision-checking all edges during roadmap construction by deferring edge evaluation until search time. Then, we will implement **path shortcutting** as a post-processing step to smooth out and shorten paths found on the discrete roadmap graph.
+In this lab (the last motion planning lab!) we will optimize our PRM planner. First, we will implement **Lazy A\***, which avoids collision-checking all edges during roadmap construction by deferring edge evaluation until search time. Then, we will implement **path shortcutting** as a post-processing step to smooth out and shorten paths found on the discrete roadmap graph.
 
 As a reminder, all motion planning labs (Labs 7 through 9) share the common architecture and problem representation described in the [Lab 7 Code Overview]({{ site.baseurl }}/lab7#code-overview).
 
