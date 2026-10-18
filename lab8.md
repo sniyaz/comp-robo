@@ -20,7 +20,7 @@ nav_exclude: true
 
 ## Overview
 
-Welcome to Lab 8! In Lab 7, we sampled configurations and implemented collision checking for states. In this lab, we will complete our roadmap graph construction by validating and adding weighted edges, and then implement the classic **A* search algorithm** to compute shortest paths across our roadmap graph.
+Welcome to Lab 8! In Lab 7, we sampled configurations and implemented collision checking for states. In this lab, we will complete our roadmap graph construction by validating and adding weighted edges, and then implement **Dijkstra's algorithm** (or **A\***) to compute shortest paths across our roadmap graph, completing our **Probabilistic Roadmap (PRM)** planner.
 
 As a reminder, all motion planning labs (Labs 7 through 9) share the common architecture and problem representation described in the [Lab 7 Code Overview]({{ site.baseurl }}/lab7#code-overview).
 
@@ -63,28 +63,28 @@ python3 scripts/roadmap -m test/share/map1.txt -n 25 -r 3.0 --show-edges
 
 ---
 
-## Q2: Searching the Roadmap with A*
+## Q2: Searching the Roadmap with Dijkstra
 
-The A* algorithm expands nodes in order of their f-value $f(n) = g(n) + h(n)$, where $g(n)$ is the estimated cost-to-come to the node $n$ and $h(n)$ is the estimated cost-to-go from the node $n$ to the goal.
+Dijkstra's algorithm expands nodes in order of their cost-to-come $g(n)$, finding the shortest path from the start to the goal across the roadmap graph. (You are also welcome to implement **A\*** search by adding an admissible heuristic: $f(n) = g(n) + h(n)$! Either Dijkstra or A* is fully supported and accepted.)
 
-**Requirement:** Implement the main A* logic in `src/planning/search.py`. For each neighbor, compute the cost-to-come via the current node (cost-to-come for the current node, plus the length of the edge to the neighbor). Insert a `QueueEntry` with this information into the priority queue. Be sure to compute the f-value of the node (cost-to-come plus heuristic) so the priority queue is sorted correctly. Then, implement `extract_path` to follow the parent pointers from the goal to the start; this function is called by `astar` after the goal has been expanded to finally return the sequence of nodes.
+**Requirement:** Implement graph search in `src/planning/search.py`. For each neighbor, compute the cost-to-come via the current node (cost-to-come for the current node, plus the length of the edge to the neighbor). Insert a `QueueEntry` with this information into the priority queue. (If implementing A*, add the heuristic to compute the f-value.) Then, implement `extract_path` to follow the parent pointers from the goal to the start; this function is called after the goal has been expanded to finally return the sequence of nodes.
 
-#### Testing A* Search
+#### Testing Graph Search
 You can verify your implementation on the provided test suites by running:
 ```bash
-python3 $(rospack find planning)/test/astar.py
+python3 $(rospack find planning)/test/dijkstra.py
 ```
-*(or `python3 test/astar.py` from within the `planning` directory)*
+*(or `python3 test/dijkstra.py` from within the `planning` directory)*
 
-Your implementation should pass the `test_astar_r2` and `test_astar_se2` suites.
+Your implementation should pass the `test_dijkstra_r2` and `test_dijkstra_se2` suites.
 
-You should now be able to run an A* planner from the start to the goal! The following command specifies that it is an `R2Problem`, planning from the start of (1, 1) to the goal of (7, 8). Note that you must be in the `planning` package directory (run `roscd planning`) to run the script. Your plot should match the reference plot below. Save your generated plot as `halton_map1_astar_path.png`.
+You should now be able to run a PRM planner from the start to the goal! The following command specifies that it is an `R2Problem`, planning from the start of (1, 1) to the goal of (7, 8). Note that you must be in the `planning` package directory (run `roscd planning`) to run the script. Your plot should match the reference plot below. Save your generated plot as `halton_map1_prm_path.png`.
 
 ```bash
 python3 scripts/run_search -m test/share/map1.txt -n 25 -r 3.0 --show-edges r2 -s 1 1 -g 7 8
 ```
 
-![Figure 2: A* path in blue on map1.txt, from (1, 1) in green to (7, 8) in red.]({{ site.baseurl }}/assets/lab8-assets/r2_map1_astar_path.png)
+![Figure 2: PRM path in blue on map1.txt, from (1, 1) in green to (7, 8) in red.]({{ site.baseurl }}/assets/lab8-assets/r2_map1_prm_path.png)
 
 ---
 
@@ -96,15 +96,15 @@ Create a **new file** `planning/writeup/lab8.md`. **List the names and Northeast
    ```bash
    python3 scripts/run_search -m test/share/map2.txt -n 600 -r 100 r2 -s 252 115 -g 350 350
    ```
-   Save this plot as `map2_astar_path.png` in `planning/writeup/` and include it in your writeup.
+   Save this plot as `map2_prm_path.png` in `planning/writeup/` and include it in your writeup.
 2. **Varying Connection Radius:** Holding the number of vertices constant at 600, decrease the connection radius from 100 until the planner fails to find a solution on `map2.txt`. Now, double the connection radius to 200. For each radius, report the radius, path length, and planning time in a table. Explain any variation you observe.
 3. **Varying Number of Vertices:** Holding the connection radius constant at 100, decrease the number of vertices from 600 until the planner fails to find a solution on `map2.txt`. Now, double the number of vertices to 1200. For each number of vertices, report the number of vertices, path length, and planning time in a table. Explain any variation you observe.
 
 Please also include the following images in the `planning/writeup/` directory:
 
 4. `halton_map1_edges.png`: The plot of the roadmap with 25 vertices and connection radius 3.0 generated in Q1.
-5. `halton_map1_astar_path.png`: The plot of the A* path from (1, 1) to (7, 8) generated in Q2.
-6. `map2_astar_path.png`: The plot of the shortest path on `map2.txt` between (252, 115) and (350, 350).
+5. `halton_map1_prm_path.png`: The plot of the PRM path from (1, 1) to (7, 8) generated in Q2.
+6. `map2_prm_path.png`: The plot of the shortest path on `map2.txt` between (252, 115) and (350, 350).
 
 ---
 
@@ -114,10 +114,10 @@ Please also include the following images in the `planning/writeup/` directory:
 
 *   **Q1:** 25 points if `python3 $(rospack find planning)/test/roadmap.py` passes.
     *   That's 5 points per test (5 tests, all or nothing per test).
-*   **Q2:** 30 points if `python3 $(rospack find planning)/test/astar.py` passes the A* test suites.
-    *   15 points for `test_astar_r2` and 15 points for `test_astar_se2`.
+*   **Q2:** 30 points if `python3 $(rospack find planning)/test/dijkstra.py` passes the search test suites.
+    *   15 points for `test_dijkstra_r2` and 15 points for `test_dijkstra_se2`.
 *   **Write-Up (Questions & Analysis):** 15 points (5 points per question/experiment analysis).
-*   **Write-Up (Plots):** 30 points (10 points per plot: `halton_map1_edges.png`, `halton_map1_astar_path.png`, and `map2_astar_path.png`).
+*   **Write-Up (Plots):** 30 points (10 points per plot: `halton_map1_edges.png`, `halton_map1_prm_path.png`, and `map2_prm_path.png`).
 
 ---
 
