@@ -46,6 +46,13 @@ In Lab 7, we sampled collision-free vertices for our roadmap. Now, we need to co
 
 **Requirement:** Implement `Roadmap.check_weighted_edges_validity` in `src/planning/roadmap.py`. This method is called by the `Roadmap` constructor to prevent edges in collision from being added to the graph.
 
+> ### 🛑 STOP! READ THIS: Node Indices Must Be Integers! 🛑
+>
+> **Float Types in `weighted_edges`:** The input `weighted_edges` is a 2D NumPy array with rows formatted as `(u, v, length)`. Because the edge `length` is a floating-point number, NumPy stores the entire array with floating-point values—meaning node indices `u` and `v` are stored as floats (e.g., `0.0`, `1.0`).
+>
+> When you call the helper method `self.check_edge_validity(n1, n2)`, it indexes into vertex arrays (e.g., `self.vertices[n1, :]`). NumPy will raise an error if you pass floats as indices! **You must explicitly cast node indices to `int`** (e.g., `int(cur_edge[0])`, `int(cur_edge[1])`) when calling `check_edge_validity`.
+{: .post-it }
+
 #### Testing Edge Validity
 You can verify your implementation on the provided test suite by running:
 ```bash
@@ -69,6 +76,31 @@ Dijkstra's algorithm expands nodes in order of their cost-to-come $g(n)$, findin
 
 **Requirement:** Implement graph search in `src/planning/search.py`. For each neighbor, compute the cost-to-come via the current node (cost-to-come for the current node, plus the length of the edge to the neighbor). Insert a `QueueEntry` with this information into the priority queue. (If implementing A*, add the heuristic to compute the f-value.) Then, implement `extract_path` to follow the parent pointers from the goal to the start; this function is called after the goal has been expanded to finally return the sequence of nodes.
 
+> ### 🛑 STOP! READ THIS OR BE SAD! 🛑
+>
+> 1. **Inspect `PriorityQueue` and `QueueEntry`:** Make sure to look at how `QueueEntry` is structured at the top of `src/planning/search.py`:
+>    ```python
+>    QueueEntry = collections.namedtuple(
+>        "QueueEntry",
+>        ["cost", "counter", "node", "parent", "cost_to_come"],
+>    )
+>    ```
+>    The underlying `PriorityQueue` sorts elements by lexicographic order starting with the first field (`cost`). The second field, `counter`, comes from `itertools.count()` (`next(c)`) and ensures ties are broken without comparing graph nodes. You can access named fields with dot notation (e.g. `entry.node`, `entry.parent`).
+>
+> 2. **Cost-to-Come in `QueueEntry`:** If you are implementing Dijkstra's algorithm, the priority `cost` is already the true cost-to-come $g(n)$ from the start node! You do **not** need to use the `cost_to_come` member of `QueueEntry` if doing Dijkstra (you can pass `0` or `cost_to_neighbor` as a dummy value). A separate `cost_to_come` is only needed if implementing A* where `cost` is the f-value $f(n) = g(n) + h(n)$.
+>
+> 3. **DO NOT Touch the Code Marked for Lab 9:** Inside `dijkstra()`, you will notice a block:
+>    ```python
+>    if rm.lazy:
+>        # BEGIN Lab 9, Q1
+>        raise NotImplementedError
+>        # END Lab 9, Q1
+>    ```
+>    **Do NOT touch or modify this block!** That section is reserved for Lazy PRM in Lab 9. In Lab 8, `rm.lazy` is `False`, so standard search will not enter this conditional.
+>
+> 4. **You Do NOT Need to Pass the Last Test Suite:** When you run `test/dijkstra.py`, it contains three test suites: `TestDijkstraR2`, `TestDijkstraSE2`, and `TestLazyPRM`. The last test suite (`TestLazyPRM`) is for **Lab 9**. You only need to pass the first two suites (`TestDijkstraR2` and `TestDijkstraSE2`) for Lab 8!
+{: .post-it }
+
 #### Testing Graph Search
 You can verify your implementation on the provided test suites by running:
 ```bash
@@ -76,7 +108,7 @@ python3 $(rospack find planning)/test/dijkstra.py
 ```
 *(or `python3 test/dijkstra.py` from within the `planning` directory)*
 
-Your implementation should pass the `test_dijkstra_r2` and `test_dijkstra_se2` suites.
+**Note on Test Suites:** Your implementation for Lab 8 only needs to pass the `TestDijkstraR2` and `TestDijkstraSE2` test suites. The last suite, `TestLazyPRM`, is specifically for **Lab 9** (it will fail with `NotImplementedError` until then—this is completely expected!).
 
 You should now be able to run a PRM planner from the start to the goal! The following command specifies that it is an `R2Problem`, planning from the start of (1, 1) to the goal of (7, 8). Note that you must be in the `planning` package directory (run `roscd planning`) to run the script. Your plot should match the reference plot below. Save your generated plot as `halton_map1_prm_path.png`.
 
@@ -115,7 +147,7 @@ Please also include the following images in the `planning/writeup/` directory:
 *   **Q1:** 25 points if `python3 $(rospack find planning)/test/roadmap.py` passes.
     *   That's 5 points per test (5 tests, all or nothing per test).
 *   **Q2:** 30 points if `python3 $(rospack find planning)/test/dijkstra.py` passes the search test suites.
-    *   15 points for `test_dijkstra_r2` and 15 points for `test_dijkstra_se2`.
+    *   15 points for `test_dijkstra_r2` and 15 points for `test_dijkstra_se2`. (Note: `TestLazyPRM` is for Lab 9 and is not part of Lab 8 grading.)
 *   **Write-Up (Questions & Analysis):** 15 points (5 points per question/experiment analysis).
 *   **Write-Up (Plots):** 30 points (10 points per plot: `halton_map1_edges.png`, `halton_map1_prm_path.png`, and `map2_prm_path.png`).
 
