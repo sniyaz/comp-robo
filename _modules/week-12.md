@@ -1,13 +1,6 @@
 ---
-title: Week 12 → More Control!
+title: Week 12 → Thanksgiving 🦃
 ---
 
-Dec 1
-: **Lab 10 due**{: .label .label-red }
-
-Dec 2
-: **Control II**
-  : [slides](#)
-: **Lab 11**{: .label .label-purple } Control II
-
-
+Nov 25
+: **No Class: Thanksgiving Break**{: .label .label-green }

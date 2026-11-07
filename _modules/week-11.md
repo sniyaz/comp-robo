@@ -1,13 +1,11 @@
 ---
-title: Week 11 → Control
+title: Week 11 → Lazy Search
 ---
 
 Nov 17
-: **Lab 9 due**{: .label .label-red }
+: **Lab 8 due**{: .label .label-red }
 
 Nov 18
-: **Control I**
+: **Lazy Motion Planning**
   : [slides](#)
-: **Lab 10**{: .label .label-purple } Control I
-
-
+: **Lab 9**{: .label .label-purple } [Building Lazy PRM](./lab9)

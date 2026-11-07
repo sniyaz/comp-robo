@@ -1,13 +1,11 @@
 ---
-title: Week 13 → That's All, Folks
+title: Week 13 → Control
 ---
 
-Dec 8
-: **Lab 11 due**{: .label .label-red }
+Dec 1
+: **Lab 9 due**{: .label .label-red }
 
-Dec 9
-: **Industry Guest Lecture, Farewell 🤖💜**
+Dec 2
+: **Control I**
   : [slides](#)
-: **Lab 12**{: .label .label-purple } Practice Final Work Time
-
-
+: **Lab 10**{: .label .label-purple } Control I

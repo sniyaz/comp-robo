@@ -1,9 +1,11 @@
 ---
-title: Week 14 → Final Exam ☠️
+title: Week 14 → More Control!
 ---
 
-Dec 16
-: **FINAL EXAM**{: .label .label-yellow }
-    : [info]()
+Dec 8
+: **Lab 10 due**{: .label .label-red }
 
-
+Dec 9
+: **Control II**
+  : [slides](#)
+: **Lab 11**{: .label .label-purple } Control II
