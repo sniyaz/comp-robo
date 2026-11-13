@@ -38,6 +38,8 @@ $ catkin build
 $ source ~/mushr_ws/devel/setup.bash
 ```
 
+😈 **Make sure to re-pull from skeleton:** I've added a fun new problem for you! :)
+
 If the build succeeds and you can run `roscd planning`, you’re ready to start!
 
 ---
