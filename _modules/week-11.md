@@ -8,4 +8,4 @@ Nov 17
 Nov 18
 : **Lazy Motion Planning**
   : [slides](#)
-: **Lab 9**{: .label .label-purple } [Building Lazy PRM](./lab9)
+: **Lab 9**{: .label .label-purple } [Lazy Shortest Paths](./lab9)
