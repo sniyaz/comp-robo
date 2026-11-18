@@ -50,7 +50,10 @@ One of the main computational bottlenecks in motion planning algorithms is check
 
 **Requirement:** Implement Lazy PRM in `src/planning/search.py`.
 
-The `Roadmap` class decides whether to collision-check edges on construction based on `Roadmap.lazy`. You will use this same field to decide when edges need to be lazily evaluated during search. When a new node is expanded, the edge from its parent to that node must be collision-checked (with `Roadmap.check_edge_validity`) to determine whether search can continue. If it is in collision, the entry cannot be used and is discarded. If it is collision-free, the algorithm can proceed as before.
+The `Roadmap` class decides whether to collision-check edges on construction based on `Roadmap.lazy`. You will use this same field to decide when edges need to be lazily evaluated during search. When evaluating candidate edges during search, edges must be collision-checked (with `Roadmap.check_edge_validity`) to determine whether search can continue. If an edge is in collision, it cannot be used and is discarded. If it is collision-free, the algorithm can proceed as before.
+
+> **HINT:** Depending on how you set up your search or follow what we covered in lecture, *maybe* you need to move the `if` statement around! :)
+{: .post-it }
 
 #### Testing Lazy PRM Search
 
@@ -125,9 +128,9 @@ python3 $(rospack find planning)/test/lazysp.py
 ```
 *(or `python3 test/lazysp.py` from within the `planning` directory)*
 
-Your implementation should pass the `test_lazysp_r2` test suite. Note that on the R2 test problem, LazySP finds the same path as Lazy PRM while evaluating only 10 edges (compared to 14 for Lazy PRM with Dijkstra).
+Your implementation should pass the `test_lazysp_r2` test suite. Note that on the R2 test problem, LazySP finds the same path as Lazy PRM while evaluating only 10 edges.
 
-You should now be able to run LazySP! Note that you must be in the `planning` package directory (run `roscd planning`) to run the script. Your plot should match the reference plot below, and the script should report that **14** edges were evaluated (compared to 24 for Lazy PRM and 60 for PRM). Save your generated plot as `halton_map1_lazysp_path.png`.
+You should now be able to run LazySP! Note that you must be in the `planning` package directory (run `roscd planning`) to run the script. Your plot should match the reference plot below, and the script should report that **14** edges were evaluated. Save your generated plot as `halton_map1_lazysp_path.png`.
 
 ```bash
 python3 scripts/run_search -m test/share/map1.txt -n 25 -r 3.0 --algorithm lazysp --show-edges r2 -s 1 1 -g 7 8
