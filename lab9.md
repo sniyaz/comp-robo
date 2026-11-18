@@ -81,6 +81,9 @@ python3 scripts/run_search -m test/share/map1.txt -n 25 -r 3.0 --lazy --show-edg
 
 PRM returns the shortest path on the graph, which is not necessarily the shortest path in the environment because not all vertices are directly connected by edges. Randomly select two indices to try and connect. Be sure to verify that an edge connecting the two vertices would be collision-free, and that connecting the two indices would actually be shorter.
 
+> **HINT:** You can call `Roadmap.heuristic(u, v)` (or `rm.heuristic(u, v)`) to compute the distance between two node labels `u` and `v`. (You would have used this in Lab 8 if you implemented A\*, but it simply computes the C-space distance between nodes in the roadmap).
+{: .post-it }
+
 #### Testing Path Shortcutting
 
 You can verify your implementation on the provided test suite by running:
