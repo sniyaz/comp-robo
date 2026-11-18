@@ -156,10 +156,10 @@ Create a **new file** `planning/writeup/lab9.md`. **List the names and Northeast
    # LazySP
    python3 scripts/run_search -m test/share/map2.txt -n <N> -r <R> --algorithm lazysp r2 -s 252 115 -g 350 350
    ```
-   Report the path length, planning time, and number of edges evaluated for all three planners in a table. Explain any variation and trade-offs you observe. In particular: which planner evaluates the fewest edges, and which is fastest? Why might they differ, and when would LazySP be the best choice? (Also compare Dijkstra and A* if you implemented both.)
+   Report the path length and number of edges evaluated for all three planners in a table. Explain any variation you observe in the number of edges evaluated. In particular: which planner evaluates the fewest edges? Why do they differ, and when would LazySP be the best choice?
 
-   > **NOTE:** LazySP re-runs a full graph search every time it finds an edge in collision, so it can be slow on large roadmaps (with 600 vertices it may take a minute or more). If it takes too long, use a smaller number of vertices for all three planners.
-2. **Shortcutting Evaluation:** Compare the time spent on planning and shortcutting on `map1.txt`. Describe qualitatively how the paths differ before and after shortcutting.
+   > **NOTE:** LazySP re-runs a full graph search every time it finds an edge in collision, so it can take longer on large roadmaps. If it takes too long, use a smaller number of vertices for all three planners.
+2. **Shortcutting Evaluation:** Describe qualitatively how the paths differ before and after shortcutting on `map1.txt`, and report the path length before and after shortcutting.
 
 Please also include the following images in the `planning/writeup/` directory:
 
