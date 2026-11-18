@@ -158,8 +158,8 @@ Create a **new file** `planning/writeup/lab9.md`. **List the names and Northeast
    ```
    Report the path length and number of edges evaluated for all three planners in a table. Explain any variation you observe in the number of edges evaluated. In particular: which planner evaluates the fewest edges? Why do they differ, and when would LazySP be the best choice?
 
-   > **NOTE:** LazySP re-runs a full graph search every time it finds an edge in collision, so it can take longer on large roadmaps. If it takes too long, use a smaller number of vertices for all three planners.
 2. **Shortcutting Evaluation:** Describe qualitatively how the paths differ before and after shortcutting on `map1.txt`, and report the path length before and after shortcutting.
+
 3. **Lazy PRM Edge Evaluation Anomaly:** On some graphs (such as `map1.txt` with `n=25, r=3.0`), you may observe that Lazy PRM actually evaluates *more* total edges than standard PRM. Why do you think that is, and how would you fix it?
 
 Please also include the following images in the `planning/writeup/` directory:
