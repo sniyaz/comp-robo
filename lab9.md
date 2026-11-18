@@ -120,7 +120,7 @@ Because the same edge can appear on many candidate paths, LazySP must **remember
 *   `check_edge(u, v)` should return whether an edge is collision-free, memoizing results in `self.edge_status`. Only call `self.rm.check_edge_validity` (which increments the `Roadmap.edges_evaluated` counter) for edges that haven't been checked yet. Use the provided `self.edge_key(u, v)` to build dictionary keys (R2 roadmaps are undirected, so `(u, v)` and `(v, u)` are the same edge).
 *   `solve(start, goal)` should implement the loop above. Remove edges in collision from `self.graph` (a copy of the roadmap's graph) with [`self.graph.remove_edge(u, v)`](https://networkx.org/documentation/stable/reference/classes/generated/networkx.Graph.remove_edge.html).
 
-> **HINT:** You do **not** need to write a new graph search! A `LazySP` object can stand in for a `Roadmap`: it has its own `graph` (with collision edges removed) and `lazy = False` (so your search never collision-checks edges itself), and forwards everything else to the underlying roadmap. That means you can reuse your search (and `extract_path`) from Lab 8 directly with `search.dijkstra(self, start, goal)`.
+> **HINT:** You do **not** need to write a new graph search! A `LazySP` object can stand in for a `Roadmap`: it has its own `graph` (with collision edges removed) and `lazy = False` (so your search never collision-checks edges itself), and forwards everything else to the underlying roadmap. That means you can reuse your search (and `extract_path`) from Lab 8 directly with `search.dijkstra(self, start, goal)`. Remember that `dijkstra` returns `(vpath, parents)`!
 {: .post-it }
 
 #### Testing LazySP
