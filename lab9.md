@@ -160,23 +160,24 @@ Create a **new file** `planning/writeup/lab9.md`. **List the names and Northeast
 
    > **NOTE:** LazySP re-runs a full graph search every time it finds an edge in collision, so it can take longer on large roadmaps. If it takes too long, use a smaller number of vertices for all three planners.
 2. **Shortcutting Evaluation:** Describe qualitatively how the paths differ before and after shortcutting on `map1.txt`, and report the path length before and after shortcutting.
+3. **Lazy PRM Edge Evaluation Anomaly:** On some graphs (such as `map1.txt` with `n=25, r=3.0`), you may observe that Lazy PRM actually evaluates *more* total edges than standard PRM. Why do you think that is, and how would you fix it?
 
 Please also include the following images in the `planning/writeup/` directory:
 
-3. `halton_map1_lazy_prm_path.png`: The plot of the Lazy PRM path on `map1.txt` generated in Q1.
-4. `halton_map1_shortcut_path.png`: The plot of the Lazy PRM path with shortcut postprocessing on `map1.txt` generated in Q2.
-5. `halton_map1_lazysp_path.png`: The plot of the LazySP path on `map1.txt` generated in Q3.
+4. `halton_map1_lazy_prm_path.png`: The plot of the Lazy PRM path on `map1.txt` generated in Q1.
+5. `halton_map1_shortcut_path.png`: The plot of the Lazy PRM path with shortcut postprocessing on `map1.txt` generated in Q2.
+6. `halton_map1_lazysp_path.png`: The plot of the LazySP path on `map1.txt` generated in Q3.
 
 ---
 
 ## 🔥 Grading Breakdown
 
-**Total Lab Points:** 100
+**Total Lab Points:** 105
 
 *   **Q1:** 25 points if `python3 $(rospack find planning)/test/dijkstra.py` passes the `test_lazy_prm` test suite.
 *   **Q2:** 20 points if `python3 $(rospack find planning)/test/shortcut.py` passes.
 *   **Q3:** 25 points if `python3 $(rospack find planning)/test/lazysp.py` passes.
-*   **Write-Up (Questions & Analysis):** 15 points (10 points for the planner comparison, 5 points for the shortcutting evaluation).
+*   **Write-Up (Questions & Analysis):** 20 points (10 points for the planner comparison, 5 points for the shortcutting evaluation, 5 points for the Lazy PRM edge evaluation anomaly).
 *   **Write-Up (Plots):** 15 points (5 points per plot: `halton_map1_lazy_prm_path.png`, `halton_map1_shortcut_path.png`, and `halton_map1_lazysp_path.png`).
 
 ---
